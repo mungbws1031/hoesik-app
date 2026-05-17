@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "settings": {
+    "checkpoint_minutes": 15,
+    "snooze_minutes": 5
+  },
+  "items": []
+}

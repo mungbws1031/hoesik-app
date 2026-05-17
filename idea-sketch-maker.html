@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아이디어 스케치 메이커</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --paper: #faf8f4;
+    --ink: #2c2c2c;
+    --pencil: #6b6b6b;
+    --accent: #4a7c9e;
+    --accent2: #e8734a;
+    --line: rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, rgba(0,0,0,0.03) 27px, rgba(0,0,0,0.03) 28px);
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    color: var(--ink);
+  }
+
+  .font-sketch { font-family: 'Noto Sans KR', sans-serif; font-weight: 700; }
+
+  .paper-shadow {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+
+  .tape {
+    position: absolute;
+    width: 60px;
+    height: 22px;
+    background: rgba(255, 220, 100, 0.55);
+    border-radius: 2px;
+    transform: rotate(-3deg);
+    top: -11px;
+    left: 50%;
+    margin-left: -30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tab-btn {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    border: 2px solid transparent;
+    background: none;
+    color: var(--pencil);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    bottom: -2px;
+  }
+
+  .tab-btn.active {
+    background: white;
+    color: var(--ink);
+    border-color: rgba(0,0,0,0.1);
+    border-bottom-color: white;
+    font-weight: 700;
+  }
+
+  .tab-btn:hover:not(.active) { color: var(--ink); }
+
+  textarea, .upload-zone {
+    border: 2px dashed rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+    transition: all 0.2s;
+    resize: none;
+  }
+
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 0 3px rgba(74,124,158,0.12);
+  }
+
+  .upload-zone {
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+  .upload-zone:hover, .upload-zone.dragover {
+    border-color: var(--accent);
+    background: rgba(74,124,158,0.06);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), #3a6080);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.65rem 1.8rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 10px rgba(74,124,158,0.35);
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 16px rgba(74,124,158,0.4); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .btn-secondary {
+    background: white;
+    color: var(--ink);
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: rgba(74,124,158,0.05); }
+
+  .btn-download {
+    background: linear-gradient(135deg, var(--accent2), #c05a30);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.65rem 1.8rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 10px rgba(232,115,74,0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .btn-download:hover { transform: translateY(-2px); box-shadow: 0 5px 16px rgba(232,115,74,0.4); }
+
+  .result-panel {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .loading-dots span {
+    animation: blink 1.2s infinite;
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes blink {
+    0%, 80%, 100% { opacity: 0.2; }
+    40% { opacity: 1; }
+  }
+
+  .sketch-pencil-anim {
+    animation: pencilDraw 1.5s ease-in-out infinite alternate;
+    display: inline-block;
+  }
+  @keyframes pencilDraw {
+    from { transform: rotate(-5deg) translate(-3px,0); }
+    to { transform: rotate(5deg) translate(3px,-2px); }
+  }
+
+  .progress-bar-wrap {
+    height: 4px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+
+  .style-chip {
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,0.12);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    background: white;
+    color: var(--pencil);
+  }
+  .style-chip.selected {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .style-chip:hover:not(.selected) { border-color: var(--accent); color: var(--accent); }
+
+  canvas { max-width: 100%; }
+
+  .keyword-tag {
+    display: inline-block;
+    background: rgba(74,124,158,0.1);
+    color: var(--accent);
+    border-radius: 20px;
+    padding: 0.15rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin: 0.2rem;
+    border: 1px solid rgba(74,124,158,0.2);
+  }
+
+  .svg-sketch-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .info-card {
+    background: rgba(74,124,158,0.06);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    color: var(--pencil);
+    line-height: 1.6;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+
+  .header-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    from { background-position: 0% 0%; }
+    to { background-position: 200% 0%; }
+  }
+</style>
+</head>
+<body class="min-h-screen py-6 px-4">
+
+<div class="max-w-3xl mx-auto">
+
+  <!-- Header -->
+  <header class="text-center mb-8 relative">
+    <div class="header-line rounded-full mb-6"></div>
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <span class="text-3xl sketch-pencil-anim">✏️</span>
+      <h1 class="font-sketch text-4xl md:text-5xl font-bold" style="color:var(--ink); letter-spacing:0.01em;">아이디어 스케치 메이커</h1>
+    </div>
+    <p class="text-sm" style="color:var(--pencil);">텍스트로 설명하거나 이미지를 업로드해서 스케치로 변환하세요</p>
+  </header>
+
+  <!-- Main Card -->
+  <div class="relative bg-white rounded-2xl paper-shadow p-6 md:p-8">
+    <div class="tape"></div>
+
+    <!-- Tabs -->
+    <div class="flex gap-1 mb-6 border-b-2" style="border-color:rgba(0,0,0,0.1);">
+      <button class="tab-btn active" id="tab-text" onclick="switchTab('text')">✏️ 텍스트 스케치</button>
+      <button class="tab-btn" id="tab-image" onclick="switchTab('image')">🖼️ 이미지 변환</button>
+    </div>
+
+    <!-- Tab: Text -->
+    <div id="panel-text">
+      <label class="font-sketch text-lg font-semibold mb-2 block" style="color:var(--pencil);">아이디어를 설명해 주세요</label>
+      <textarea
+        id="text-input"
+        rows="5"
+        class="w-full p-4 text-sm"
+        placeholder="예: 친환경 스마트 텃밭 관리 앱, 사용자가 식물의 상태를 카메라로 찍으면 AI가 진단해주는 서비스..."
+      ></textarea>
+      <div class="flex flex-wrap gap-2 mt-3 mb-4">
+        <span class="text-xs" style="color:var(--pencil); align-self:center;">예시:</span>
+        <button class="style-chip text-xs" onclick="fillExample('친환경 스마트 텃밭 관리 앱 — 카메라로 식물 상태를 찍으면 AI가 진단해주는 서비스')">🌱 스마트 텃밭</button>
+        <button class="style-chip text-xs" onclick="fillExample('소셜 독서 플랫폼 — 책을 읽으며 친구와 실시간으로 밑줄·메모를 공유하는 앱')">📚 소셜 독서</button>
+        <button class="style-chip text-xs" onclick="fillExample('AR 인테리어 앱 — 스마트폰 카메라로 가구를 방에 배치해보는 증강현실 쇼핑 서비스')">🛋️ AR 인테리어</button>
+        <button class="style-chip text-xs" onclick="fillExample('헬스케어 마음챙김 앱 — 하루 감정을 기록하고 스트레스 패턴을 분석해 맞춤 명상 루틴을 추천')">🧘 마음챙김</button>
+      </div>
+      <button class="btn-primary w-full" id="btn-generate" onclick="generateSketch()">🪄 스케치 생성하기</button>
+    </div>
+
+    <!-- Tab: Image -->
+    <div id="panel-image" class="hidden">
+      <label class="font-sketch text-lg font-semibold mb-2 block" style="color:var(--pencil);">이미지를 업로드하세요</label>
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()"
+           ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+        <span class="text-4xl">📂</span>
+        <span class="font-sketch text-lg" style="color:var(--pencil);">클릭 또는 드래그&드롭</span>
+        <span class="text-xs" style="color:var(--pencil);">JPG, PNG, GIF, WebP 지원</span>
+      </div>
+      <input type="file" id="file-input" accept="image/*" class="hidden" onchange="handleFileSelect(event)">
+
+      <!-- Style options -->
+      <div class="mt-4 flex flex-wrap gap-2 items-center">
+        <span class="font-sketch text-base" style="color:var(--pencil);">변환 스타일:</span>
+        <button class="style-chip selected" id="chip-sketch" onclick="selectStyle('sketch')">🖋️ 펜화 스케치</button>
+        <button class="style-chip" id="chip-illust" onclick="selectStyle('illust')">🎨 컬러 일러스트</button>
+        <button class="style-chip" id="chip-soft" onclick="selectStyle('soft')">🌸 소프트 파스텔</button>
+      </div>
+
+      <div id="img-preview-wrap" class="mt-4 hidden">
+        <img id="img-preview" class="rounded-xl max-h-48 mx-auto border" style="border-color:rgba(0,0,0,0.1);" alt="preview">
+      </div>
+
+      <button class="btn-primary w-full mt-4" id="btn-convert" onclick="convertImage()" disabled>✨ 변환하기</button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading-panel" class="hidden mt-6 bg-white rounded-2xl paper-shadow p-8 text-center">
+    <div class="text-5xl mb-4 sketch-pencil-anim">✏️</div>
+    <p class="font-sketch text-2xl mb-1" id="loading-msg">스케치 생성 중...</p>
+    <div class="loading-dots mb-4"><span>●</span><span>●</span><span>●</span></div>
+    <div class="progress-bar-wrap max-w-xs mx-auto">
+      <div class="progress-bar" id="progress-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div id="result-panel" class="hidden mt-6 result-panel">
+    <div class="p-4 border-b flex items-center justify-between" style="border-color:rgba(0,0,0,0.07);">
+      <span class="font-sketch text-xl font-bold" style="color:var(--ink);">🎨 결과물</span>
+      <div class="flex gap-2">
+        <button class="btn-secondary text-sm" onclick="resetAll()">↩ 다시 하기</button>
+        <button class="btn-download text-sm" id="btn-download" onclick="downloadResult()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          다운로드
+        </button>
+      </div>
+    </div>
+    <div class="p-5">
+      <div id="result-content"></div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-8 text-xs" style="color:var(--pencil); opacity:0.6;">
+    <span class="font-sketch text-sm">✏️ 아이디어 스케치 메이커</span> · 외부 API 없이 동작
+  </footer>
+</div>
+
+<!-- Hidden canvas for image processing -->
+<canvas id="work-canvas" class="hidden"></canvas>
+
+<script>
+// ========== Global State ==========
+let currentTab = 'text';
+let selectedStyle = 'sketch';
+let resultType = null; // 'svg' | 'canvas'
+let resultSVGString = '';
+let resultCanvasId = '';
+let uploadedImageData = null;
+let progressTimer = null;
+
+// ========== Tab Switching ==========
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('panel-text').classList.toggle('hidden', tab !== 'text');
+  document.getElementById('panel-image').classList.toggle('hidden', tab !== 'image');
+  document.getElementById('tab-text').classList.toggle('active', tab === 'text');
+  document.getElementById('tab-image').classList.toggle('active', tab === 'image');
+  hideResult();
+}
+
+function fillExample(text) {
+  document.getElementById('text-input').value = text;
+  document.getElementById('text-input').focus();
+}
+
+function selectStyle(s) {
+  selectedStyle = s;
+  ['sketch','illust','soft'].forEach(id => {
+    document.getElementById('chip-' + id).classList.toggle('selected', id === s);
+  });
+}
+
+// ========== Upload ==========
+function handleDragOver(e) { e.preventDefault(); document.getElementById('upload-zone').classList.add('dragover'); }
+function handleDragLeave(e) { document.getElementById('upload-zone').classList.remove('dragover'); }
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('upload-zone').classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) loadImageFile(file);
+}
+function handleFileSelect(e) {
+  const file = e.target.files[0];
+  if (file) loadImageFile(file);
+}
+
+function loadImageFile(file) {
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    uploadedImageData = ev.target.result;
+    const preview = document.getElementById('img-preview');
+    preview.src = uploadedImageData;
+    document.getElementById('img-preview-wrap').classList.remove('hidden');
+    document.getElementById('btn-convert').removeAttribute('disabled');
+    document.getElementById('upload-zone').innerHTML = `<span class="text-2xl">✅</span><span class="font-sketch text-base" style="color:var(--accent);">${file.name}</span><span class="text-xs" style="color:var(--pencil);">클릭해서 다른 이미지 선택</span>`;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ========== Loading Animation ==========
+function showLoading(msg) {
+  document.getElementById('loading-msg').textContent = msg;
+  document.getElementById('loading-panel').classList.remove('hidden');
+  document.getElementById('result-panel').classList.add('hidden');
+  let p = 0;
+  const bar = document.getElementById('progress-bar');
+  bar.style.width = '0%';
+  clearInterval(progressTimer);
+  progressTimer = setInterval(() => {
+    p = Math.min(p + Math.random() * 12, 88);
+    bar.style.width = p + '%';
+  }, 200);
+}
+
+function hideLoading() {
+  clearInterval(progressTimer);
+  document.getElementById('progress-bar').style.width = '100%';
+  setTimeout(() => {
+    document.getElementById('loading-panel').classList.add('hidden');
+  }, 300);
+}
+
+function hideResult() {
+  document.getElementById('result-panel').classList.add('hidden');
+  document.getElementById('loading-panel').classList.add('hidden');
+}
+
+function resetAll() {
+  hideResult();
+  document.getElementById('text-input').value = '';
+  uploadedImageData = null;
+  document.getElementById('img-preview-wrap').classList.add('hidden');
+  document.getElementById('btn-convert').setAttribute('disabled', true);
+  const uz = document.getElementById('upload-zone');
+  uz.innerHTML = `<span class="text-4xl">📂</span><span class="font-sketch text-lg" style="color:var(--pencil);">클릭 또는 드래그&드롭</span><span class="text-xs" style="color:var(--pencil);">JPG, PNG, GIF, WebP 지원</span>`;
+  document.getElementById('file-input').value = '';
+}
+
+// ========== Text Sketch Generator ==========
+const KEYWORD_DB = {
+  // categories: [keywords, icon, theme color, elements]
+  agriculture: { keys:['텃밭','식물','농업','가드닝','원예','씨앗','채소','작물'], icon:'🌱', color:'#4caf78', bg:'#edf7f0', title:'스마트 농업/텃밭', elements: drawAgriculture },
+  health: { keys:['건강','헬스','운동','명상','마음','스트레스','요가','피트니스','웰빙','수면'], icon:'🧘', color:'#7c6fa0', bg:'#f3f0f9', title:'헬스케어/웰니스', elements: drawHealth },
+  travel: { keys:['여행','지도','관광','숙소','호텔','항공','비행','탐험','모험'], icon:'✈️', color:'#4a7cc4', bg:'#eff4fc', title:'여행/탐험', elements: drawTravel },
+  social: { keys:['소셜','공유','커뮤니티','친구','네트워크','팔로우','채팅','메시지'], icon:'💬', color:'#e8734a', bg:'#fdf1eb', title:'소셜/커뮤니티', elements: drawSocial },
+  book: { keys:['독서','책','도서','공부','학습','교육','지식','글'], icon:'📚', color:'#b5662a', bg:'#faf0e6', title:'독서/교육', elements: drawBook },
+  ar_vr: { keys:['AR','VR','증강현실','가상현실','3D','홀로그램','메타버스'], icon:'🥽', color:'#3a9aa0', bg:'#eaf6f7', title:'AR/VR 서비스', elements: drawARVR },
+  shopping: { keys:['쇼핑','인테리어','가구','홈','인테리어','스토어','마켓','커머스'], icon:'🛍️', color:'#d4669c', bg:'#fdf0f7', title:'쇼핑/인테리어', elements: drawShopping },
+  music: { keys:['음악','노래','악기','멜로디','리듬','DJ','플레이리스트'], icon:'🎵', color:'#6c54b5', bg:'#f0edfb', title:'음악/엔터테인먼트', elements: drawMusic },
+  food: { keys:['음식','요리','레시피','식당','카페','맛집','배달','푸드'], icon:'🍽️', color:'#e05c4a', bg:'#fdf0ee', title:'음식/요리', elements: drawFood },
+  finance: { keys:['금융','투자','주식','비트코인','결제','지갑','경제','돈'], icon:'💰', color:'#4a8f5e', bg:'#eef6f1', title:'금융/핀테크', elements: drawFinance },
+  ai: { keys:['AI','인공지능','머신러닝','데이터','분석','자동화','로봇','챗봇'], icon:'🤖', color:'#3f7fc4', bg:'#edf3fc', title:'AI/데이터 서비스', elements: drawAI },
+  default: { keys:[], icon:'💡', color:'#4a7c9e', bg:'#eef4f8', title:'아이디어 스케치', elements: drawDefault },
+};
+
+function detectCategory(text) {
+  const lower = text.toLowerCase();
+  for (const [cat, data] of Object.entries(KEYWORD_DB)) {
+    if (cat === 'default') continue;
+    if (data.keys.some(k => lower.includes(k))) return { cat, data };
+  }
+  return { cat: 'default', data: KEYWORD_DB.default };
+}
+
+function extractKeywords(text) {
+  const stopwords = new Set(['이','가','을','를','의','에','에서','로','으로','과','와','는','은','도','만','하는','하여','해서','있는','하고','수','등','위한','통해','통한','기반','제공','사용','활용','구현','만들','개발','서비스','앱','시스템','플랫폼','솔루션','기능','관리','지원','자동','실시간','연동','분석']);
+  const tokens = text.split(/[\s,·\-—·]+/).filter(t => t.length >= 2);
+  return [...new Set(tokens.filter(t => !stopwords.has(t)))].slice(0, 8);
+}
+
+function generateDescription(text, catData, keywords) {
+  const descriptions = {
+    agriculture: `이 아이디어는 **스마트 농업/텃밭 관리 플랫폼**입니다.\n\n핵심 기능으로는 카메라 기반의 식물 상태 진단, 실시간 환경 센서 모니터링(토양 수분·온도·일조량), 개인화된 재배 일정 알림이 포함됩니다. AI가 병충해를 조기 감지하고 맞춤형 케어 루틴을 추천합니다.`,
+    health: `이 아이디어는 **헬스케어/마음챙김 서비스**입니다.\n\n감정 및 스트레스 패턴을 분석해 개인화된 명상·호흡 루틴을 제공합니다. 일일 체크인, 수면 추적, 마음챙김 저널 기능으로 정신 건강을 종합 관리하는 웰니스 플랫폼입니다.`,
+    travel: `이 아이디어는 **AI 기반 여행 플랫폼**입니다.\n\n사용자의 취향과 예산에 맞는 여행 코스를 자동 생성하고, AR로 관광지 정보를 오버레이합니다. 현지 숨은 명소 추천과 실시간 여행 파트너 매칭 기능이 핵심입니다.`,
+    social: `이 아이디어는 **소셜 콘텐츠 공유 플랫폼**입니다.\n\n실시간 반응, 공동 창작, 관심사 기반 커뮤니티 형성이 특징입니다. 알고리즘이 취향에 맞는 콘텐츠와 크리에이터를 연결해주는 차세대 소셜 네트워크입니다.`,
+    book: `이 아이디어는 **소셜 독서/학습 플랫폼**입니다.\n\n독서 중 실시간으로 밑줄과 메모를 친구와 공유하고, AI가 독서 패턴을 분석해 다음 책을 추천합니다. 독서 챌린지와 북클럽 기능으로 독서 습관을 함께 만들어갑니다.`,
+    ar_vr: `이 아이디어는 **AR/VR 기반 몰입형 서비스**입니다.\n\n현실 공간에 디지털 콘텐츠를 자연스럽게 융합하여 새로운 경험을 제공합니다. 공간 인식 기술과 실시간 렌더링으로 직관적인 인터랙션을 구현합니다.`,
+    shopping: `이 아이디어는 **AR 기반 스마트 쇼핑 플랫폼**입니다.\n\n스마트폰 카메라로 가구나 제품을 실제 공간에 미리 배치해볼 수 있습니다. AI가 인테리어 스타일을 분석해 어울리는 제품을 추천하고, 1:1 인테리어 컨설팅도 제공합니다.`,
+    music: `이 아이디어는 **AI 음악 경험 플랫폼**입니다.\n\n사용자의 감정 상태와 활동에 맞는 플레이리스트를 실시간으로 생성합니다. 음악가와 팬이 직접 연결되는 라이브 스트리밍과 공동 창작 기능이 차별점입니다.`,
+    food: `이 아이디어는 **스마트 푸드/요리 플랫폼**입니다.\n\n냉장고 속 재료를 스캔하면 만들 수 있는 레시피를 추천합니다. 영양 분석, 식단 관리, 지역 맛집 탐방까지 음식 생활 전반을 연결하는 서비스입니다.`,
+    finance: `이 아이디어는 **스마트 금융/핀테크 서비스**입니다.\n\nAI가 소비 패턴을 분석하고 맞춤형 저축·투자 전략을 제안합니다. 간편 결제, 자산 통합 관리, 금융 목표 달성 코칭까지 제공하는 종합 재무 플랫폼입니다.`,
+    ai: `이 아이디어는 **AI/데이터 기반 지능형 서비스**입니다.\n\n대용량 데이터를 실시간으로 처리하고 인사이트를 시각화합니다. 자연어 처리 기반의 직관적인 인터페이스로 전문 지식 없이도 데이터를 분석할 수 있습니다.`,
+    default: `이 아이디어는 **혁신적인 디지털 솔루션**입니다.\n\n사용자 중심의 설계로 핵심 문제를 해결합니다. 직관적인 UX와 최신 기술의 조합으로 기존 시장의 불편함을 개선하는 차별화된 서비스입니다.`,
+  };
+  return descriptions[catData === KEYWORD_DB.default ? 'default' : Object.keys(KEYWORD_DB).find(k => KEYWORD_DB[k] === catData)] || descriptions.default;
+}
+
+// ========== SVG Drawing Functions ==========
+function makeSVG(width, height, content) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
+  <defs>
+    <filter id="sketch-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" stitchTiles="stitch" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  ${content}
+  </svg>`;
+}
+
+function sketchLine(x1,y1,x2,y2, color='#2c2c2c', width=1.5, dash='') {
+  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${width}" stroke-linecap="round" ${dash ? `stroke-dasharray="${dash}"` : ''} filter="url(#sketch-filter)"/>`;
+}
+function sketchRect(x,y,w,h,color='#2c2c2c',fill='none',width=1.5,rx=2) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" stroke="${color}" stroke-width="${width}" fill="${fill}" filter="url(#sketch-filter)"/>`;
+}
+function sketchCircle(cx,cy,r,color='#2c2c2c',fill='none',width=1.5) {
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" stroke="${color}" stroke-width="${width}" fill="${fill}" filter="url(#sketch-filter)"/>`;
+}
+function sketchText(x,y,text,size=12,color='#2c2c2c',anchor='middle') {
+  return `<text x="${x}" y="${y}" font-family="Noto Sans KR, sans-serif" font-weight="700" font-size="${size}" fill="${color}" text-anchor="${anchor}">${text}</text>`;
+}
+function sketchPath(d,color='#2c2c2c',width=1.5,fill='none') {
+  return `<path d="${d}" stroke="${color}" stroke-width="${width}" fill="${fill}" stroke-linecap="round" stroke-linejoin="round" filter="url(#sketch-filter)"/>`;
+}
+
+function drawAgriculture(w,h) {
+  let s = '';
+  // ground
+  s += sketchPath(`M20,${h*0.7} Q${w/2},${h*0.65} ${w-20},${h*0.7}`, '#4caf78', 2);
+  // pot
+  s += sketchPath(`M${w/2-30},${h*0.7} L${w/2-20},${h*0.88} L${w/2+20},${h*0.88} L${w/2+30},${h*0.7}`, '#b87a50', 2, 'rgba(184,122,80,0.15)');
+  // soil
+  s += sketchPath(`M${w/2-20},${h*0.71} Q${w/2},${h*0.68} ${w/2+20},${h*0.71}`, '#6b4226', 1.5);
+  // stem
+  s += sketchLine(w/2, h*0.7, w/2, h*0.35, '#4caf78', 2.5);
+  s += sketchPath(`M${w/2},${h*0.5} Q${w/2-35},${h*0.38} ${w/2-45},${h*0.42}`, '#4caf78', 2);
+  s += sketchPath(`M${w/2},${h*0.45} Q${w/2+30},${h*0.33} ${w/2+40},${h*0.38}`, '#4caf78', 2);
+  // flower/leaves
+  for (let i=0;i<6;i++) {
+    const a = (i/6)*Math.PI*2, px = w/2+Math.cos(a)*22, py = h*0.32+Math.sin(a)*14;
+    s += sketchCircle(px, py, 10, '#4caf78', 'rgba(76,175,120,0.2)', 1.5);
+  }
+  s += sketchCircle(w/2, h*0.32, 10, '#f9c74f', 'rgba(249,199,79,0.4)', 1.5);
+  // sun
+  s += sketchCircle(w*0.85, h*0.15, 22, '#f9c74f', 'rgba(249,199,79,0.25)', 2);
+  for (let i=0;i<8;i++) {
+    const a=(i/8)*Math.PI*2, sx=w*0.85+Math.cos(a)*28, sy=h*0.15+Math.sin(a)*28, ex=w*0.85+Math.cos(a)*34, ey=h*0.15+Math.sin(a)*34;
+    s += sketchLine(sx,sy,ex,ey,'#f9c74f',1.5);
+  }
+  // phone with scan
+  s += sketchRect(w*0.1, h*0.2, 50, 80, '#2c2c2c', 'rgba(74,124,158,0.1)', 1.5, 6);
+  s += sketchRect(w*0.1+5, h*0.2+8, 40, 55, '#4a7c9e', 'rgba(74,124,158,0.15)', 1, 4);
+  s += sketchLine(w*0.1+5, h*0.2+20, w*0.1+45, h*0.2+20, '#e05c4a', 1, '3,2');
+  s += sketchCircle(w*0.1+25, h*0.2+75, 4, '#2c2c2c', 'rgba(0,0,0,0.1)', 1);
+  // wifi signal
+  for (let i=1;i<=3;i++) s += sketchPath(`M${w*0.1+10},${h*0.2+40-i*7} Q${w*0.1+25},${h*0.2+35-i*8} ${w*0.1+40},${h*0.2+40-i*7}`, '#4a7c9e', 1.2);
+  s += sketchText(w/2, h*0.96, '🌱 스마트 텃밭 관리', 14, '#4caf78');
+  return s;
+}
+
+function drawHealth(w,h) {
+  let s = '';
+  // yoga figure
+  const cx=w/2, cy=h*0.5;
+  s += sketchCircle(cx, cy-70, 18, '#7c6fa0', 'rgba(124,111,160,0.2)', 2);
+  // arms
+  s += sketchPath(`M${cx-18},${cy-45} Q${cx-50},${cy-20} ${cx-55},${cy+10}`, '#7c6fa0', 2.5);
+  s += sketchPath(`M${cx+18},${cy-45} Q${cx+50},${cy-20} ${cx+55},${cy+10}`, '#7c6fa0', 2.5);
+  // body
+  s += sketchLine(cx, cy-45, cx, cy+10, '#7c6fa0', 2.5);
+  // lotus legs
+  s += sketchPath(`M${cx},${cy+10} Q${cx-30},${cy+40} ${cx-50},${cy+25}`, '#7c6fa0', 2.5);
+  s += sketchPath(`M${cx},${cy+10} Q${cx+30},${cy+40} ${cx+50},${cy+25}`, '#7c6fa0', 2.5);
+  // ground line
+  s += sketchLine(cx-70, cy+25, cx+70, cy+25, '#7c6fa0', 1.5);
+  // aura circles
+  for (let i=1;i<=3;i++) s += sketchCircle(cx, cy-30, 35+i*20, '#d0c8f0', 'none', 0.7);
+  // heart
+  s += sketchPath(`M${cx},${cy-85} L${cx-8},${cy-93} Q${cx-16},${cy-100} ${cx-8},${cy-107} Q${cx},${cy-100} ${cx+8},${cy-107} Q${cx+16},${cy-100} ${cx+8},${cy-93} Z`, '#e05c89', 'none');
+  s += sketchPath(`M${cx},${cy-85} L${cx-8},${cy-93} Q${cx-16},${cy-100} ${cx-8},${cy-107} Q${cx},${cy-100} ${cx+8},${cy-107} Q${cx+16},${cy-100} ${cx+8},${cy-93} Z`, '#e05c89', 1.5, 'rgba(224,92,137,0.3)');
+  // chart (right side)
+  s += sketchRect(w*0.75, h*0.25, 65, 80, '#7c6fa0', 'rgba(124,111,160,0.06)', 1.2, 6);
+  const pts = [[0,55],[15,30],[30,45],[45,15],[65,25]];
+  const base = h*0.25+15;
+  s += sketchPath('M' + pts.map(([x,y])=>`${w*0.75+x+5},${base+y}`).join(' L'), '#7c6fa0', 1.5);
+  pts.forEach(([x,y]) => s += sketchCircle(w*0.75+x+5, base+y, 3, '#7c6fa0', 'white', 1.2));
+  s += sketchText(cx, h*0.96, '🧘 마음챙김 헬스케어', 14, '#7c6fa0');
+  return s;
+}
+
+function drawTravel(w,h) {
+  let s = '';
+  // map bg
+  s += sketchRect(20, h*0.15, w-40, h*0.65, '#4a7cc4', 'rgba(74,124,196,0.07)', 1.5, 8);
+  // map grid
+  for (let i=1;i<4;i++) s += sketchLine(20+(w-40)/4*i, h*0.15, 20+(w-40)/4*i, h*0.8, '#4a7cc4', 0.5, '4,4');
+  for (let i=1;i<3;i++) s += sketchLine(20, h*0.15+h*0.65/3*i, w-20, h*0.15+h*0.65/3*i, '#4a7cc4', 0.5, '4,4');
+  // route
+  const rpts = [[60,h*0.7],[120,h*0.5],[180,h*0.6],[250,h*0.3],[320,h*0.45]];
+  s += sketchPath('M'+rpts.map(p=>p.join(',')).join(' L'), '#e8734a', 2, 'rgba(232,115,74,0.15)');
+  rpts.forEach((p,i) => {
+    s += sketchCircle(p[0], p[1], i===0||i===rpts.length-1?8:5, i===0||i===rpts.length-1?'#e8734a':'#4a7cc4', 'white', i===0||i===rpts.length-1?2:1.5);
+  });
+  // pin at destination
+  const [px,py] = rpts[rpts.length-1];
+  s += sketchPath(`M${px},${py-20} Q${px-14},${py-35} ${px},${py-42} Q${px+14},${py-35} ${px},${py-20}`, '#e05c4a', 2, 'rgba(224,92,74,0.3)');
+  s += sketchCircle(px, py-38, 5, '#e05c4a', 'white', 1.5);
+  // plane
+  s += sketchPath(`M${w*0.7},${h*0.2} L${w*0.78},${h*0.17} L${w*0.75},${h*0.23} Z`, '#4a7cc4', 1.5, 'rgba(74,124,196,0.3)');
+  s += sketchLine(w*0.78, h*0.17, w*0.72, h*0.22, '#4a7cc4', 1.2, '2,2');
+  s += sketchText(w/2, h*0.96, '✈️ 여행 플랫폼', 14, '#4a7cc4');
+  return s;
+}
+
+function drawSocial(w,h) {
+  let s = '';
+  const avatarPos = [[w/2,h*0.25],[w*0.25,h*0.55],[w*0.75,h*0.55],[w*0.15,h*0.3],[w*0.85,h*0.3]];
+  // connections
+  avatarPos.slice(1).forEach(([x,y]) => s += sketchLine(w/2, h*0.25, x, y, '#e8734a', 1.2, '4,3'));
+  avatarPos.forEach(([x,y],i) => {
+    s += sketchCircle(x, y, i===0?28:20, '#e8734a', i===0?'rgba(232,115,74,0.15)':'rgba(232,115,74,0.1)', i===0?2:1.5);
+    s += sketchText(x, y+5, ['😊','👤','👤','👤','👤'][i], i===0?18:13, '#e8734a');
+  });
+  // chat bubbles
+  s += sketchRect(w*0.1, h*0.68, 120, 35, '#e8734a', 'rgba(232,115,74,0.1)', 1.5, 12);
+  s += sketchPath(`M${w*0.1+20},${h*0.68+35} L${w*0.1+10},${h*0.68+47} L${w*0.1+30},${h*0.68+35}`, '#e8734a', 1.5, 'rgba(232,115,74,0.1)');
+  s += sketchText(w*0.1+60, h*0.68+22, '안녕! 👋', 12, '#e8734a');
+  s += sketchRect(w*0.6, h*0.68, 110, 35, '#4a7cc4', 'rgba(74,124,196,0.1)', 1.5, 12);
+  s += sketchText(w*0.6+55, h*0.68+22, '반가워요 😄', 12, '#4a7cc4');
+  s += sketchText(w/2, h*0.96, '💬 소셜 플랫폼', 14, '#e8734a');
+  return s;
+}
+
+function drawBook(w,h) {
+  let s = '';
+  // open book
+  s += sketchPath(`M${w/2},${h*0.75} L${w/2-90},${h*0.7} L${w/2-90},${h*0.2} L${w/2},${h*0.28} Z`, '#b5662a', 2, 'rgba(181,102,42,0.08)');
+  s += sketchPath(`M${w/2},${h*0.75} L${w/2+90},${h*0.7} L${w/2+90},${h*0.2} L${w/2},${h*0.28} Z`, '#b5662a', 2, 'rgba(181,102,42,0.08)');
+  // spine curve
+  s += sketchPath(`M${w/2},${h*0.28} Q${w/2-5},${h*0.5} ${w/2},${h*0.75}`, '#b5662a', 2);
+  // lines on pages
+  for (let i=0;i<5;i++) {
+    s += sketchLine(w/2-80, h*0.3+i*0.08*h, w/2-15, h*0.3+i*0.08*h, '#b5662a', 0.8);
+    s += sketchLine(w/2+15, h*0.32+i*0.08*h, w/2+80, h*0.32+i*0.08*h, '#b5662a', 0.8);
+  }
+  // highlight
+  s += sketchRect(w/2-80, h*0.42, 65, 10, '#f9c74f', 'rgba(249,199,79,0.5)', 0.5, 3);
+  // speech bubble (sharing)
+  s += sketchRect(w*0.72, h*0.15, 85, 50, '#4a7cc4', 'rgba(74,124,196,0.1)', 1.5, 10);
+  s += sketchPath(`M${w*0.72+20},${h*0.15+50} L${w*0.72+12},${h*0.15+64} L${w*0.72+32},${h*0.15+50}`, '#4a7cc4', 1.5, 'rgba(74,124,196,0.1)');
+  s += sketchText(w*0.72+42, h*0.15+18, '✍️ 밑줄', 11, '#4a7cc4');
+  s += sketchText(w*0.72+42, h*0.15+36, '공유 중!', 11, '#4a7cc4');
+  s += sketchText(w/2, h*0.96, '📚 소셜 독서 플랫폼', 14, '#b5662a');
+  return s;
+}
+
+function drawARVR(w,h) {
+  let s = '';
+  // VR headset
+  s += sketchRect(w/2-65, h*0.3, 130, 70, '#3a9aa0', 'rgba(58,154,160,0.1)', 2, 16);
+  s += sketchCircle(w/2-28, h*0.37, 22, '#3a9aa0', 'rgba(58,154,160,0.15)', 1.5);
+  s += sketchCircle(w/2+28, h*0.37, 22, '#3a9aa0', 'rgba(58,154,160,0.15)', 1.5);
+  s += sketchLine(w/2-65, h*0.37+12, w/2-30+10, h*0.37+12, '#3a9aa0', 1.5);
+  s += sketchLine(w/2+65, h*0.37+12, w/2+30-10, h*0.37+12, '#3a9aa0', 1.5);
+  // hologram effect
+  const holoCx = w/2, holoCy = h*0.65;
+  for (let i=1;i<=4;i++) s += sketchCircle(holoCx, holoCy, i*15, 'rgba(58,154,160,0.4)', 'none', 0.8);
+  s += sketchText(holoCx, holoCy+5, 'AR', 18, '#3a9aa0');
+  // floating particles
+  [[w*0.2,h*0.5],[w*0.8,h*0.45],[w*0.15,h*0.7],[w*0.82,h*0.68]].forEach(([x,y]) => {
+    s += sketchCircle(x,y,4,'#3a9aa0','rgba(58,154,160,0.3)',1);
+    s += sketchLine(x,y,holoCx,holoCy,'rgba(58,154,160,0.2)',0.8,'3,3');
+  });
+  s += sketchText(w/2, h*0.96, '🥽 AR/VR 서비스', 14, '#3a9aa0');
+  return s;
+}
+
+function drawShopping(w,h) {
+  let s = '';
+  // room outline
+  s += sketchPath(`M${w*0.12},${h*0.85} L${w*0.12},${h*0.2} L${w*0.88},${h*0.2} L${w*0.88},${h*0.85}`, '#d4669c', 1.5);
+  s += sketchLine(w*0.12, h*0.85, w*0.88, h*0.85, '#d4669c', 2);
+  // perspective lines
+  s += sketchLine(w*0.12, h*0.2, w*0.3, h*0.15, '#d4669c', 1, '3,3');
+  s += sketchLine(w*0.88, h*0.2, w*0.7, h*0.15, '#d4669c', 1, '3,3');
+  // sofa (AR furniture)
+  s += sketchRect(w/2-60, h*0.6, 120, 45, '#d4669c', 'rgba(212,102,156,0.15)', 2, 8);
+  s += sketchRect(w/2-60, h*0.55, 120, 15, '#d4669c', 'rgba(212,102,156,0.2)', 1.5, 8);
+  s += sketchRect(w/2-60, h*0.6, 20, 45, '#d4669c', 'rgba(212,102,156,0.2)', 1.5, 4);
+  s += sketchRect(w/2+40, h*0.6, 20, 45, '#d4669c', 'rgba(212,102,156,0.2)', 1.5, 4);
+  // AR frame
+  const corners = [[w/2-70,h*0.5],[w/2+70,h*0.5],[w/2-70,h*0.9],[w/2+70,h*0.9]];
+  corners.forEach(([x,y]) => {
+    const dx=x>w/2?-1:1, dy=y>h*0.7?-1:1;
+    s += sketchLine(x,y,x+dx*18,y,'#4a7cc4',2);
+    s += sketchLine(x,y,x,y+dy*18,'#4a7cc4',2);
+  });
+  // phone in hand
+  s += sketchRect(w*0.75, h*0.35, 40, 65, '#2c2c2c', 'rgba(74,124,196,0.1)', 1.5, 6);
+  s += sketchRect(w*0.75+4, h*0.35+6, 32, 44, '#4a7cc4', 'rgba(74,124,196,0.2)', 1, 3);
+  s += sketchText(w*0.75+20, h*0.35+32, '🛋️', 16, '#d4669c');
+  s += sketchText(w/2, h*0.96, '🛍️ AR 인테리어 쇼핑', 14, '#d4669c');
+  return s;
+}
+
+function drawMusic(w,h) {
+  let s = '';
+  // vinyl record
+  const cx=w/2, cy=h*0.45;
+  s += sketchCircle(cx,cy,85,'#6c54b5','rgba(108,84,181,0.12)',2);
+  for (let i=1;i<=4;i++) s += sketchCircle(cx,cy,85-i*15,'#6c54b5','none',0.6);
+  s += sketchCircle(cx,cy,18,'#6c54b5','rgba(108,84,181,0.3)',1.5);
+  s += sketchCircle(cx,cy,6,'#6c54b5','rgba(108,84,181,0.5)',1.5);
+  // music notes floating
+  [[-60,-50],[50,-65],[-70,20],[70,30],[-40,70],[55,60]].forEach(([dx,dy]) => {
+    const sz = Math.random()*6+12;
+    s += sketchText(cx+dx, cy+dy, '♪', sz, 'rgba(108,84,181,0.7)');
+  });
+  // waveform
+  const wpts = [];
+  for (let i=0;i<=20;i++) {
+    const x=w*0.08+i*(w*0.84/20), amp=Math.sin(i*0.8)*22+Math.sin(i*1.5)*10;
+    wpts.push(`${x},${h*0.85+amp}`);
+  }
+  s += `<polyline points="${wpts.join(' ')}" fill="none" stroke="#6c54b5" stroke-width="2" stroke-linecap="round" filter="url(#sketch-filter)"/>`;
+  s += sketchText(cx, h*0.96, '🎵 음악 플랫폼', 14, '#6c54b5');
+  return s;
+}
+
+function drawFood(w,h) {
+  let s = '';
+  // plate
+  s += sketchCircle(w/2, h*0.47, 70, '#e05c4a', 'rgba(224,92,74,0.08)', 2);
+  s += sketchCircle(w/2, h*0.47, 55, '#e05c4a', 'none', 0.8);
+  // food items on plate
+  s += sketchCircle(w/2, h*0.47, 28, '#f9c74f', 'rgba(249,199,79,0.35)', 1.5);
+  s += sketchPath(`M${w/2-20},${h*0.47-15} Q${w/2},${h*0.47-30} ${w/2+20},${h*0.47-15}`, '#4caf78', 2);
+  s += sketchCircle(w/2-10, h*0.47+8, 8, '#e05c4a', 'rgba(224,92,74,0.3)', 1.2);
+  s += sketchCircle(w/2+10, h*0.47+8, 8, '#e05c4a', 'rgba(224,92,74,0.3)', 1.2);
+  // fork and knife
+  s += sketchLine(w/2-85, h*0.3, w/2-85, h*0.7, '#e05c4a', 2);
+  s += sketchPath(`M${w/2-85},${h*0.3} Q${w/2-90},${h*0.4} ${w/2-85},${h*0.45}`, '#e05c4a', 2);
+  s += sketchLine(w/2+85, h*0.3, w/2+85, h*0.7, '#e05c4a', 2);
+  s += sketchPath(`M${w/2+85},${h*0.3} L${w/2+80},${h*0.38} M${w/2+85},${h*0.3} L${w/2+90},${h*0.38}`, '#e05c4a', 1.5);
+  // recipe card
+  s += sketchRect(w*0.65, h*0.15, 90, 70, '#e05c4a', 'rgba(224,92,74,0.07)', 1.5, 6);
+  for (let i=0;i<4;i++) s += sketchLine(w*0.65+8, h*0.15+15+i*14, w*0.65+82, h*0.15+15+i*14, '#e05c4a', 0.8);
+  s += sketchText(w*0.65+45, h*0.15+9, '🍽️ 레시피', 11, '#e05c4a');
+  // scan icon
+  s += sketchRect(w*0.1, h*0.15, 60, 60, '#4caf78', 'rgba(76,175,120,0.08)', 1.5, 6);
+  s += sketchText(w*0.1+30, h*0.15+36, '📷', 22, '#4caf78');
+  s += sketchText(w/2, h*0.96, '🍽️ 스마트 푸드 플랫폼', 14, '#e05c4a');
+  return s;
+}
+
+function drawFinance(w,h) {
+  let s = '';
+  // bar chart
+  const bars = [40,65,45,80,55,90,70];
+  bars.forEach((bh,i) => {
+    const x=w*0.08+i*45, y=h*0.72-bh*1.2, bw=30, h2=bh*1.2;
+    const colors=['rgba(76,143,94,','rgba(74,124,196,'];
+    s += sketchRect(x, y, bw, h2, '#4a8f5e', colors[i%2]+'0.3)', 1.2, 3);
+  });
+  // chart axis
+  s += sketchLine(w*0.06, h*0.72, w*0.94, h*0.72, '#2c2c2c', 1.5);
+  s += sketchLine(w*0.06, h*0.2, w*0.06, h*0.72, '#2c2c2c', 1.5);
+  // trend line
+  const tpts = bars.map((bh,i)=>[w*0.08+i*45+15, h*0.72-bh*1.2]);
+  s += sketchPath('M'+tpts.map(p=>p.join(',')).join(' L'), '#e05c4a', 1.5);
+  tpts.forEach(([x,y]) => s += sketchCircle(x,y,3,'#e05c4a','white',1.2));
+  // coin/wallet
+  s += sketchCircle(w*0.82, h*0.35, 30, '#f9c74f', 'rgba(249,199,79,0.25)', 2);
+  s += sketchText(w*0.82, h*0.35+8, '💰', 24, '#f9c74f');
+  // arrow up
+  s += sketchPath(`M${w*0.82},${h*0.35-38} L${w*0.82-10},${h*0.35-25} M${w*0.82},${h*0.35-38} L${w*0.82+10},${h*0.35-25}`, '#4a8f5e', 2);
+  s += sketchLine(w*0.82, h*0.35-38, w*0.82, h*0.35-20, '#4a8f5e', 2);
+  s += sketchText(w/2, h*0.96, '💰 핀테크 서비스', 14, '#4a8f5e');
+  return s;
+}
+
+function drawAI(w,h) {
+  let s = '';
+  // robot head
+  const rcx=w/2, rcy=h*0.35;
+  s += sketchRect(rcx-50, rcy-45, 100, 80, '#3f7fc4', 'rgba(63,127,196,0.1)', 2, 10);
+  s += sketchCircle(rcx-20, rcy-15, 12, '#3f7fc4', 'rgba(63,127,196,0.2)', 1.5);
+  s += sketchCircle(rcx+20, rcy-15, 12, '#3f7fc4', 'rgba(63,127,196,0.2)', 1.5);
+  s += sketchCircle(rcx-20, rcy-15, 5, '#3f7fc4', 'rgba(63,127,196,0.5)', 1);
+  s += sketchCircle(rcx+20, rcy-15, 5, '#3f7fc4', 'rgba(63,127,196,0.5)', 1);
+  s += sketchPath(`M${rcx-20},${rcy+10} Q${rcx},${rcy+22} ${rcx+20},${rcy+10}`, '#3f7fc4', 2);
+  // antenna
+  s += sketchLine(rcx, rcy-45, rcx, rcy-68, '#3f7fc4', 1.5);
+  s += sketchCircle(rcx, rcy-72, 5, '#3f7fc4', 'rgba(63,127,196,0.4)', 1.5);
+  // body + circuits
+  s += sketchRect(rcx-40, rcy+35, 80, 55, '#3f7fc4', 'rgba(63,127,196,0.08)', 1.5, 6);
+  const circuitPts = [[rcx-20,rcy+55],[rcx,rcy+55],[rcx,rcy+70],[rcx+20,rcy+70]];
+  s += sketchPath('M'+circuitPts.map(p=>p.join(',')).join(' L'), '#3f7fc4', 1.2);
+  circuitPts.forEach(([x,y]) => s += sketchCircle(x,y,3,'#3f7fc4','white',1));
+  // data nodes
+  const nodes = [[w*0.1,h*0.3],[w*0.15,h*0.6],[w*0.85,h*0.3],[w*0.88,h*0.65]];
+  nodes.forEach(([x,y]) => {
+    s += sketchLine(x,y,rcx,rcy,'rgba(63,127,196,0.25)',0.8,'3,3');
+    s += sketchCircle(x,y,10,'#3f7fc4','rgba(63,127,196,0.1)',1.2);
+    s += sketchText(x,y+4,['📊','🔍','💡','⚡'][nodes.indexOf([x,y])],10,'#3f7fc4');
+  });
+  s += sketchText(w/2, h*0.96, '🤖 AI 서비스', 14, '#3f7fc4');
+  return s;
+}
+
+function drawDefault(w,h) {
+  let s = '';
+  // lightbulb
+  const cx=w/2, cy=h*0.38;
+  s += sketchCircle(cx, cy-20, 45, '#f9c74f', 'rgba(249,199,79,0.2)', 2);
+  s += sketchPath(`M${cx-22},${cy+25} L${cx-18},${cy+45} L${cx+18},${cy+45} L${cx+22},${cy+25}`, '#f9c74f', 2, 'rgba(249,199,79,0.15)');
+  s += sketchLine(cx-18, cy+45, cx+18, cy+45, '#f9c74f', 2);
+  s += sketchLine(cx-15, cy+52, cx+15, cy+52, '#f9c74f', 1.5);
+  s += sketchLine(cx-10, cy+58, cx+10, cy+58, '#f9c74f', 1);
+  // rays
+  for (let i=0;i<8;i++) {
+    const a=(i/8)*Math.PI*2, sx=cx+Math.cos(a)*52, sy=(cy-20)+Math.sin(a)*52, ex=cx+Math.cos(a)*66, ey=(cy-20)+Math.sin(a)*66;
+    s += sketchLine(sx,sy,ex,ey,'rgba(249,199,79,0.6)',1.5);
+  }
+  // question marks / idea sparks
+  [[-80,-40],[80,-30],[-70,30],[75,40]].forEach(([dx,dy]) => {
+    s += sketchText(cx+dx, cy+dy, '?', 20, 'rgba(74,124,158,0.5)');
+  });
+  // pen strokes at bottom
+  s += sketchLine(w*0.1, h*0.8, w*0.9, h*0.8, '#4a7c9e', 1, '6,4');
+  s += sketchLine(w*0.15, h*0.86, w*0.75, h*0.86, '#4a7c9e', 0.8, '4,4');
+  s += sketchText(w/2, h*0.96, '💡 아이디어 스케치', 14, '#4a7c9e');
+  return s;
+}
+
+async function generateSketch() {
+  const text = document.getElementById('text-input').value.trim();
+  if (!text) { alert('아이디어를 입력해 주세요!'); return; }
+
+  document.getElementById('btn-generate').disabled = true;
+  showLoading('아이디어 분석 중...');
+
+  await sleep(400);
+  document.getElementById('loading-msg').textContent = '키워드 추출 중...';
+  await sleep(500);
+  document.getElementById('loading-msg').textContent = '스케치 생성 중...';
+  await sleep(800);
+
+  const { cat, data: catData } = detectCategory(text);
+  const keywords = extractKeywords(text);
+  const description = generateDescription(text, catData, keywords);
+
+  // Generate SVG
+  const W=380, H=300;
+  const innerContent = catData.elements(W, H);
+  const bgColor = catData.bg || '#eef4f8';
+  const svgContent = `
+    <rect width="${W}" height="${H}" fill="${bgColor}" rx="8"/>
+    ${innerContent}
+  `;
+  const svgStr = makeSVG(W, H, svgContent);
+  resultSVGString = svgStr;
+  resultType = 'svg';
+
+  hideLoading();
+  await sleep(100);
+
+  const resultHTML = `
+    <div class="grid md:grid-cols-2 gap-5">
+      <div>
+        <div class="font-sketch text-base font-semibold mb-2" style="color:var(--pencil);">스케치 미리보기</div>
+        <div class="svg-sketch-container border rounded-xl overflow-hidden" style="border-color:rgba(0,0,0,0.08);">
+          ${svgStr}
+        </div>
+      </div>
+      <div>
+        <div class="font-sketch text-base font-semibold mb-2" style="color:var(--pencil);">아이디어 분석</div>
+        <div class="info-card mb-3">
+          ${description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')}
+        </div>
+        <div class="font-sketch text-sm mb-1" style="color:var(--pencil);">추출된 키워드</div>
+        <div class="flex flex-wrap">${keywords.map(k=>`<span class="keyword-tag">${k}</span>`).join('')}</div>
+        <div class="mt-3 font-sketch text-sm" style="color:var(--pencil);">감지된 카테고리: <strong style="color:var(--accent);">${catData.icon} ${catData.title}</strong></div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('result-content').innerHTML = resultHTML;
+  document.getElementById('result-panel').classList.remove('hidden');
+  document.getElementById('btn-generate').disabled = false;
+
+  document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ========== Image Processing ==========
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function convertImage() {
+  if (!uploadedImageData) return;
+  document.getElementById('btn-convert').disabled = true;
+  showLoading('이미지 로드 중...');
+
+  const img = new Image();
+  img.onload = async () => {
+    await sleep(300);
+    document.getElementById('loading-msg').textContent = '이미지 분석 중...';
+    await sleep(400);
+    document.getElementById('loading-msg').textContent = selectedStyle === 'sketch' ? '펜화 변환 중...' : selectedStyle === 'illust' ? '일러스트 변환 중...' : '파스텔 변환 중...';
+    await sleep(500);
+
+    const MAX = 500;
+    let W = img.naturalWidth, H = img.naturalHeight;
+    if (W > MAX || H > MAX) { const r = Math.min(MAX/W, MAX/H); W=Math.round(W*r); H=Math.round(H*r); }
+
+    const canvas = document.getElementById('work-canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, W, H);
+
+    const imageData = ctx.getImageData(0, 0, W, H);
+
+    if (selectedStyle === 'sketch') applySketchEffect(ctx, imageData, W, H);
+    else if (selectedStyle === 'illust') applyIllustEffect(ctx, imageData, W, H);
+    else applySoftPastelEffect(ctx, imageData, W, H);
+
+    await sleep(200);
+
+    const dataURL = canvas.toDataURL('image/png');
+    resultType = 'canvas-img';
+    resultSVGString = dataURL;
+
+    hideLoading();
+    await sleep(100);
+
+    const labels = { sketch:'🖋️ 펜화 스케치', illust:'🎨 컬러 일러스트', soft:'🌸 소프트 파스텔' };
+    const resultHTML = `
+      <div>
+        <div class="font-sketch text-base font-semibold mb-2" style="color:var(--pencil);">${labels[selectedStyle]} 결과</div>
+        <div class="flex justify-center">
+          <img src="${dataURL}" class="rounded-xl max-w-full" style="max-height:450px; border:1px solid rgba(0,0,0,0.08);" alt="변환 결과">
+        </div>
+        <div class="info-card mt-4">
+          <strong>적용된 효과:</strong>
+          ${selectedStyle==='sketch'?'엣지 감지(Sobel 필터) + 흑백 반전 → 연필 스케치 느낌의 선화':''}
+          ${selectedStyle==='illust'?'색상 양자화(Color Quantization) + 경계선 강조 → 만화/일러스트 스타일':''}
+          ${selectedStyle==='soft'?'색상 밝기 조정 + 채도 감소 + 소프트 블러 → 파스텔 수채화 느낌':''}
+        </div>
+      </div>
+    `;
+    document.getElementById('result-content').innerHTML = resultHTML;
+    document.getElementById('result-panel').classList.remove('hidden');
+    document.getElementById('btn-convert').disabled = false;
+    document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+  img.src = uploadedImageData;
+}
+
+// ---- Sketch (Sobel Edge Detection) ----
+function applySketchEffect(ctx, imageData, W, H) {
+  const data = imageData.data;
+  const gray = new Float32Array(W*H);
+  for (let i=0;i<W*H;i++) {
+    const r=data[i*4], g=data[i*4+1], b=data[i*4+2];
+    gray[i] = 0.299*r + 0.587*g + 0.114*b;
+  }
+  // Gaussian blur
+  const blurred = gaussianBlur(gray, W, H, 1.5);
+  // Sobel
+  const out = new Uint8ClampedArray(W*H*4);
+  for (let y=1;y<H-1;y++) for (let x=1;x<W-1;x++) {
+    const gx =
+      -blurred[(y-1)*W+(x-1)] - 2*blurred[y*W+(x-1)] - blurred[(y+1)*W+(x-1)]
+      +blurred[(y-1)*W+(x+1)] + 2*blurred[y*W+(x+1)] + blurred[(y+1)*W+(x+1)];
+    const gy =
+      -blurred[(y-1)*W+(x-1)] - 2*blurred[(y-1)*W+x] - blurred[(y-1)*W+(x+1)]
+      +blurred[(y+1)*W+(x-1)] + 2*blurred[(y+1)*W+x] + blurred[(y+1)*W+(x+1)];
+    const mag = Math.sqrt(gx*gx+gy*gy);
+    const v = 255 - Math.min(255, mag * 1.8);
+    const idx = (y*W+x)*4;
+    out[idx]=out[idx+1]=out[idx+2]=v; out[idx+3]=255;
+  }
+  // borders
+  for (let x=0;x<W;x++) { const i=x*4; out[i]=out[i+1]=out[i+2]=255; out[i+3]=255; const j=((H-1)*W+x)*4; out[j]=out[j+1]=out[j+2]=255; out[j+3]=255; }
+  for (let y=0;y<H;y++) { const i=y*W*4; out[i]=out[i+1]=out[i+2]=255; out[i+3]=255; const j=(y*W+W-1)*4; out[j]=out[j+1]=out[j+2]=255; out[j+3]=255; }
+  ctx.putImageData(new ImageData(out, W, H), 0, 0);
+}
+
+function gaussianBlur(data, W, H, sigma) {
+  const ks = Math.ceil(sigma*3)|1 + (Math.ceil(sigma*3)%2===0?1:0);
+  const half = Math.floor(ks/2);
+  const kernel = [];
+  let sum = 0;
+  for (let i=-half;i<=half;i++) { const v=Math.exp(-i*i/(2*sigma*sigma)); kernel.push(v); sum+=v; }
+  for (let i=0;i<kernel.length;i++) kernel[i]/=sum;
+  const tmp = new Float32Array(W*H);
+  // horizontal
+  for (let y=0;y<H;y++) for (let x=0;x<W;x++) {
+    let acc=0;
+    for (let k=-half;k<=half;k++) { const xx=Math.max(0,Math.min(W-1,x+k)); acc+=data[y*W+xx]*kernel[k+half]; }
+    tmp[y*W+x]=acc;
+  }
+  const out = new Float32Array(W*H);
+  // vertical
+  for (let y=0;y<H;y++) for (let x=0;x<W;x++) {
+    let acc=0;
+    for (let k=-half;k<=half;k++) { const yy=Math.max(0,Math.min(H-1,y+k)); acc+=tmp[yy*W+x]*kernel[k+half]; }
+    out[y*W+x]=acc;
+  }
+  return out;
+}
+
+// ---- Illustraion (Color Quantization + edge) ----
+function applyIllustEffect(ctx, imageData, W, H) {
+  const data = new Uint8ClampedArray(imageData.data);
+  // quantize colors (reduce palette)
+  const levels = 5;
+  const step = 256 / levels;
+  for (let i=0;i<data.length;i+=4) {
+    data[i]   = Math.round(data[i]   / step) * step;
+    data[i+1] = Math.round(data[i+1] / step) * step;
+    data[i+2] = Math.round(data[i+2] / step) * step;
+  }
+  // detect edges and draw dark outline
+  const gray = new Float32Array(W*H);
+  for (let i=0;i<W*H;i++) gray[i] = 0.299*imageData.data[i*4]+0.587*imageData.data[i*4+1]+0.114*imageData.data[i*4+2];
+  for (let y=1;y<H-1;y++) for (let x=1;x<W-1;x++) {
+    const gx = -gray[(y-1)*W+(x-1)]-2*gray[y*W+(x-1)]-gray[(y+1)*W+(x-1)]+gray[(y-1)*W+(x+1)]+2*gray[y*W+(x+1)]+gray[(y+1)*W+(x+1)];
+    const gy = -gray[(y-1)*W+(x-1)]-2*gray[(y-1)*W+x]-gray[(y-1)*W+(x+1)]+gray[(y+1)*W+(x-1)]+2*gray[(y+1)*W+x]+gray[(y+1)*W+(x+1)];
+    const mag = Math.sqrt(gx*gx+gy*gy);
+    if (mag > 40) { const idx=(y*W+x)*4; data[idx]=30; data[idx+1]=30; data[idx+2]=40; }
+  }
+  ctx.putImageData(new ImageData(data, W, H), 0, 0);
+}
+
+// ---- Soft Pastel ----
+function applySoftPastelEffect(ctx, imageData, W, H) {
+  const data = new Uint8ClampedArray(imageData.data);
+  // desaturate partially, brighten, warm
+  for (let i=0;i<data.length;i+=4) {
+    const r=data[i], g=data[i+1], b=data[i+2];
+    const gray = 0.299*r + 0.587*g + 0.114*b;
+    const mix = 0.45;
+    let nr = r*(1-mix)+gray*mix, ng = g*(1-mix)+gray*mix, nb = b*(1-mix)+gray*mix;
+    // warm tint + brighten
+    nr = Math.min(255, nr * 1.08 + 28);
+    ng = Math.min(255, ng * 1.05 + 18);
+    nb = Math.min(255, nb * 1.02 + 30);
+    data[i]=nr; data[i+1]=ng; data[i+2]=nb;
+  }
+  // horizontal scanline blur (simple)
+  const out = new Uint8ClampedArray(data.length);
+  const r2 = 1;
+  for (let y=0;y<H;y++) for (let x=0;x<W;x++) {
+    let sr=0,sg=0,sb=0, cnt=0;
+    for (let dx=-r2;dx<=r2;dx++) {
+      const xx=Math.max(0,Math.min(W-1,x+dx));
+      const idx=(y*W+xx)*4;
+      sr+=data[idx]; sg+=data[idx+1]; sb+=data[idx+2]; cnt++;
+    }
+    const oi=(y*W+x)*4;
+    out[oi]=sr/cnt; out[oi+1]=sg/cnt; out[oi+2]=sb/cnt; out[oi+3]=255;
+  }
+  ctx.putImageData(new ImageData(out, W, H), 0, 0);
+}
+
+// ========== Download ==========
+function downloadResult() {
+  if (resultType === 'svg') {
+    const blob = new Blob([resultSVGString], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'idea-sketch.svg'; a.click();
+    URL.revokeObjectURL(url);
+  } else if (resultType === 'canvas-img') {
+    const a = document.createElement('a'); a.href = resultSVGString; a.download = 'converted-' + selectedStyle + '.png'; a.click();
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "folder-mindmap",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/redna/Desktop/mindmap-server/server.js"],
+      "port": 3000
+    },
+    {
+      "name": "cursor-talk-to-figma (socket)",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "C:/Users/redna/Downloads/cursor-talk-to-figma-mcp-main/cursor-talk-to-figma-mcp-main/src/socket.ts"],
+      "port": 3056
+    }
+  ]
+}

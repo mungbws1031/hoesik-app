@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vela Reader · 측면 버튼 구조 탐색</title>
+<style>
+  :root{
+    --bg:#faf7f4; --ink:#2b2622; --muted:#7a716a;
+    --gold:#c8a26a; --gold-soft:#e7d4b8; --line:#e7e0d8;
+    --card:#ffffff; --good:#3f7d54; --bad:#b5563f; --mid:#b08a3e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"Segoe UI",Roboto,"Malgun Gothic",sans-serif;
+    line-height:1.65;}
+  .wrap{max-width:1080px;margin:0 auto;padding:48px 28px 96px}
+  header{border-bottom:2px solid var(--gold);padding-bottom:24px;margin-bottom:40px}
+  .kicker{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--gold);font-weight:700}
+  h1{font-size:30px;margin:8px 0 6px;font-weight:700}
+  h2{font-size:22px;margin:56px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3{font-size:17px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:15px;margin:0}
+  p{font-size:15px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;box-shadow:0 1px 3px rgba(80,60,40,.05)}
+  .card.reco{border:2px solid var(--gold);box-shadow:0 6px 22px rgba(200,162,106,.18)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;
+    padding:3px 10px;border-radius:999px;margin-bottom:10px}
+  .tag.reco{background:var(--gold);color:#fff}
+  .tag.alt{background:var(--gold-soft);color:#7a5a23}
+  .tag.future{background:#e6e1ec;color:#5a4f70}
+  .tag.fallback{background:#efe9e3;color:#7a716a}
+  svg{display:block;width:100%;height:auto;background:#fdfbf8;
+    border:1px solid var(--line);border-radius:10px;margin:12px 0}
+  ul{margin:8px 0 0;padding-left:18px}
+  li{font-size:14px;margin:3px 0}
+  .pro::marker{color:var(--good)} .con::marker{color:var(--bad)}
+  table{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:center}
+  th{background:#f3ede5;font-weight:700}
+  td:first-child,th:first-child{text-align:left}
+  .s-good{color:var(--good);font-weight:700}
+  .s-mid{color:var(--mid);font-weight:700}
+  .s-bad{color:var(--bad);font-weight:700}
+  .callout{background:#fff;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;
+    padding:18px 22px;margin-top:26px;box-shadow:0 1px 3px rgba(80,60,40,.05)}
+  .callout h3{color:var(--gold)}
+  .spec{display:grid;grid-template-columns:160px 1fr;gap:6px 18px;font-size:14px;margin-top:14px}
+  .spec dt{color:var(--muted);font-weight:600}
+  .spec dd{margin:0}
+  code{background:#f3ede5;padding:1px 6px;border-radius:5px;font-size:13px}
+  footer{margin-top:60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+  .leaf{fill:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">VELA READER · INDUSTRIAL DESIGN</div>
+  <h1>측면 버튼 구조 탐색</h1>
+  <p class="sub">스마트폰 사이드 버튼 감성의 물리 버튼 — 4가지 구조 컨셉 · 단면도 · 비교 · 권장안 (2026-05-18, 야간 자율 작업)</p>
+</header>
+
+<section>
+  <h2>1. 디바이스 컨텍스트 & 제약</h2>
+  <p>Vela Reader는 달걀형 프리미엄 호르몬 측정 기기다. 매끈한 백색 사출 플라스틱 바디 + 로즈골드 적도 액센트 밴드, 상단 다크 윈도우, 하단 <code>INSERT</code> 스트립 슬롯. 현재 외형엔 버튼이 없다. 측면에 단일 다기능 버튼을 추가한다.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>핵심 제약</h3>
+      <ul>
+        <li><b>위생/세척성</b> — 소변 컵에 담근 스트립을 다루는 펨테크 기기. 표면을 닦아낼 수 있어야 하고, 액체가 고이는 틈을 최소화해야 함.</li>
+        <li><b>프리미엄 심리스 외형</b> — 매끈한 유기적 폼을 깨지 않을 것. 로즈골드 밴드를 디자인 언어로 활용.</li>
+        <li><b>무광시 촉각 조작</b> — 보지 않고도(컵 위에서) 찾고 누를 수 있어야 함.</li>
+        <li><b>단일 버튼 다기능</b> — 짧게/길게/더블 프레스. UX 단순.</li>
+        <li><b>저비용·소형·배터리</b> — 사출 플라스틱, 내부 공간/배터리 제약.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>추정 기능 매핑 (가정)</h3>
+      <ul>
+        <li><b>짧게</b> — 깨우기 / 측정 시작 확인</li>
+        <li><b>길게 2초</b> — 전원 ON/OFF</li>
+        <li><b>길게 6초</b> — BLE 페어링 / 리셋</li>
+        <li><b>더블</b> — 즉시 동기화 (선택)</li>
+      </ul>
+      <p class="sub" style="margin-top:10px">※ 기능 매핑은 가정이며, 아침 검토 시 확정 필요.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2. 버튼 구조 컨셉 (단면도)</h2>
+  <p class="sub">각 단면도: 좌측이 기기 외부, 우측이 내부. 회색=쉘, 금색=손가락 접촉면, 청록=작동 메커니즘, 점선=실링.</p>
+
+  <div class="grid">
+
+    <!-- A -->
+    <div class="card">
+      <span class="tag fallback">컨셉 A · 저비용 폴백</span>
+      <h3>경질 키캡 + 메탈 돔</h3>
+      <p class="sub">고전적 스마트폰 사이드 버튼</p>
+      <svg viewBox="0 0 360 200" role="img" aria-label="경질 키캡 메탈 돔 단면도">
+        <rect x="120" y="20" width="40" height="160" fill="#e7e0d8"/>
+        <text x="40" y="105" font-size="11" fill="#7a716a">외부</text>
+        <text x="300" y="105" font-size="11" fill="#7a716a">내부</text>
+        <!-- shell with cutout -->
+        <path d="M120,20 L120,80 L100,80 L100,120 L120,120 L120,180 L160,180 L160,20 Z" fill="#d8cfc4"/>
+        <!-- keycap -->
+        <rect x="86" y="78" width="22" height="44" rx="3" fill="#c8a26a"/>
+        <!-- gap arrows -->
+        <line x1="108" y1="70" x2="108" y2="78" stroke="#b5563f" stroke-width="1.5"/>
+        <line x1="108" y1="122" x2="108" y2="130" stroke="#b5563f" stroke-width="1.5"/>
+        <text x="60" y="150" font-size="10" fill="#b5563f">둘레 틈 = 침투 경로</text>
+        <!-- metal dome -->
+        <path d="M150,90 Q170,72 190,90" fill="none" stroke="#2c7d8a" stroke-width="3"/>
+        <line x1="150" y1="92" x2="190" y2="92" stroke="#2c7d8a" stroke-width="1.5"/>
+        <rect x="190" y="80" width="14" height="40" fill="#cfc7bb"/>
+        <text x="210" y="75" font-size="10" fill="#2c7d8a">메탈 돔 / PCB</text>
+      </svg>
+      <ul>
+        <li class="pro">친숙한 크리스프 클릭, 최저 비용, 검증된 양산성</li>
+        <li class="pro">로즈골드 마감 키캡으로 밴드와 연결 가능</li>
+        <li class="con">둘레 틈 → 침투/오염 경로, 세척성 약함</li>
+        <li class="con">내부 부트/O링 별도 실링 필요</li>
+      </ul>
+    </div>
+
+    <!-- B -->
+    <div class="card reco">
+      <span class="tag reco">컨셉 B · 권장</span>
+      <h3>일체형 실리콘 오버레이 + 내부 돔</h3>
+      <p class="sub">실드 멤브레인 (방수 의료기기 표준)</p>
+      <svg viewBox="0 0 360 200" role="img" aria-label="일체형 실리콘 오버레이 단면도">
+        <text x="40" y="105" font-size="11" fill="#7a716a">외부</text>
+        <text x="300" y="105" font-size="11" fill="#7a716a">내부</text>
+        <!-- continuous shell -->
+        <path d="M150,20 L150,180 L200,180 L200,20 Z" fill="#d8cfc4"/>
+        <!-- one-piece silicone skin (no gap) bulging out -->
+        <path d="M150,20 L150,75 Q120,100 150,125 L150,180 L150,20 Z" fill="#cfc7bb"/>
+        <path d="M150,75 Q120,100 150,125 Q140,100 150,75 Z" fill="#c8a26a"/>
+        <path d="M150,20 L150,75 Q118,100 150,125 L150,180" fill="none" stroke="#3f7d54" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="55" y="150" font-size="10" fill="#3f7d54">연속 스킨 — 틈 없음</text>
+        <!-- internal dome -->
+        <path d="M165,88 Q180,74 195,88" fill="none" stroke="#2c7d8a" stroke-width="3"/>
+        <rect x="195" y="78" width="12" height="44" fill="#cfc7bb"/>
+        <text x="210" y="73" font-size="10" fill="#2c7d8a">내부 메탈 돔</text>
+      </svg>
+      <ul>
+        <li class="pro">완전 실드(IP67+), 틈 없음 → 완벽한 닦임 — 위생 컨텍스트 최적</li>
+        <li class="pro">내부 메탈 돔으로 진짜 클릭감 유지, 수백만 사이클 내구</li>
+        <li class="pro">저비용·소형, 검증된 방수 의료기기 표준 구조</li>
+        <li class="con">경질 키캡 대비 약간 부드러운 타격감 (튜닝으로 보완)</li>
+      </ul>
+    </div>
+
+    <!-- C -->
+    <div class="card">
+      <span class="tag future">컨셉 C · v2 미래</span>
+      <h3>솔리드스테이트 압력 존 + 햅틱</h3>
+      <p class="sub">iPhone 액션 버튼 방식</p>
+      <svg viewBox="0 0 360 200" role="img" aria-label="솔리드스테이트 압력 존 단면도">
+        <text x="40" y="105" font-size="11" fill="#7a716a">외부</text>
+        <text x="300" y="105" font-size="11" fill="#7a716a">내부</text>
+        <path d="M150,20 L150,180 L200,180 L200,20 Z" fill="#d8cfc4"/>
+        <!-- subtle dimple, continuous -->
+        <path d="M150,85 Q142,100 150,115" fill="none" stroke="#c8a26a" stroke-width="4"/>
+        <!-- strain sensor -->
+        <rect x="150" y="80" width="8" height="40" fill="#2c7d8a"/>
+        <text x="165" y="78" font-size="10" fill="#2c7d8a">스트레인 센서</text>
+        <!-- LRA actuator -->
+        <circle cx="185" cy="100" r="14" fill="none" stroke="#7a5a90" stroke-width="3"/>
+        <text x="205" y="103" font-size="10" fill="#7a5a90">LRA 햅틱</text>
+        <text x="60" y="160" font-size="10" fill="#3f7d54">완전 연속 쉘 · 무가동부</text>
+      </svg>
+      <ul>
+        <li class="pro">침투 경로 0, 최상의 심리스 외형 (Apple 2027 방향)</li>
+        <li class="pro">기계적 마모 없음</li>
+        <li class="con">최고 비용·복잡도 (센서+드라이버+액추에이터+튜닝)</li>
+        <li class="con"><b>전원 OFF 상태 콜드스타트 문제</b> — 완전 종료 시 누름 감지 불가</li>
+        <li class="con">배터리·내부 공간 부담 ↑</li>
+      </ul>
+    </div>
+
+    <!-- D -->
+    <div class="card">
+      <span class="tag alt">컨셉 D · 대안</span>
+      <h3>리세스 필 버튼 + 내부 실리콘 부트</h3>
+      <p class="sub">경질 클릭감 + 실드 하이브리드</p>
+      <svg viewBox="0 0 360 200" role="img" aria-label="리세스 필 버튼 단면도">
+        <text x="40" y="105" font-size="11" fill="#7a716a">외부</text>
+        <text x="300" y="105" font-size="11" fill="#7a716a">내부</text>
+        <path d="M120,20 L120,78 L104,86 L104,114 L120,122 L120,180 L170,180 L170,20 Z" fill="#d8cfc4"/>
+        <!-- recessed keycap -->
+        <rect x="108" y="84" width="16" height="32" rx="3" fill="#c8a26a"/>
+        <!-- gold bezel ring -->
+        <path d="M120,72 L120,78 M120,122 L120,128" stroke="#c8a26a" stroke-width="3"/>
+        <text x="46" y="150" font-size="10" fill="#7a716a">리세스 = 오작동 방지</text>
+        <!-- internal silicone boot -->
+        <path d="M124,80 Q150,100 124,120 L150,120 L150,80 Z" fill="#cfc7bb"/>
+        <path d="M124,80 Q148,100 124,120" fill="none" stroke="#3f7d54" stroke-width="2" stroke-dasharray="4 3"/>
+        <path d="M150,92 Q165,78 180,92" fill="none" stroke="#2c7d8a" stroke-width="3"/>
+        <text x="185" y="90" font-size="10" fill="#2c7d8a">돔</text>
+        <text x="150" y="150" font-size="10" fill="#3f7d54">실리콘 부트 실링</text>
+      </svg>
+      <ul>
+        <li class="pro">경질 클릭감 + 실드 + 오작동 저항(리세스)</li>
+        <li class="pro">로즈골드 베젤 링으로 브랜드 연속성</li>
+        <li class="con">리세스에 잔여물 고일 수 있음</li>
+        <li class="con">젖은/장갑 손가락 작동성 ↓, 부품 수 ↑</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>3. 비교 매트릭스</h2>
+  <table>
+    <thead>
+      <tr><th>기준 (가중치)</th><th>A 경질키캡</th><th>B 실리콘오버레이</th><th>C 솔리드스테이트</th><th>D 리세스하이브리드</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>위생/세척성 ×1.3</td><td class="s-bad">약</td><td class="s-good">최상</td><td class="s-good">최상</td><td class="s-mid">중상</td></tr>
+      <tr><td>방수 실링 ×1.3</td><td class="s-bad">약</td><td class="s-good">강</td><td class="s-good">강</td><td class="s-good">강</td></tr>
+      <tr><td>프리미엄 외형 ×1.2</td><td class="s-mid">중</td><td class="s-good">상</td><td class="s-good">최상</td><td class="s-good">상</td></tr>
+      <tr><td>촉각 클릭감 ×1.2</td><td class="s-good">최상</td><td class="s-good">상</td><td class="s-mid">중(햅틱)</td><td class="s-good">상</td></tr>
+      <tr><td>비용/양산성 ×1.1</td><td class="s-good">최상</td><td class="s-good">상</td><td class="s-bad">약</td><td class="s-mid">중</td></tr>
+      <tr><td>전원ON 신뢰성 ×1.1</td><td class="s-good">강</td><td class="s-good">강</td><td class="s-bad">약(콜드스타트)</td><td class="s-good">강</td></tr>
+      <tr><td><b>종합</b></td><td class="s-mid">보통</td><td class="s-good">★ 최적</td><td class="s-mid">미래형</td><td class="s-good">우수(대안)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>4. 권장안 — 컨셉 B</h2>
+  <div class="card reco">
+    <p><b>일체형 실리콘 오버레이 버튼 + 내부 메탈 돔</b>을 1순위로 권장한다. 위생·실링·실제 클릭감·저비용·검증된 신뢰성을 동시에 만족하는 유일한 안이며, 로즈골드 밴드 안의 의도적 액센트로 스타일링할 수 있다.</p>
+    <dl class="spec">
+      <dt>배치</dt><dd>로즈골드 적도 밴드 위, 자연 그립 시 엄지 도달 15~20mm (20mm 아크 룰). 단일 버튼.</dd>
+      <dt>형상</dt><dd>작동면 Ø8~10mm, 0.3~0.5mm 볼록 → 무광시 촉지 가능. 중앙 리프 엠보스로 방향 인지.</dd>
+      <dt>작동력/스트로크</dt><dd>약 2.5~4 N, 체감 스트로크 0.3~0.5mm (내부 메탈 돔 250~350gf, 0.25mm 붕괴) — 인체공학 범위 내, 오작동 저항.</dd>
+      <dt>실링</dt><dd>실리콘 오버레이 오버몰드 또는 3M 467MP급 접착 + 내부 리브 글랜드 → IP67 목표.</dd>
+      <dt>피드백</dt><dd>메탈 돔 기계적 클릭(≥300k 사이클) + 화면/LED 확인 + 앱 BLE 햅틱(기기 아닌 폰).</dd>
+      <dt>소재</dt><dd>스킨 매칭 LSR 실리콘 오버레이, 선택적 로즈골드 PVD 링 베젤; SS301 메탈 돔; FPC 접점.</dd>
+    </dl>
+  </div>
+  <div class="callout">
+    <h3>아침 검토용 결정 포인트</h3>
+    <ul>
+      <li><b>기능 매핑 확정</b> — 짧게/길게/더블 프레스 동작 (현재 가정값).</li>
+      <li><b>컨셉 B vs D</b> — 심리스 위생(B) vs 더 단단한 경질 클릭감(D) 중 우선순위.</li>
+      <li><b>로즈골드 PVD 베젤 링</b> 적용 여부 (브랜드 연속성 ↔ 비용/세척성).</li>
+      <li><b>버튼 위치</b> — 좌/우 측면, 상단 윈도우 기준 정확한 좌표는 기구 도면 필요.</li>
+      <li><b>IP 등급 목표</b> — IP67 충분한지, 침수 세척(IP68/IP69K) 필요한지.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Vela Reader 측면 버튼 구조 탐색 · 야간 자율 작업 산출물 · 동반 스펙 문서:
+  <code>docs/superpowers/specs/2026-05-18-vela-reader-side-button-design.md</code>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(claude-developer-platform)",
+      "Skill(claude-developer-platform:*)",
+      "mcp__filesystem__list_directory",
+      "Bash(dir:*)",
+      "Bash(# Check for port info in these projects grep -r \"\"port\\\\|PORT\\\\|listen\"\" /c/Users/redna/Desktop/mindmap-server/)",
+      "Bash(# Check the socket.ts for port info on the figma project grep -n \"\"port\\\\|PORT\\\\|listen\\\\|3055\"\" /c/Users/redna/Downloads/cursor-talk-to-figma-mcp-main/cursor-talk-to-figma-mcp-main/src/socket.ts)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__filesystem__read_text_file",
+      "Bash(pip install fpdf2)",
+      "Bash(python -m pip install fpdf2)",
+      "Bash(cscript //nologo \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\create_shortcut.vbs\")",
+      "Bash(wscript \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\create_shortcut.vbs\")",
+      "Bash(powershell -Command \":*)",
+      "Bash(powershell -Command \"$WshShell = New-Object -comObject WScript.Shell; $desk = [Environment]::GetFolderPath\\(''Desktop''\\); $Shortcut = $WshShell.CreateShortcut\\($desk + ''\\\\주식분석AI.lnk''\\); $Shortcut.TargetPath = ''C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\run.bat''; $Shortcut.WorkingDirectory = ''C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock''; $Shortcut.Description = ''주식 분석 멀티에이전트 시스템''; $Shortcut.WindowStyle = 1; $Shortcut.Save\\(\\); Write-Host ''완료:'' $desk\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\make_shortcut.ps1\")",
+      "Bash(explorer \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\")",
+      "Bash(python -m py_compile config.py)",
+      "Bash(python -m py_compile agents.py)",
+      "Bash(python -m py_compile orchestrator.py)",
+      "Bash(python -m py_compile main.py)",
+      "Bash(python -c \"import anthropic; print\\(''anthropic 버전:'', anthropic.__version__\\)\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\redna\\\\Desktop\\\\'' | Where-Object { $_Name -like ''*lnk'' } | Select-Object Name, FullName\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \":*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\check_shortcut.ps1\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\verify_shortcut.ps1\")",
+      "Bash(cmd /c start \"\" \"C:\\\\Users\\\\redna\\\\Desktop\")",
+      "Bash(claude plugin:*)"
+    ]
+  }
+}

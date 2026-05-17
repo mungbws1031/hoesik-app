@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "app_name": "Vela Flow",
+    "device_name": "Vela Reader",
+    "prototype_version": "v1",
+    "notes": "Local mock data for a premium hormone reader companion app prototype. Copy stays trend-oriented and avoids diagnostic certainty."
+  },
+  "scenarios": {
+    "default": {
+      "device_status": {
+        "connection_state": "connected",
+        "battery_level": 82,
+        "last_sync_at": "2026-04-22 14:10",
+        "firmware_notice": "Firmware current"
+      },
+      "test_session": {
+        "captured_at": "2026-04-22 08:40",
+        "cycle_day": 12,
+        "sync_state": "synced",
+        "assay_status": "complete",
+        "summary_label": "Hormone shift is becoming more active today."
+      },
+      "reading_items": [
+        {
+          "analyte_name": "E3G",
+          "level_band": "steady high",
+          "trend_direction": "up",
+          "relative_change_note": "Higher than your recent three-session range."
+        },
+        {
+          "analyte_name": "LH",
+          "level_band": "rising",
+          "trend_direction": "up",
+          "relative_change_note": "A clearer rise is visible compared with yesterday."
+        },
+        {
+          "analyte_name": "PdG",
+          "level_band": "baseline",
+          "trend_direction": "flat",
+          "relative_change_note": "Still near baseline for this cycle window."
+        }
+      ],
+      "coach_tip": {
+        "title": "Plan for one more check tomorrow morning.",
+        "why_it_matters": "A follow-up reading helps confirm whether today’s rise continues or settles.",
+        "recommended_action": "Keep tomorrow’s first test in a similar time window for easier comparison.",
+        "caution_copy": "Use this result as a trend reference only. It is not a medical diagnosis."
+      },
+      "timeline_events": [
+        {
+          "date": "2026-04-18",
+          "event_type": "test",
+          "linked_session_id": "S-0418",
+          "short_note": "Baseline pattern recorded."
+        },
+        {
+          "date": "2026-04-20",
+          "event_type": "test",
+          "linked_session_id": "S-0420",
+          "short_note": "Hormone activity began to move."
+        },
+        {
+          "date": "2026-04-22",
+          "event_type": "test",
+          "linked_session_id": "S-0422",
+          "short_note": "Clearer rise visible in today’s read."
+        }
+      ]
+    },
+    "device_disconnected": {
+      "device_status": {
+        "connection_state": "disconnected",
+        "battery_level": 82,
+        "last_sync_at": "2026-04-21 09:02",
+        "firmware_notice": "Reader not paired"
+      },
+      "test_session": {
+        "captured_at": "",
+        "cycle_day": 12,
+        "sync_state": "not_started",
+        "assay_status": "idle",
+        "summary_label": "Connect the reader before starting a new check."
+      },
+      "reading_items": [],
+      "coach_tip": {
+        "title": "Reconnect before the next session.",
+        "why_it_matters": "The app cannot receive a reading until the reader is paired again.",
+        "recommended_action": "Open pairing and keep the reader close until connection is confirmed.",
+        "caution_copy": "Status guidance only. No test result has been received."
+      },
+      "timeline_events": [
+        {
+          "date": "2026-04-20",
+          "event_type": "test",
+          "linked_session_id": "S-0420",
+          "short_note": "Last synced result available."
+        }
+      ]
+    },
+    "sync_delayed": {
+      "device_status": {
+        "connection_state": "connected",
+        "battery_level": 77,
+        "last_sync_at": "2026-04-22 08:40",
+        "firmware_notice": "Sync delay detected"
+      },
+      "test_session": {
+        "captured_at": "2026-04-22 08:40",
+        "cycle_day": 12,
+        "sync_state": "delayed",
+        "assay_status": "processing",
+        "summary_label": "The reader captured a session, but the full result is still arriving."
+      },
+      "reading_items": [
+        {
+          "analyte_name": "Session",
+          "level_band": "processing",
+          "trend_direction": "pending",
+          "relative_change_note": "Trend interpretation unlocks after sync completes."
+        }
+      ],
+      "coach_tip": {
+        "title": "Keep the reader nearby for a short retry.",
+        "why_it_matters": "Most delayed sessions finish when the reader stays open and close to the phone.",
+        "recommended_action": "Wait up to one minute before retrying manual sync.",
+        "caution_copy": "No interpretation is shown until the delayed result finishes syncing."
+      },
+      "timeline_events": [
+        {
+          "date": "2026-04-22",
+          "event_type": "sync",
+          "linked_session_id": "S-0422",
+          "short_note": "Captured, pending full sync."
+        }
+      ]
+    },
+    "incomplete_test": {
+      "device_status": {
+        "connection_state": "connected",
+        "battery_level": 80,
+        "last_sync_at": "2026-04-22 08:37",
+        "firmware_notice": "Ready for retry"
+      },
+      "test_session": {
+        "captured_at": "2026-04-22 08:37",
+        "cycle_day": 12,
+        "sync_state": "synced",
+        "assay_status": "incomplete",
+        "summary_label": "This session could not be interpreted with confidence."
+      },
+      "reading_items": [
+        {
+          "analyte_name": "Session quality",
+          "level_band": "incomplete",
+          "trend_direction": "pending",
+          "relative_change_note": "The device could not confirm a complete reading."
+        }
+      ],
+      "coach_tip": {
+        "title": "Retry with the full dip-insert flow.",
+        "why_it_matters": "An incomplete session can come from timing, insertion, or unstable transfer.",
+        "recommended_action": "Use the step guide again and start a fresh session when ready.",
+        "caution_copy": "No hormone trend is shown from incomplete sessions."
+      },
+      "timeline_events": [
+        {
+          "date": "2026-04-22",
+          "event_type": "retry",
+          "linked_session_id": "S-0422-R1",
+          "short_note": "Retry recommended after incomplete session."
+        }
+      ]
+    },
+    "no_cycle_data": {
+      "device_status": {
+        "connection_state": "connected",
+        "battery_level": 82,
+        "last_sync_at": "2026-04-22 14:10",
+        "firmware_notice": "Firmware current"
+      },
+      "test_session": {
+        "captured_at": "2026-04-22 08:40",
+        "cycle_day": 0,
+        "sync_state": "synced",
+        "assay_status": "complete",
+        "summary_label": "A new result is available, but cycle context has not been added yet."
+      },
+      "reading_items": [
+        {
+          "analyte_name": "LH",
+          "level_band": "rising",
+          "trend_direction": "up",
+          "relative_change_note": "The result is available even without cycle context."
+        }
+      ],
+      "coach_tip": {
+        "title": "Add cycle context for clearer comparisons.",
+        "why_it_matters": "The timeline becomes easier to read once cycle day is known.",
+        "recommended_action": "Enter the start of the current cycle before the next session.",
+        "caution_copy": "Without cycle context, the app can only show limited comparisons."
+      },
+      "timeline_events": []
+    }
+  }
+}
