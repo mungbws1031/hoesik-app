@@ -1,0 +1,17 @@
+# Secrets / credentials — never track
+.credentials.json
+.credentials
+**/.env
+.env
+*.key
+*.pem
+
+# Local backups & caches
+backups/
+mcp-needs-auth-cache.json
+statsig/
+shell-snapshots/
+
+# Python
+__pycache__/
+*.pyc
