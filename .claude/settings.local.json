@@ -27,7 +27,14 @@
       "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\check_shortcut.ps1\")",
       "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\redna\\\\.claude\\\\multi_agent_stock\\\\verify_shortcut.ps1\")",
       "Bash(cmd /c start \"\" \"C:\\\\Users\\\\redna\\\\Desktop\")",
-      "Bash(claude plugin:*)"
+      "Bash(claude plugin:*)",
+      "Bash(grep -iE \"\\(\\\\.env$|\\\\.credentials|credential|secret|token|api_key\\)\")",
+      "PowerShell(Start-Process powershell.exe)",
+      "WebSearch",
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:brainstorming:*)",
+      "Bash(mkdir -p \"C:/Users/redna/.claude/docs/superpowers/specs\" && ls \"C:/Users/redna/.claude/docs/superpowers/specs\")",
+      "Bash(find /c/Users/redna -name \"*hermes*\" -o -name \"*Hermes*\" 2>/dev/null | head -20)"
     ]
   }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_top">#F8FDFF</color>
+    <color name="window_bottom">#EFFBF4</color>
+    <color name="header_surface">#FFFFFF</color>
+    <color name="quick_surface">#F9FFFC</color>
+    <color name="card_surface">#FFFFFF</color>
+    <color name="accent_teal">#0B7D7B</color>
+    <color name="accent_coral">#FF6B4A</color>
+    <color name="accent_gold">#FFCF4A</color>
+    <color name="accent_sky">#2F80ED</color>
+    <color name="text_primary">#11262D</color>
+    <color name="text_secondary">#627780</color>
+    <color name="line_soft">#D8E8E7</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="focus_start">#0B7D7B</color>
+    <color name="focus_mid">#2F80ED</color>
+    <color name="focus_end">#FF6B4A</color>
+    <color name="icon_teal_bg">#DFF8EE</color>
+    <color name="icon_coral_bg">#FFE8E0</color>
+    <color name="icon_gold_bg">#FFF3C4</color>
+    <color name="icon_sky_bg">#E4F0FF</color>
+
+    <color name="lane_main_fill">#FFF0EB</color>
+    <color name="lane_main_text">#AA3B22</color>
+    <color name="lane_ref_fill">#E6FBF1</color>
+    <color name="lane_ref_text">#0B7567</color>
+    <color name="lane_park_fill">#FFF5CC</color>
+    <color name="lane_park_text">#765408</color>
+</resources>

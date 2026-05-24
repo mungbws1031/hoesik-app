@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surearly Objet Blue Diary Concept</title>
+<style>
+  :root {
+    --bg-a: #d9edf8;
+    --bg-b: #eef8fc;
+    --bg-c: #d7eaf5;
+    --ink: #21313a;
+    --muted: #71848e;
+    --soft: rgba(255, 255, 255, 0.48);
+    --soft-strong: rgba(255, 255, 255, 0.68);
+    --line: rgba(255, 255, 255, 0.7);
+    --shadow-dark: rgba(98, 134, 153, 0.22);
+    --shadow-light: rgba(255, 255, 255, 0.86);
+    --blue: #4bb8e8;
+    --cyan: #42d2d8;
+    --rose: #ff77ae;
+    --violet: #8d5fe2;
+    --amber: #ffbd70;
+    --green: #65a491;
+    --phone-w: 372px;
+    --phone-h: 724px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+    background:
+      radial-gradient(circle at 19% 15%, rgba(255, 255, 255, 0.86), transparent 25%),
+      radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.58), transparent 23%),
+      linear-gradient(135deg, var(--bg-a), var(--bg-b) 48%, var(--bg-c));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    border-radius: 999px;
+    pointer-events: none;
+    filter: blur(16px);
+    opacity: 0.74;
+  }
+
+  body::before {
+    width: 520px;
+    height: 520px;
+    left: -150px;
+    bottom: -180px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.78), rgba(76, 184, 232, 0.14), transparent 72%);
+  }
+
+  body::after {
+    width: 500px;
+    height: 500px;
+    right: -120px;
+    top: -170px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.82), rgba(255, 119, 174, 0.13), transparent 72%);
+  }
+
+  button {
+    font: inherit;
+  }
+
+  .board {
+    position: relative;
+    z-index: 1;
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 42px 0 54px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 36px;
+    margin-bottom: 30px;
+  }
+
+  .brand-lockup {
+    display: grid;
+    gap: 10px;
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: #496774;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    color: #1d303a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 6vw, 78px);
+    line-height: 0.92;
+    letter-spacing: -0.06em;
+    text-shadow: 0 16px 32px rgba(89, 126, 146, 0.16);
+  }
+
+  .summary {
+    max-width: 380px;
+    margin: 0;
+    color: #506b78;
+    font-size: 15px;
+    line-height: 1.76;
+    word-break: keep-all;
+  }
+
+  .phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(48px, 8vw, 96px);
+  }
+
+  .phone {
+    position: relative;
+    width: var(--phone-w);
+    height: var(--phone-h);
+    padding: 34px 32px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    border-radius: 38px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(230, 246, 253, 0.38)),
+      rgba(238, 248, 252, 0.42);
+    box-shadow:
+      22px 28px 56px var(--shadow-dark),
+      -22px -24px 54px var(--shadow-light),
+      inset 1px 1px 1px rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    overflow: hidden;
+  }
+
+  .phone.secondary {
+    transform: translateY(-30px);
+  }
+
+  .phone::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: linear-gradient(142deg, rgba(255, 255, 255, 0.74), transparent 34%, rgba(255, 255, 255, 0.2));
+    pointer-events: none;
+  }
+
+  .screen-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .ghost-icon,
+  .nav-button,
+  .play-button {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 15px;
+    background: rgba(238, 248, 252, 0.64);
+    color: #263943;
+    box-shadow:
+      7px 8px 18px rgba(92, 130, 150, 0.16),
+      -7px -8px 18px rgba(255, 255, 255, 0.84),
+      inset 1px 1px 1px rgba(255, 255, 255, 0.78);
+  }
+
+  .ghost-icon svg,
+  .nav-button svg,
+  .play-button svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .wordmark {
+    color: #263943;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    margin: 50px 0 0;
+    color: #22343e;
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    font-weight: 300;
+  }
+
+  .hero-title strong {
+    display: block;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .next-button {
+    position: absolute;
+    top: 114px;
+    right: 32px;
+    min-width: 86px;
+    min-height: 42px;
+    padding: 0 19px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(240, 249, 253, 0.78);
+    color: #375462;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow:
+      8px 10px 20px rgba(92, 130, 150, 0.15),
+      -8px -10px 18px rgba(255, 255, 255, 0.88),
+      inset 1px 1px 1px rgba(255, 255, 255, 0.86);
+  }
+
+  .metrics-card {
+    margin-top: 26px;
+    padding: 19px 28px;
+    border-radius: 16px;
+    background: rgba(225, 241, 249, 0.58);
+    box-shadow:
+      inset 8px 8px 22px rgba(104, 144, 165, 0.12),
+      inset -8px -8px 22px rgba(255, 255, 255, 0.78);
+  }
+
+  .metric-line {
+    display: grid;
+    grid-template-columns: 94px 1fr;
+    align-items: center;
+    min-height: 27px;
+    color: #607782;
+    font-size: 14px;
+  }
+
+  .metric-line b {
+    color: #36505d;
+    font-weight: 800;
+  }
+
+  .mini-track {
+    width: 96px;
+    height: 8px;
+    border-radius: 999px;
+    background: #dbeef7;
+    box-shadow: inset 2px 2px 5px rgba(107, 149, 169, 0.18), inset -2px -2px 5px rgba(255, 255, 255, 0.72);
+    overflow: hidden;
+  }
+
+  .mini-track span {
+    display: block;
+    width: 67%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--amber), var(--rose));
+  }
+
+  .session-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .session {
+    display: grid;
+    grid-template-columns: 92px 1fr 46px;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .thumb {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 92px;
+    height: 58px;
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 62% 28%, rgba(255, 255, 255, 0.9), transparent 26%),
+      linear-gradient(135deg, #dceff8, #f8fcfd);
+    box-shadow:
+      inset 3px 3px 10px rgba(108, 148, 168, 0.1),
+      inset -3px -3px 12px rgba(255, 255, 255, 0.82);
+    overflow: hidden;
+  }
+
+  .thumb img {
+    width: 78px;
+    transform: rotate(-8deg);
+    filter: drop-shadow(0 10px 12px rgba(54, 82, 96, 0.16));
+  }
+
+  .session b {
+    display: block;
+    color: #344b56;
+    font-size: 15px;
+  }
+
+  .session span {
+    display: block;
+    margin-top: 3px;
+    color: #7c9099;
+    font-size: 13px;
+  }
+
+  .screen-bottom {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: center;
+  }
+
+  .nav-button.active {
+    color: var(--blue);
+    background: rgba(224, 242, 250, 0.7);
+    box-shadow:
+      inset 5px 5px 12px rgba(92, 130, 150, 0.12),
+      inset -5px -5px 12px rgba(255, 255, 255, 0.82);
+  }
+
+  .switch {
+    position: absolute;
+    top: 106px;
+    right: 40px;
+    width: 86px;
+    height: 40px;
+    padding: 4px;
+    border-radius: 999px;
+    background: #d7ebf5;
+    box-shadow:
+      inset 5px 5px 12px rgba(95, 137, 158, 0.16),
+      inset -5px -5px 12px rgba(255, 255, 255, 0.78);
+  }
+
+  .switch span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #eff9fd;
+    box-shadow: 5px 6px 13px rgba(90, 128, 150, 0.18), -4px -5px 12px rgba(255, 255, 255, 0.88);
+  }
+
+  .chart-wrap {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 204px;
+    height: 204px;
+    margin: 38px auto 0;
+    border-radius: 50%;
+    background:
+      conic-gradient(from 220deg, var(--violet) 0 45%, rgba(255, 255, 255, 0.36) 45% 62%, #7d78e8 62% 79%, rgba(255, 255, 255, 0.34) 79% 100%);
+    box-shadow:
+      12px 16px 34px rgba(94, 126, 150, 0.16),
+      -10px -14px 34px rgba(255, 255, 255, 0.88);
+  }
+
+  .chart-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border-radius: inherit;
+    background: #e9f6fb;
+    box-shadow: inset 8px 8px 18px rgba(101, 142, 165, 0.14), inset -8px -8px 18px rgba(255, 255, 255, 0.8);
+  }
+
+  .chart-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 70px;
+    border-radius: inherit;
+    background: #eef9fd;
+    box-shadow: 5px 6px 14px rgba(96, 137, 158, 0.14), -5px -6px 14px rgba(255, 255, 255, 0.88);
+  }
+
+  .chart-center {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 3px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    text-shadow: 0 1px 7px rgba(64, 54, 112, 0.35);
+  }
+
+  .bar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+    margin-top: 38px;
+  }
+
+  .bar-item {
+    display: grid;
+    justify-items: center;
+    gap: 9px;
+  }
+
+  .bar-shell {
+    display: flex;
+    align-items: end;
+    width: 40px;
+    height: 124px;
+    padding: 6px;
+    border-radius: 999px;
+    background: rgba(229, 244, 251, 0.72);
+    box-shadow:
+      inset 7px 7px 15px rgba(92, 130, 150, 0.14),
+      inset -7px -7px 15px rgba(255, 255, 255, 0.84);
+  }
+
+  .bar-fill {
+    width: 100%;
+    border-radius: inherit;
+    background: linear-gradient(180deg, var(--blue), var(--cyan));
+    box-shadow: 0 8px 18px rgba(75, 184, 232, 0.28);
+  }
+
+  .bar-fill.fsh {
+    height: 44%;
+    background: linear-gradient(180deg, #74d5c0, #48b9a7);
+  }
+
+  .bar-fill.lh {
+    height: 76%;
+    background: linear-gradient(180deg, #ffd085, #ff9d5d);
+  }
+
+  .bar-fill.ep {
+    height: 82%;
+    background: linear-gradient(180deg, #ff92bf, #f24da0);
+  }
+
+  .bar-fill.hcg {
+    height: 38%;
+  }
+
+  .bar-item b {
+    color: #49636f;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .bar-item span {
+    margin-top: -6px;
+    color: #344b56;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .micro-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-top: 30px;
+  }
+
+  .date-dot {
+    display: grid;
+    place-items: center;
+    min-height: 29px;
+    border-radius: 10px;
+    color: #5f737d;
+    font-size: 11px;
+    font-weight: 800;
+    background: rgba(236, 248, 253, 0.52);
+    box-shadow: inset 2px 2px 7px rgba(98, 134, 153, 0.09), inset -2px -2px 7px rgba(255, 255, 255, 0.7);
+  }
+
+  .date-dot.period {
+    background: rgba(255, 119, 174, 0.2);
+    color: #aa4e79;
+  }
+
+  .date-dot.ovulation {
+    background: rgba(255, 189, 112, 0.28);
+    color: #935f2d;
+  }
+
+  .date-dot.test {
+    outline: 2px solid rgba(75, 184, 232, 0.76);
+    background: rgba(255, 255, 255, 0.58);
+    color: #226883;
+  }
+
+  @media (max-width: 920px) {
+    .header {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    .phones {
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .phone.secondary {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .board {
+      width: min(100% - 18px, 100%);
+      padding-top: 24px;
+    }
+
+    .phone {
+      width: min(var(--phone-w), 100%);
+      height: auto;
+      min-height: var(--phone-h);
+      padding-inline: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="board">
+    <header class="header">
+      <div class="brand-lockup">
+        <p class="eyebrow">Blue Diary Concept</p>
+        <h1>Surearly<br>Objet</h1>
+      </div>
+      <p class="summary">
+        참고 이미지의 창백한 블루 톤, 뉴모피즘 버튼, 부드러운 유리 카드 느낌으로
+        4호르몬 검사와 주기 캘린더를 더 감성적이고 트렌디하게 재구성한 시안입니다.
+      </p>
+    </header>
+
+    <section class="phones" aria-label="Surearly Objet app mockup">
+      <article class="phone">
+        <div class="screen-content">
+          <div class="top">
+            <button class="ghost-icon" aria-label="back">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path><path d="M9 12h11"></path></svg>
+            </button>
+            <span class="wordmark">Surearly</span>
+            <button class="ghost-icon" aria-label="profile">
+              <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </button>
+          </div>
+
+          <h2 class="hero-title">Today<br><strong>4 Hormone</strong></h2>
+          <p class="subtitle">한 번의 검체로 hCG, FSH, LH, E+P를 동시에 읽습니다.</p>
+          <button class="next-button">Start</button>
+
+          <section class="metrics-card">
+            <div class="metric-line"><span>Sample</span><b>1회</b></div>
+            <div class="metric-line"><span>Reader</span><b>84%</b></div>
+            <div class="metric-line"><span>Sync</span><div class="mini-track"><span></span></div></div>
+          </section>
+
+          <div class="session-list">
+            <div class="session">
+              <div class="thumb"><img src="../assets/premium-reader-device.png" alt="Surearly Objet reader"></div>
+              <div><b>검체 적용</b><span>Dip 10 sec</span></div>
+              <button class="play-button" aria-label="play guide">
+                <svg viewBox="0 0 24 24"><path d="M9 6l9 6-9 6V6z"></path></svg>
+              </button>
+            </div>
+            <div class="session">
+              <div class="thumb"><img src="../assets/premium-reader-device.png" alt=""></div>
+              <div><b>리더기 삽입</b><span>Insert 1 time</span></div>
+              <button class="play-button" aria-label="play insert">
+                <svg viewBox="0 0 24 24"><path d="M9 6l9 6-9 6V6z"></path></svg>
+              </button>
+            </div>
+            <div class="session">
+              <div class="thumb"><img src="../assets/premium-reader-device.png" alt=""></div>
+              <div><b>결과 동기화</b><span>Reading 4 panels</span></div>
+              <button class="play-button" aria-label="play sync">
+                <svg viewBox="0 0 24 24"><path d="M9 6l9 6-9 6V6z"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="phone secondary">
+        <div class="screen-content">
+          <div class="top">
+            <button class="ghost-icon" aria-label="menu">
+              <svg viewBox="0 0 24 24"><path d="M7 7h.01"></path><path d="M12 7h.01"></path><path d="M17 7h.01"></path><path d="M7 12h.01"></path><path d="M12 12h.01"></path><path d="M17 12h.01"></path></svg>
+            </button>
+            <span class="wordmark">Cycle</span>
+            <button class="ghost-icon" aria-label="profile">
+              <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </button>
+          </div>
+
+          <h2 class="hero-title">Statistics</h2>
+          <p class="subtitle">주기 캘린더와 4호르몬 신호를 한 화면에서 봅니다.</p>
+          <div class="switch" aria-hidden="true"><span></span></div>
+
+          <div class="chart-wrap">
+            <div class="chart-center">73%</div>
+          </div>
+
+          <div class="bar-grid">
+            <div class="bar-item"><div class="bar-shell"><div class="bar-fill hcg"></div></div><b>hCG</b><span>38%</span></div>
+            <div class="bar-item"><div class="bar-shell"><div class="bar-fill fsh"></div></div><b>FSH</b><span>44%</span></div>
+            <div class="bar-item"><div class="bar-shell"><div class="bar-fill lh"></div></div><b>LH</b><span>76%</span></div>
+            <div class="bar-item"><div class="bar-shell"><div class="bar-fill ep"></div></div><b>E+P</b><span>82%</span></div>
+          </div>
+
+          <div class="micro-calendar" aria-label="cycle calendar">
+            <span class="date-dot">19</span><span class="date-dot period">20</span><span class="date-dot test">21</span><span class="date-dot period">22</span><span class="date-dot ovulation">23</span><span class="date-dot test">24</span><span class="date-dot period">25</span>
+          </div>
+
+          <nav class="screen-bottom" aria-label="main navigation">
+            <button class="nav-button" aria-label="home">
+              <svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"></path><path d="M6 10v10h12V10"></path></svg>
+            </button>
+            <button class="nav-button" aria-label="reader">
+              <svg viewBox="0 0 24 24"><path d="M8 6v12"></path><path d="M16 6v12"></path><path d="M7 12h10"></path><path d="M5 18h14"></path></svg>
+            </button>
+            <button class="nav-button active" aria-label="analytics">
+              <svg viewBox="0 0 24 24"><path d="M5 20V9"></path><path d="M12 20V4"></path><path d="M19 20v-7"></path></svg>
+            </button>
+          </nav>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

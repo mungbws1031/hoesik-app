@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surearly Objet Refined App Concept</title>
+<style>
+  :root {
+    --bg: #f8f0ea;
+    --surface: rgba(255, 253, 253, 0.74);
+    --ink: #2e2726;
+    --muted: #817169;
+    --line: rgba(255, 255, 255, 0.58);
+    --soft-line: rgba(33, 29, 34, 0.08);
+    --rose: #f2a7b7;
+    --rose-deep: #c96d82;
+    --plum: #4a3937;
+    --taupe: #8b705c;
+    --amber: #c9945f;
+    --warmgray: #87766f;
+    --accent: #d38a9c;
+    --accent-deep: #9f5363;
+    --cream: #fff7f1;
+    --champagne: #ead5bf;
+    --pearl: #fffaf6;
+    --glass: rgba(255, 255, 255, 0.52);
+    --glass-strong: rgba(255, 255, 255, 0.78);
+    --glass-line: rgba(255, 255, 255, 0.78);
+    --glass-shadow: 0 26px 86px rgba(112, 83, 70, 0.16);
+    --rose-glow: rgba(242, 167, 183, 0.28);
+    --cream-glow: rgba(234, 213, 191, 0.3);
+    --warm-glow: rgba(201, 148, 95, 0.18);
+    --phone-w: 390px;
+    --phone-h: 844px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.98), transparent 28%),
+      radial-gradient(circle at 78% 12%, rgba(242, 167, 183, 0.24), transparent 26%),
+      radial-gradient(circle at 88% 30%, rgba(234, 213, 191, 0.34), transparent 24%),
+      radial-gradient(circle at 56% 82%, rgba(201, 148, 95, 0.12), transparent 25%),
+      repeating-linear-gradient(135deg, rgba(159, 83, 99, 0.025) 0 1px, transparent 1px 34px),
+      linear-gradient(135deg, #fffaf6 0%, #f8f0ea 48%, #fffdfb 100%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: auto;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 999px;
+    filter: blur(10px);
+  }
+
+  body::before {
+    width: 440px;
+    height: 440px;
+    left: 34%;
+    top: -170px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.94), rgba(242, 167, 183, 0.22) 42%, rgba(234, 213, 191, 0.18) 62%, transparent 76%);
+  }
+
+  body::after {
+    width: 540px;
+    height: 540px;
+    right: -180px;
+    bottom: -220px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.78), rgba(234, 213, 191, 0.26) 42%, rgba(242, 167, 183, 0.13) 63%, transparent 76%);
+  }
+
+  button {
+    font: inherit;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    width: min(1480px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 26px 0 46px;
+  }
+
+  .page::before,
+  .page::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 999px;
+    filter: blur(26px);
+  }
+
+  .page::before {
+    width: 290px;
+    height: 290px;
+    left: 43%;
+    top: 180px;
+    background: radial-gradient(circle, rgba(242, 167, 183, 0.2), transparent 70%);
+  }
+
+  .page::after {
+    width: 260px;
+    height: 260px;
+    right: 13%;
+    top: 420px;
+    background: radial-gradient(circle, rgba(234, 213, 191, 0.24), transparent 70%);
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 22px;
+  }
+
+  .brand {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 5.4vw, 82px);
+    line-height: 0.88;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    background: linear-gradient(130deg, #2e2726 8%, #9f5363 48%, #8b705c 74%, #2e2726 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 18px 42px rgba(65, 46, 55, 0.12);
+  }
+
+  .brief {
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.68;
+    word-break: keep-all;
+  }
+
+  .brief strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .workspace {
+    display: grid;
+    grid-template-columns: 300px minmax(var(--phone-w), auto) 330px;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .panel {
+    min-height: var(--phone-h);
+    padding: 26px;
+    border: 1px solid var(--glass-line);
+    border-radius: 28px;
+    background:
+      linear-gradient(150deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.48)),
+      radial-gradient(circle at 82% 8%, rgba(242, 167, 183, 0.16), transparent 42%),
+      radial-gradient(circle at 12% 96%, rgba(234, 213, 191, 0.2), transparent 42%);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(34px) saturate(170%);
+    -webkit-backdrop-filter: blur(34px) saturate(170%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::before,
+  .phone::after,
+  .device-card::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.82), transparent 31%, rgba(255, 255, 255, 0.2) 100%),
+      linear-gradient(315deg, rgba(242, 167, 183, 0.14), transparent 34%, rgba(234, 213, 191, 0.14));
+    opacity: 0.86;
+    z-index: 0;
+  }
+
+  .panel > *,
+  .device-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel-title {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .mode-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .mode-button {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
+    width: 100%;
+    padding: 13px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.4)),
+      radial-gradient(circle at 100% 0%, rgba(234, 213, 191, 0.18), transparent 45%);
+    color: var(--ink);
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 12px 26px rgba(112, 83, 70, 0.06);
+    backdrop-filter: blur(22px) saturate(170%);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .mode-button:hover,
+  .mode-button.active {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 246, 241, 0.7)),
+      radial-gradient(circle at 0% 100%, rgba(242, 167, 183, 0.18), transparent 48%);
+    border-color: rgba(201, 109, 130, 0.34);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      0 16px 38px rgba(159, 83, 99, 0.12),
+      0 0 0 1px rgba(242, 167, 183, 0.12);
+  }
+
+  .mode-button b {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .mode-button span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.46;
+    word-break: keep-all;
+  }
+
+  .marker-icon {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.42));
+    color: var(--plum);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 20px rgba(112, 83, 70, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .marker-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .marker-icon.hcg {
+    color: var(--plum);
+    background: rgba(74, 57, 55, 0.09);
+  }
+
+  .marker-icon.fsh {
+    color: var(--taupe);
+    background: rgba(234, 213, 191, 0.36);
+  }
+
+  .marker-icon.lh {
+    color: var(--amber);
+    background: rgba(217, 130, 43, 0.16);
+  }
+
+  .marker-icon.ep {
+    color: #c85e8b;
+    background: rgba(244, 138, 174, 0.2);
+  }
+
+  .phone-stage {
+    display: grid;
+    justify-content: center;
+  }
+
+  .phone {
+    width: var(--phone-w);
+    height: var(--phone-h);
+    padding: 14px;
+    border-radius: 42px;
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.38)),
+      radial-gradient(circle at 90% 12%, rgba(242, 167, 183, 0.14), transparent 42%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 232, 219, 0.52));
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+      0 30px 74px rgba(112, 83, 70, 0.18),
+      0 0 0 1px rgba(255, 255, 255, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    position: relative;
+    backdrop-filter: blur(32px) saturate(150%);
+    -webkit-backdrop-filter: blur(32px) saturate(150%);
+    overflow: hidden;
+  }
+
+  .phone::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 122px;
+    height: 25px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #211d22;
+    z-index: 2;
+  }
+
+  .screen {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 31px;
+    background:
+      radial-gradient(circle at 84% 9%, rgba(242, 167, 183, 0.16), transparent 24%),
+      radial-gradient(circle at 16% 84%, rgba(234, 213, 191, 0.2), transparent 26%),
+      rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(26px) saturate(165%);
+    -webkit-backdrop-filter: blur(26px) saturate(165%);
+  }
+
+  .app {
+    height: 100%;
+    padding: 52px 22px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .app-kicker {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .reader-status {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--taupe);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .reader-status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--taupe);
+  }
+
+  .app h2 {
+    margin: 22px 0 0;
+    color: #171319;
+    font-size: 30px;
+    line-height: 1.18;
+    font-weight: 800;
+    word-break: keep-all;
+    letter-spacing: -0.045em;
+  }
+
+  .app-sub {
+    margin: 12px 0 0;
+    color: #5f5660;
+    font-size: 13px;
+    line-height: 1.56;
+    word-break: keep-all;
+  }
+
+  .device-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 17px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 100px;
+    gap: 12px;
+    align-items: center;
+    min-height: 112px;
+    padding: 15px;
+    border-radius: 24px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
+      radial-gradient(circle at 92% 18%, rgba(242, 167, 183, 0.18), transparent 44%);
+    border: 1px solid rgba(255, 255, 255, 0.74);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 14px 34px rgba(73, 56, 65, 0.08);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  }
+
+  .device-card b {
+    display: block;
+    margin-bottom: 6px;
+    color: #171319;
+    font-size: 14px;
+  }
+
+  .device-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.46;
+    word-break: keep-all;
+  }
+
+  .device-card img {
+    width: 104px;
+    filter: drop-shadow(0 14px 18px rgba(50, 40, 44, 0.15));
+  }
+
+  .analyte-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .analyte {
+    min-height: 70px;
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74), 0 10px 24px rgba(61, 48, 55, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .analyte .marker-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+  }
+
+  .analyte .marker-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .analyte b {
+    display: block;
+    margin-top: 8px;
+    color: #171319;
+    font-size: 12px;
+  }
+
+  .analyte span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .primary-action {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgba(159, 83, 99, 0.96), rgba(211, 138, 156, 0.92)),
+      radial-gradient(circle at 22% 0%, rgba(255, 255, 255, 0.34), transparent 34%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 18px 42px rgba(159, 83, 99, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .primary-action::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    bottom: -40%;
+    left: -28%;
+    width: 28%;
+    transform: rotate(18deg);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    animation: glassSweep 5.2s ease-in-out infinite;
+  }
+
+  .micro-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .micro {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .micro strong {
+    display: block;
+    color: #171319;
+    font-size: 12px;
+  }
+
+  .micro span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .step-list,
+  .result-grid,
+  .trend-list,
+  .coach-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .step,
+  .result,
+  .coach-card {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.54);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 12px 28px rgba(61, 48, 55, 0.05);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  .step.active,
+  .coach-card.focus {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 239, 246, 0.58));
+    border-color: rgba(211, 138, 156, 0.32);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 14px 34px rgba(159, 83, 99, 0.12);
+  }
+
+  .step b,
+  .result b,
+  .coach-card b {
+    display: block;
+    font-size: 14px;
+  }
+
+  .step span,
+  .result span,
+  .coach-card span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .result {
+    grid-template-columns: 1fr 36px;
+    min-height: 116px;
+    align-content: space-between;
+  }
+
+  .result .marker-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 48px;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(159, 83, 99, 0.14);
+    color: var(--taupe);
+    font-size: 10px;
+    font-weight: 800;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  }
+
+  .trend-item {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .line-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .line-meta .cycle-chip {
+    min-height: 54px;
+  }
+
+  .line-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .line-card {
+    position: relative;
+    min-height: 138px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 20px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.36)),
+      radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--line-color) 20%, transparent), transparent 44%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 12px 28px rgba(61, 48, 55, 0.05);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    overflow: hidden;
+  }
+
+  .line-card header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 8px;
+  }
+
+  .line-card b {
+    display: block;
+    color: #171319;
+    font-size: 13px;
+  }
+
+  .line-card span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .change-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 22px;
+    padding: 4px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.74);
+    color: var(--line-color);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 900;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  }
+
+  .line-chart {
+    width: 100%;
+    height: 72px;
+    overflow: visible;
+  }
+
+  .line-chart .grid {
+    stroke: rgba(33, 29, 34, 0.08);
+    stroke-width: 1;
+  }
+
+  .line-chart .trend-line {
+    fill: none;
+    stroke: var(--line-color);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 6px 8px color-mix(in srgb, var(--line-color) 24%, transparent));
+  }
+
+  .line-chart .trend-area {
+    fill: var(--line-color);
+    opacity: 0.09;
+  }
+
+  .line-chart circle {
+    fill: #fff;
+    stroke: var(--line-color);
+    stroke-width: 3;
+  }
+
+  .axis-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .cycle-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 17px;
+  }
+
+  .cycle-chip {
+    min-height: 58px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.52);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 10px 24px rgba(61, 48, 55, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .cycle-chip b {
+    display: block;
+    color: #171319;
+    font-size: 13px;
+  }
+
+  .cycle-chip span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+
+  .calendar-card {
+    margin-top: 14px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.35)),
+      radial-gradient(circle at 88% 10%, rgba(242, 167, 183, 0.18), transparent 42%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84), 0 14px 34px rgba(73, 56, 65, 0.08);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  }
+
+  .calendar-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .calendar-head b {
+    font-size: 14px;
+  }
+
+  .calendar-head span {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .week-row,
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .week-row span {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .calendar-grid {
+    margin-top: 7px;
+  }
+
+  .day {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 29px;
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.43);
+    color: #332b34;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.66);
+  }
+
+  .day.muted {
+    color: rgba(117, 109, 117, 0.42);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .day.period {
+    background: rgba(244, 138, 174, 0.22);
+    color: #994565;
+  }
+
+  .day.fertile {
+    background: rgba(234, 213, 191, 0.34);
+    color: #8b705c;
+  }
+
+  .day.ovulation {
+    background: rgba(217, 130, 43, 0.24);
+    color: #834c13;
+  }
+
+  .day.test {
+    background: rgba(211, 138, 156, 0.28);
+    color: #8f4f60;
+  }
+
+  .day.today {
+    outline: 2px solid rgba(33, 29, 34, 0.82);
+    outline-offset: 1px;
+  }
+
+  .day.note::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    left: 50%;
+    bottom: 4px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .legend-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .legend {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    word-break: keep-all;
+  }
+
+  .legend::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rose);
+  }
+
+  .legend.fertile::before {
+    background: #e6c6ce;
+  }
+
+  .legend.ovulation::before {
+    background: var(--amber);
+  }
+
+  .legend.test::before {
+    background: var(--taupe);
+  }
+
+  .quick-log {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .quick-log button {
+    min-height: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #342d35;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  .points-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 114px 1fr;
+    gap: 14px;
+    align-items: center;
+    min-height: 126px;
+    margin-top: 18px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.84), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(255, 239, 246, 0.42));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 16px 38px rgba(73, 56, 65, 0.09);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  }
+
+  .score-ring {
+    display: grid;
+    place-items: center;
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(255, 255, 255, 0.88) 0 47%, transparent 49%),
+      conic-gradient(var(--accent-deep) 0 64%, rgba(255, 255, 255, 0.5) 64% 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 14px 32px rgba(159, 83, 99, 0.2);
+  }
+
+  .score-ring strong {
+    color: #171319;
+    font-size: 23px;
+    letter-spacing: -0.04em;
+  }
+
+  .score-copy b {
+    display: block;
+    color: #171319;
+    font-size: 18px;
+    line-height: 1.28;
+    word-break: keep-all;
+  }
+
+  .score-copy span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .streak-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .streak-day {
+    min-height: 74px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74), 0 10px 24px rgba(61, 48, 55, 0.04);
+  }
+
+  .streak-day.done {
+    background: rgba(255, 246, 249, 0.72);
+    border-color: rgba(255, 255, 255, 0.84);
+  }
+
+  .streak-day b {
+    display: block;
+    color: #171319;
+    font-size: 12px;
+  }
+
+  .streak-day span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .reward-progress {
+    margin-top: 14px;
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 12px 28px rgba(61, 48, 55, 0.05);
+  }
+
+  .reward-progress b {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #171319;
+    font-size: 12px;
+  }
+
+  .reward-track {
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: inset 0 1px 4px rgba(40, 32, 38, 0.08);
+    overflow: hidden;
+  }
+
+  .reward-track span {
+    display: block;
+    width: 64%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--champagne), var(--accent));
+  }
+
+  .reward-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 12px;
+  }
+
+  .reward-card {
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 10px 24px rgba(61, 48, 55, 0.04);
+  }
+
+  .reward-card b {
+    display: block;
+    color: #171319;
+    font-size: 12px;
+  }
+
+  .reward-card span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .track {
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(40, 32, 38, 0.08);
+  }
+
+  .fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--rose-deep);
+  }
+
+  .fill.taupe {
+    background: var(--taupe);
+  }
+
+  .fill.amber {
+    background: var(--amber);
+  }
+
+  .tabbar {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    padding: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.42);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 12px 30px rgba(61, 48, 55, 0.05);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .tabbar button {
+    display: grid;
+    place-items: center;
+    min-height: 34px;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .tabbar .active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--rose), var(--accent-deep));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.36), 0 8px 18px rgba(159, 83, 99, 0.2);
+  }
+
+  .purpose-list {
+    display: grid;
+    gap: 18px;
+  }
+
+  .purpose {
+    padding-top: 18px;
+    border-top: 1px solid rgba(33, 29, 34, 0.08);
+  }
+
+  .purpose:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .purpose b {
+    display: block;
+    font-size: 16px;
+  }
+
+  .purpose span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.58;
+    word-break: keep-all;
+  }
+
+  .screen-strip {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .strip-card {
+    min-height: 72px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  @keyframes glassSweep {
+    0%, 52% {
+      transform: translateX(0) rotate(18deg);
+      opacity: 0;
+    }
+
+    62% {
+      opacity: 1;
+    }
+
+    88%, 100% {
+      transform: translateX(560%) rotate(18deg);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  .strip-card.mode-button {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    place-items: center;
+    text-align: center;
+  }
+
+  .strip-card .marker-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 11px;
+  }
+
+  .strip-card .marker-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .strip-card b {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 1180px) {
+    .workspace {
+      grid-template-columns: 1fr;
+    }
+
+    .panel {
+      min-height: auto;
+    }
+
+    .topbar {
+      align-items: start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .page {
+      width: min(100% - 20px, 100%);
+      padding-top: 16px;
+    }
+
+    .phone {
+      width: min(var(--phone-w), 100%);
+      height: auto;
+      aspect-ratio: 390 / 844;
+    }
+
+    .screen-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <h1 class="brand">Surearly<br>Objet</h1>
+      <p class="brief">
+        <strong>Blush Glass Clarity</strong>
+        hCG, FSH, LH, E+P를 한 세션에서 읽고, 검사 시작과 결과 해석으로 바로 이어지는 동반 앱 콘셉트.
+      </p>
+    </header>
+
+    <section class="workspace">
+      <aside class="panel">
+        <h2 class="panel-title">화면 흐름</h2>
+        <div class="mode-list" id="mode-list"></div>
+      </aside>
+
+      <section class="phone-stage">
+        <div class="phone">
+          <div class="screen" id="app-screen"></div>
+        </div>
+        <div class="screen-strip" id="screen-strip"></div>
+      </section>
+
+      <aside class="panel">
+        <h2 class="panel-title">설계 기준</h2>
+        <div class="purpose-list">
+          <div class="purpose">
+            <b>첫 행동</b>
+            <span>홈에서 `4호르몬 검사 시작`이 가장 먼저 보이도록 정보량을 줄입니다.</span>
+          </div>
+          <div class="purpose">
+            <b>캘린더 확장</b>
+            <span>생리일, 가임기, 배란일, 검사일, 메모를 한 달력에서 구분합니다.</span>
+          </div>
+          <div class="purpose">
+            <b>의료기기 톤</b>
+            <span>확정 진단처럼 말하지 않고 동일 검체, 동일 세션, 추세 참고 문구를 유지합니다.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+<script>
+  const productImage = "../assets/premium-reader-device.png";
+  const state = { screen: (location.hash || "").replace("#", "") || "home" };
+
+  const iconPaths = {
+    hCG: '<path d="M12 3v5l-4.8 7.3a3.8 3.8 0 0 0 3.2 5.7h3.2a3.8 3.8 0 0 0 3.2-5.7L12 8V3Z"></path><path d="M9.5 13h5"></path>',
+    FSH: '<circle cx="12" cy="12" r="7"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path>',
+    LH: '<path d="M4 18h16"></path><path d="M6 15l4-5 3 4 5-8"></path>',
+    EP: '<path d="M5 15c5-8 11-8 14-8-1 6-5 10-12 10"></path><path d="M7 17c2-3 5-5 10-7"></path>',
+    sample: '<path d="M9 3h6"></path><path d="M10 3v5l-4 7a4 4 0 0 0 3.5 6h5a4 4 0 0 0 3.5-6l-4-7V3"></path>',
+    move: '<path d="M5 12h12"></path><path d="M13 8l4 4-4 4"></path><path d="M4 18h6"></path>',
+    insert: '<path d="M4 12h11"></path><path d="M15 7v10"></path><path d="M19 9v6"></path>',
+    calendar: '<rect x="4" y="5" width="16" height="15" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M4 10h16"></path><path d="M8 14h2"></path><path d="M14 14h2"></path>',
+    gift: '<path d="M20 12v8H4v-8"></path><path d="M3 8h18v4H3z"></path><path d="M12 8v12"></path><path d="M12 8H8.5A2.5 2.5 0 1 1 11 5.5L12 8Z"></path><path d="M12 8h3.5A2.5 2.5 0 1 0 13 5.5L12 8Z"></path>',
+    review: '<rect x="5" y="5" width="14" height="14" rx="3"></rect><path d="M8 12h8"></path><path d="M12 8v8"></path>'
+  };
+
+  const analytes = [
+    { key: "hCG", label: "hCG", sub: "임신 신호", value: "기준선", status: "유지", tone: "hcg" },
+    { key: "FSH", label: "FSH", sub: "난소 예비", value: "안정", status: "유지", tone: "fsh" },
+    { key: "LH", label: "LH", sub: "배란 피크", value: "상승", status: "상승", tone: "lh" },
+    { key: "EP", label: "E+P", sub: "주기 맥락", value: "활성", status: "상승", tone: "ep" }
+  ];
+
+  const screens = {
+    home: { label: "홈", hint: "검사 시작과 리더기 상태" },
+    guide: { label: "검사", hint: "1회 검체, 4항목 흐름" },
+    result: { label: "결과", hint: "동일 세션 판독 보드" },
+    calendar: { label: "캘린더", hint: "주기, 배란, 검사 기록" },
+    points: { label: "포인트", hint: "3일 연속 측정 보상" },
+    trend: { label: "트렌드", hint: "4개 연속측정 그래프" },
+    coach: { label: "코치", hint: "다음 행동과 주의 문구" }
+  };
+
+  function icon(key, extra = "") {
+    const tone = key === "EP" ? "ep" : key.toLowerCase();
+    return `<span class="marker-icon ${tone} ${extra}" aria-hidden="true"><svg viewBox="0 0 24 24">${iconPaths[key] || iconPaths.review}</svg></span>`;
+  }
+
+  function analyteBoard() {
+    return `<div class="analyte-board">${analytes.map((item) => `
+      <div class="analyte">
+        ${icon(item.key)}
+        <b>${item.label}</b>
+        <span>${item.sub}</span>
+      </div>
+    `).join("")}</div>`;
+  }
+
+  function tabbar(active) {
+    return `<nav class="tabbar">
+      <button class="${active === "home" ? "active" : ""}" data-screen="home">홈</button>
+      <button class="${active === "calendar" ? "active" : ""}" data-screen="calendar">캘린더</button>
+      <button class="${active === "points" ? "active" : ""}" data-screen="points">포인트</button>
+      <button class="${active === "trend" ? "active" : ""}" data-screen="trend">트렌드</button>
+      <button class="${active === "coach" ? "active" : ""}" data-screen="coach">코치</button>
+    </nav>`;
+  }
+
+  function renderHome() {
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">Surearly Objet</span><span class="reader-status">Reader 84%</span></div>
+      <h2>한 번의 검체,<br>4호르몬 동시 판독.</h2>
+      <p class="app-sub">hCG, FSH, LH, E+P 리더기 연결 완료.</p>
+      <div class="device-card">
+        <div><b>4호르몬 패널</b><span>동일 검체 기준<br>4항목 동시 판독</span></div>
+        <img src="${productImage}" alt="Surearly Objet reader">
+      </div>
+      ${analyteBoard()}
+      <button class="primary-action">${icon("sample")} 4호르몬 검사 시작</button>
+      <div class="micro-row">
+        <div class="micro"><strong>검체</strong><span>1회</span></div>
+        <div class="micro"><strong>삽입</strong><span>1회</span></div>
+        <div class="micro"><strong>판독</strong><span>4항목</span></div>
+      </div>
+      ${tabbar("home")}
+    </div>`;
+  }
+
+  function renderGuide() {
+    const steps = [
+      ["sample", "Dip", "검체 적용"],
+      ["move", "Move", "리더기로 이동"],
+      ["insert", "Insert", "1회 삽입"],
+      ["review", "Review", "4항목 확인"]
+    ];
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">검사 흐름</span><span class="reader-status">Ready</span></div>
+      <h2>검사는 1회,<br>판독은 4항목.</h2>
+      <div class="step-list">${steps.map((step, index) => `
+        <div class="step ${index === 0 ? "active" : ""}">
+          ${icon(step[0])}
+          <div><b>${step[1]}</b><span>${step[2]}</span></div>
+          <span class="status-pill">${index + 1}</span>
+        </div>
+      `).join("")}</div>
+      <button class="primary-action">타이머 시작 03:00</button>
+      ${tabbar("home")}
+    </div>`;
+  }
+
+  function renderResult() {
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">결과</span><span class="reader-status">Synced</span></div>
+      <h2>한 세션의<br>4신호 판독.</h2>
+      <div class="result-grid">${analytes.map((item) => `
+        <div class="result">
+          <div><b>${item.label}</b><span>${item.value}</span><span class="status-pill">${item.status}</span></div>
+          ${icon(item.key)}
+        </div>
+      `).join("")}</div>
+      <div class="coach-card focus">
+        ${icon("review")}
+        <div><b>동일 검체 기준 비교</b><span>확정 판정보다 상대 위치와 추세를 봅니다.</span></div>
+        <span class="status-pill">참고</span>
+      </div>
+      <button class="primary-action">세션 비교 보기</button>
+      ${tabbar("coach")}
+    </div>`;
+  }
+
+  function renderCalendar() {
+    const days = [
+      { n: 29, cls: "muted" }, { n: 30, cls: "muted" }, { n: 31, cls: "muted" },
+      { n: 1 }, { n: 2 }, { n: 3 }, { n: 4 },
+      { n: 5 }, { n: 6 }, { n: 7 }, { n: 8 },
+      { n: 9, cls: "period" }, { n: 10, cls: "period" }, { n: 11, cls: "period" },
+      { n: 12, cls: "period" }, { n: 13, cls: "period note" }, { n: 14 }, { n: 15 },
+      { n: 16 }, { n: 17 }, { n: 18 },
+      { n: 19 }, { n: 20, cls: "fertile" }, { n: 21, cls: "fertile test note" },
+      { n: 22, cls: "fertile" }, { n: 23, cls: "ovulation" }, { n: 24, cls: "test today note" },
+      { n: 25, cls: "fertile" },
+      { n: 26 }, { n: 27 }, { n: 28 }, { n: 29 }, { n: 30 },
+      { n: 1, cls: "muted" }, { n: 2, cls: "muted" }
+    ];
+
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">캘린더</span><span class="reader-status">Cycle 16</span></div>
+      <h2>주기와 판독을<br>한 달에서 확인.</h2>
+      <p class="app-sub">주기 기록과 4호르몬 세션을 같은 달력에 연결합니다.</p>
+      <div class="cycle-summary">
+        <div class="cycle-chip"><b>CD 16</b><span>현재 주기일</span></div>
+        <div class="cycle-chip"><b>D-13</b><span>다음 생리 예상</span></div>
+        <div class="cycle-chip"><b>2회</b><span>이번 달 검사</span></div>
+      </div>
+      <div class="calendar-card">
+        <div class="calendar-head"><b>2026.04</b><span>cycle diary</span></div>
+        <div class="week-row"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+        <div class="calendar-grid">${days.map((day) => `<span class="day ${day.cls || ""}">${day.n}</span>`).join("")}</div>
+        <div class="legend-row">
+          <span class="legend period">생리</span>
+          <span class="legend fertile">가임기</span>
+          <span class="legend ovulation">배란</span>
+          <span class="legend test">검사</span>
+        </div>
+      </div>
+      <div class="quick-log">
+        <button>생리 시작</button>
+        <button>증상 기록</button>
+        <button>검사 메모</button>
+        <button>알림 설정</button>
+      </div>
+      ${tabbar("calendar")}
+    </div>`;
+  }
+
+  function renderPoints() {
+    const streak = [
+      ["Day 1", "측정 완료", "+10P", true],
+      ["Day 2", "측정 완료", "+20P", true],
+      ["Day 3", "오늘 완료 시", "+40P", false]
+    ];
+    const rewards = [
+      ["gift", "500P", "리필 스트립 1개 교환권", "도달 임박"],
+      ["sample", "900P", "Objet 파우치 증정", "준비중"],
+      ["calendar", "1200P", "월간 케어 키트 할인", "잠김"]
+    ];
+
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">포인트</span><span class="reader-status">2-day streak</span></div>
+      <h2>3일 연속 측정하면<br>점수가 더 올라갑니다.</h2>
+      <p class="app-sub">권장 측정 기간 안에서 기록을 완성할수록 보상이 커집니다.</p>
+      <div class="points-hero">
+        <div class="score-ring"><strong>320P</strong></div>
+        <div class="score-copy"><b>누적 포인트</b><span>오늘 측정 완료 시 3일 연속 보너스까지 합산해 +40P가 추가됩니다.</span></div>
+      </div>
+      <div class="streak-row">${streak.map((item) => `
+        <div class="streak-day ${item[3] ? "done" : ""}">
+          <b>${item[0]}</b>
+          <span>${item[1]}<br>${item[2]}</span>
+        </div>
+      `).join("")}</div>
+      <div class="reward-progress">
+        <b><span>다음 상품까지</span><span>320 / 500P</span></b>
+        <div class="reward-track"><span></span></div>
+      </div>
+      <div class="reward-list">${rewards.map((item, index) => `
+        <div class="reward-card">
+          ${icon(item[0])}
+          <div><b>${item[1]} · ${item[2]}</b><span>${index === 0 ? "180P 더 모으면 교환 가능" : "누적 점수 달성 시 오픈"}</span></div>
+          <span class="status-pill">${item[3]}</span>
+        </div>
+      `).join("")}</div>
+      ${tabbar("points")}
+    </div>`;
+  }
+
+  function renderTrend() {
+    const charts = [
+      { key: "hCG", sub: "임신 신호", change: "유지", color: "#4a3937", line: "12,48 62,46 112,44", area: "12,48 62,46 112,44 112,68 12,68" },
+      { key: "FSH", sub: "난소 예비", change: "-4%", color: "#9f7b5f", line: "12,36 62,40 112,43", area: "12,36 62,40 112,43 112,68 12,68" },
+      { key: "LH", sub: "배란 피크", change: "+28%", color: "#d9822b", line: "12,56 62,38 112,18", area: "12,56 62,38 112,18 112,68 12,68" },
+      { key: "E+P", sub: "주기 맥락", change: "+19%", color: "#c96d82", line: "12,52 62,34 112,24", area: "12,52 62,34 112,24 112,68 12,68" }
+    ];
+
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">연속 측정</span><span class="reader-status">D1-D3</span></div>
+      <h2>3일 연속 기록을<br>4개 그래프로 확인.</h2>
+      <p class="app-sub">동일 시간대 측정값을 D1, D2, D3 기준으로 비교합니다.</p>
+      <div class="line-meta">
+        <div class="cycle-chip"><b>D1</b><span>기준 세션</span></div>
+        <div class="cycle-chip"><b>D2</b><span>중간 변화</span></div>
+        <div class="cycle-chip"><b>D3</b><span>오늘 측정</span></div>
+      </div>
+      <div class="line-grid">${charts.map((chart) => `
+        <section class="line-card" style="--line-color:${chart.color}">
+          <header>
+            <div><b>${chart.key}</b><span>${chart.sub}</span></div>
+            <em class="change-pill">${chart.change}</em>
+          </header>
+          <svg class="line-chart" viewBox="0 0 124 72" aria-label="${chart.key} 연속측정 그래프">
+            <path class="grid" d="M8 18H116M8 44H116M12 8V66M62 8V66M112 8V66"></path>
+            <polygon class="trend-area" points="${chart.area}"></polygon>
+            <polyline class="trend-line" points="${chart.line}"></polyline>
+            ${chart.line.split(" ").map((point) => {
+              const xy = point.split(",");
+              return `<circle cx="${xy[0]}" cy="${xy[1]}" r="4"></circle>`;
+            }).join("")}
+          </svg>
+          <div class="axis-row"><span>D1</span><span>D2</span><span>D3</span></div>
+        </section>
+      `).join("")}</div>
+      <div class="coach-card focus">
+        ${icon("review")}
+        <div><b>연속 측정 해석</b><span>LH와 E+P의 상승 방향을 함께 확인합니다.</span></div>
+      </div>
+      ${tabbar("trend")}
+    </div>`;
+  }
+
+  function renderCoach() {
+    return `<div class="app">
+      <div class="app-top"><span class="app-kicker">코치</span><span class="reader-status">Next</span></div>
+      <h2>다음 행동만<br>짧게 제안.</h2>
+      <div class="coach-list">
+        <div class="coach-card focus">${icon("sample")}<div><b>내일 같은 시간 재측정</b><span>동일 조건에서 세션 간 차이를 비교합니다.</span></div></div>
+        <div class="coach-card">${icon("review")}<div><b>추세 참고용</b><span>의학적 확정 진단을 대신하지 않습니다.</span></div></div>
+        <div class="coach-card">${icon("move")}<div><b>리더기 가까이 유지</b><span>전체 패널 동기화를 우선합니다.</span></div></div>
+      </div>
+      <button class="primary-action">알림 설정</button>
+      ${tabbar("coach")}
+    </div>`;
+  }
+
+  const renderers = { home: renderHome, guide: renderGuide, result: renderResult, calendar: renderCalendar, points: renderPoints, trend: renderTrend, coach: renderCoach };
+
+  function screenIcon(key) {
+    return {
+      home: "hCG",
+      guide: "sample",
+      result: "review",
+      calendar: "calendar",
+      points: "gift",
+      trend: "LH",
+      coach: "move"
+    }[key] || "hCG";
+  }
+
+  function renderModes() {
+    const target = document.getElementById("mode-list");
+    target.innerHTML = Object.entries(screens).map(([key, screen]) => `
+      <button class="mode-button ${state.screen === key ? "active" : ""}" data-screen="${key}">
+        ${icon(screenIcon(key))}
+        <span><b>${screen.label}</b><span>${screen.hint}</span></span>
+      </button>
+    `).join("");
+    target.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.screen = button.dataset.screen;
+        render();
+      });
+    });
+  }
+
+  function renderStrip() {
+    const target = document.getElementById("screen-strip");
+    target.innerHTML = Object.entries(screens).map(([key, screen]) => `
+      <button class="strip-card mode-button ${state.screen === key ? "active" : ""}" data-screen="${key}">
+        ${icon(screenIcon(key))}
+        <b>${screen.label}</b>
+      </button>
+    `).join("");
+    target.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.screen = button.dataset.screen;
+        render();
+      });
+    });
+  }
+
+  function render() {
+    if (!renderers[state.screen]) {
+      state.screen = "home";
+    }
+    history.replaceState(null, "", `#${state.screen}`);
+    document.getElementById("app-screen").innerHTML = renderers[state.screen]();
+    renderModes();
+    renderStrip();
+    document.getElementById("app-screen").querySelectorAll("[data-screen]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.screen = button.dataset.screen;
+        render();
+      });
+    });
+  }
+
+  render();
+</script>
+</body>
+</html>

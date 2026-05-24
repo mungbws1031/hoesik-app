@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surearly Objet S26 Quad Hormone Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f2f3;
+    --bg-soft: #fffdfd;
+    --panel: rgba(255, 255, 255, 0.92);
+    --ink: #241f26;
+    --muted: #766d76;
+    --line: rgba(36, 31, 38, 0.08);
+    --rose: #d5a8b3;
+    --rose-strong: #bb8696;
+    --rose-soft: rgba(213, 168, 179, 0.12);
+    --plum: #514552;
+    --good: #55756a;
+    --warn: #a56f47;
+    --bad: #8e555c;
+    --shadow: 0 18px 48px rgba(59, 47, 54, 0.08);
+    --phone-shadow: 0 16px 28px rgba(49, 38, 43, 0.1);
+    --radius-xl: 40px;
+    --radius-lg: 30px;
+    --radius-md: 22px;
+    --radius-sm: 15px;
+    --s26-frame-width: 314px;
+    --s26-screen-ratio: 9 / 19.5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background:
+      radial-gradient(circle at 14% 12%, rgba(213, 168, 179, 0.14), transparent 22%),
+      radial-gradient(circle at 84% 8%, rgba(255, 255, 255, 0.82), transparent 26%),
+      linear-gradient(180deg, #fbf8f8 0%, #f4eef0 56%, #f1eaed 100%);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(81, 69, 82, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(81, 69, 82, 0.018) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 72%);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .shell {
+    width: min(1480px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 40px 0 96px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(500px, 1.12fr);
+    gap: 40px;
+    min-height: calc(100svh - 60px);
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .section {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+  }
+
+  .hero-copy,
+  .hero-visual {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .hero-copy {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose), var(--rose-strong));
+    box-shadow: 0 0 0 6px rgba(212, 164, 179, 0.12);
+  }
+
+  .brand {
+    margin: 34px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(64px, 8vw, 104px);
+    line-height: 0.9;
+    letter-spacing: 0;
+  }
+
+  .hero-copy h1 {
+    margin: 24px 0 0;
+    max-width: 8.8ch;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: clamp(31px, 3.55vw, 50px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: 0;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: balance;
+  }
+
+  .hero-copy p {
+    margin: 22px 0 0;
+    max-width: 46ch;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.76;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .headline-line {
+    display: block;
+  }
+
+  .hero-specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 26px;
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-spec {
+    padding-top: 2px;
+    border-top: 1px solid rgba(36, 31, 38, 0.04);
+  }
+
+  .hero-spec strong {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-spec span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.42;
+    word-break: keep-all;
+  }
+
+  .hero-analytes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .analyte-tile {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    min-height: 108px;
+    padding: 16px 12px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(36, 31, 38, 0.06);
+  }
+
+  .analyte-tile strong {
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .analyte-tile span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .marker-icon {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(36, 31, 38, 0.07);
+    color: var(--plum);
+  }
+
+  .marker-icon svg {
+    width: 21px;
+    height: 21px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .marker-icon.hcg {
+    color: #5f5363;
+    background: rgba(81, 69, 82, 0.08);
+  }
+
+  .marker-icon.fsh {
+    color: #6a746f;
+    background: rgba(85, 117, 106, 0.09);
+  }
+
+  .marker-icon.lh {
+    color: #9b6a52;
+    background: rgba(165, 111, 71, 0.1);
+  }
+
+  .marker-icon.ep {
+    color: #a96f83;
+    background: rgba(213, 168, 179, 0.14);
+  }
+
+  .hero-foot {
+    margin-top: 34px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-foot p {
+    margin: 0;
+    max-width: 36ch;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.68;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .hero-visual {
+    padding: 36px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 28px;
+    background:
+      radial-gradient(circle at 50% 28%, rgba(213, 168, 179, 0.16), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(251, 246, 247, 0.92));
+  }
+
+  .hero-pillbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .hero-pill {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(36, 31, 38, 0.06);
+    background: rgba(255, 255, 255, 0.74);
+    color: var(--plum);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .product-stage {
+    display: grid;
+    place-items: center;
+    position: relative;
+    min-height: 580px;
+    border-radius: 34px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 248, 250, 0.32)),
+      repeating-linear-gradient(135deg, rgba(81, 69, 82, 0.012), rgba(81, 69, 82, 0.012) 16px, transparent 16px, transparent 32px);
+  }
+
+  .product-stage::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(213, 168, 179, 0.16), transparent 63%);
+    animation: pulse 3.8s ease-in-out infinite;
+  }
+
+  .product-stage img {
+    position: relative;
+    z-index: 1;
+    width: min(126%, 860px);
+    max-width: none;
+    filter: drop-shadow(0 26px 30px rgba(52, 41, 46, 0.13));
+    animation: floatProduct 5.4s ease-in-out infinite;
+  }
+
+  .hero-panel-note {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: end;
+    padding-top: 12px;
+    border-top: 1px solid rgba(36, 31, 38, 0.06);
+  }
+
+  .hero-panel-note strong {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-panel-note p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.66;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .section {
+    margin-top: 40px;
+    border-radius: var(--radius-xl);
+    padding: 40px;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    align-items: flex-end;
+    margin-bottom: 34px;
+  }
+
+  .section-head h2 {
+    margin: 0;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: 0;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: balance;
+  }
+
+  .section-head p {
+    margin: 0;
+    max-width: 54ch;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .concept-card {
+    padding: 18px 0 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(36, 31, 38, 0.08);
+  }
+
+  .concept-card .marker-icon {
+    margin-bottom: 12px;
+  }
+
+  .concept-card strong {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .concept-card h3 {
+    margin: 18px 0 8px;
+    font-size: 17px;
+    letter-spacing: 0;
+  }
+
+  .concept-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.68;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .scenario-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .scenario-btn {
+    appearance: none;
+    border: 1px solid rgba(36, 31, 38, 0.06);
+    background: rgba(255, 255, 255, 0.62);
+    color: var(--ink);
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .scenario-btn:hover,
+  .scenario-btn.is-active {
+    transform: translateY(-1px);
+    border-color: rgba(185, 126, 145, 0.16);
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .scenario-info {
+    margin-top: 24px;
+    padding: 22px 0 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(36, 31, 38, 0.08);
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.68;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .phones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--s26-frame-width), max-content));
+    gap: 34px 28px;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .phone-wrap {
+    width: var(--s26-frame-width);
+    animation: rise 620ms ease backwards;
+  }
+
+  .phone-wrap:nth-child(2) { animation-delay: 90ms; }
+  .phone-wrap:nth-child(3) { animation-delay: 160ms; }
+  .phone-wrap:nth-child(4) { animation-delay: 230ms; }
+  .phone-wrap:nth-child(5) { animation-delay: 300ms; }
+
+  .phone-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: baseline;
+    padding: 0 6px 14px;
+  }
+
+  .phone-meta strong {
+    font-size: 15px;
+  }
+
+  .phone-meta span {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .phone {
+    padding: 14px;
+    border-radius: 36px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 246, 0.92));
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    box-shadow: var(--phone-shadow);
+    position: relative;
+  }
+
+  .phone::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+    width: 33%;
+    height: 20px;
+    border-radius: 999px;
+    background: #1f1a21;
+    z-index: 2;
+  }
+
+  .screen {
+    aspect-ratio: var(--s26-screen-ratio);
+    border-radius: 26px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top right, rgba(213, 168, 179, 0.12), transparent 22%),
+      linear-gradient(180deg, #fffefe 0%, #fcf8f9 100%);
+    border: 1px solid rgba(36, 31, 38, 0.06);
+    position: relative;
+  }
+
+  .screen-inner {
+    padding: 50px 20px 18px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .statusline {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .statusline strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--plum);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .statusline strong::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose), var(--rose-strong));
+  }
+
+  .screen-title {
+    margin: 18px 0 0;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: 0;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: balance;
+  }
+
+  .screen-sub {
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.68;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .visual-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .visual-summary .marker-icon {
+    width: 100%;
+    height: 42px;
+    border-radius: 16px;
+  }
+
+  .cover {
+    margin-top: 24px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .cover img {
+    width: 100%;
+    border-radius: 22px;
+  }
+
+  .cover-kicker,
+  .panel-label {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .cover-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cover-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose), var(--rose-strong));
+  }
+
+  .cover h4,
+  .panel-title {
+    margin: 12px 0 0;
+    font-size: 18px;
+    line-height: 1.34;
+    letter-spacing: 0;
+    font-weight: 700;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: balance;
+  }
+
+  .cover p,
+  .panel-body {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.66;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .chipline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .chip {
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(36, 31, 38, 0.06);
+    color: var(--plum);
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #544756, #866173);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: none;
+    box-shadow: 0 10px 22px rgba(84, 71, 86, 0.14);
+  }
+
+  .panel,
+  .banner,
+  .trend-panel {
+    margin-top: 22px;
+    padding: 18px 0 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(36, 31, 38, 0.08);
+  }
+
+  .hormone-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .hormone-card {
+    padding: 12px;
+    border-radius: 18px;
+    background: rgba(248, 242, 244, 0.62);
+    border: 1px solid rgba(36, 31, 38, 0.05);
+  }
+
+  .hormone-card-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .hormone-card .marker-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 12px;
+    flex: 0 0 auto;
+  }
+
+  .hormone-card .marker-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hormone-card strong {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hormone-card h4 {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .hormone-card p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.58;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .tag {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 68px;
+    margin-top: 8px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .tag.good {
+    background: rgba(85, 117, 106, 0.12);
+    color: var(--good);
+  }
+
+  .tag.warn {
+    background: rgba(165, 111, 71, 0.12);
+    color: var(--warn);
+  }
+
+  .tag.bad {
+    background: rgba(142, 85, 92, 0.12);
+    color: var(--bad);
+  }
+
+  .tag.neutral {
+    background: rgba(81, 69, 82, 0.1);
+    color: var(--plum);
+  }
+
+  .list {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .row:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .row strong {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+
+  .row p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.58;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .row span {
+    color: var(--plum);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .guide-steps {
+    display: grid;
+    gap: 9px;
+    margin-top: 12px;
+  }
+
+  .guide-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--line);
+  }
+
+  .guide-step.current {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 238, 242, 0.96));
+    border-color: rgba(185, 126, 145, 0.22);
+  }
+
+  .guide-step strong {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(81, 69, 82, 0.12);
+    color: var(--plum);
+    font-size: 11px;
+  }
+
+  .guide-step.current strong {
+    background: linear-gradient(135deg, var(--rose), var(--rose-strong));
+    color: white;
+  }
+
+  .guide-step.current .marker-icon {
+    background: linear-gradient(135deg, var(--rose), var(--rose-strong));
+    color: white;
+    border-color: transparent;
+  }
+
+  .guide-step h4 {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+
+  .guide-step .marker-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+
+  .guide-step p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.58;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .banner {
+    font-size: 12px;
+    line-height: 1.64;
+    word-break: keep-all;
+    line-break: strict;
+    text-wrap: pretty;
+  }
+
+  .banner.good {
+    background: rgba(85, 117, 106, 0.1);
+    color: var(--good);
+  }
+
+  .banner.warn {
+    background: rgba(165, 111, 71, 0.1);
+    color: var(--warn);
+  }
+
+  .banner.bad {
+    background: rgba(142, 85, 92, 0.1);
+    color: var(--bad);
+  }
+
+  .mini-chart {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .mini-line {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .mini-line strong {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .track {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(81, 69, 82, 0.08);
+    overflow: hidden;
+  }
+
+  .fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--rose), var(--rose-strong));
+  }
+
+  .fill.soft {
+    background: linear-gradient(90deg, #d9c0c8, #cda0ad);
+  }
+
+  .fill.deep {
+    background: linear-gradient(90deg, #9b7584, #7a5b68);
+  }
+
+  .fill.muted {
+    background: linear-gradient(90deg, #b5a4ae, #8f7e88);
+  }
+
+  .mini-line span {
+    color: var(--plum);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .tabbar {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(36, 31, 38, 0.06);
+  }
+
+  .tabbar span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 14px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .tabbar span.active {
+    background: linear-gradient(135deg, #f0d9df, #e6c0cb);
+    color: var(--plum);
+  }
+
+  .contract-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+    gap: 34px;
+  }
+
+  .contract-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .contract-item {
+    padding-top: 20px;
+    border-top: 1px solid rgba(36, 31, 38, 0.08);
+  }
+
+  .contract-item h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+
+  .contract-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  pre {
+    margin: 0;
+    padding: 24px;
+    border-radius: 26px;
+    background: #221d23;
+    color: #f6eff2;
+    font-size: 12px;
+    line-height: 1.68;
+    overflow: auto;
+  }
+
+  .footer-note {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  @keyframes floatProduct {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(0.96); opacity: 0.64; }
+    50% { transform: scale(1.05); opacity: 0.94; }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1320px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .concept-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .phones {
+      justify-content: center;
+    }
+
+    .contract-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .shell {
+      width: min(100% - 20px, 100%);
+      padding-top: 12px;
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .section {
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .hero-specs,
+    .concept-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-foot {
+      margin-top: 32px;
+    }
+
+    .section-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .phone-wrap,
+    .phone {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <section class="hero-copy">
+        <div>
+          <div class="eyebrow">4-hormone medical concept</div>
+          <div class="brand">Surearly Objet</div>
+          <h1>
+            <span class="headline-line">hCG, FSH, LH, E+P를</span>
+            <span class="headline-line">한 번의 검체로</span>
+            <span class="headline-line">동시에 읽는</span>
+            <span class="headline-line">정밀 동반 앱.</span>
+          </h1>
+          <p>
+            하나의 검체와 하나의 세션에서 4개 호르몬을 동시에 정렬합니다.
+            앱은 긴 설명보다 판독 상태와 다음 행동을 먼저 보여줍니다.
+          </p>
+          <div class="hero-analytes" id="hero-analytes"></div>
+          <div class="hero-specs">
+            <div class="hero-spec">
+              <strong>Panel</strong>
+              <span>4-analyte read</span>
+            </div>
+            <div class="hero-spec">
+              <strong>Phone Fit</strong>
+              <span>Compact portrait frame</span>
+            </div>
+            <div class="hero-spec">
+              <strong>Priority</strong>
+              <span>Single-session comparison</span>
+            </div>
+            <div class="hero-spec">
+              <strong>Tone</strong>
+              <span>Premium, precise, clinical</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <p>아이콘, 상태값, 짧은 판독 문구로 의료기기형 정확성을 더 빠르게 읽게 했습니다.</p>
+        </div>
+      </section>
+      <section class="hero-visual">
+        <div class="hero-pillbar">
+          <span class="hero-pill">Synchronized 4-analyte panel</span>
+        </div>
+        <div class="product-stage">
+          <img src="../assets/premium-reader-device.png" alt="Premium hormone reader device">
+        </div>
+        <div class="hero-panel-note">
+          <div>
+            <strong>Panel Idea</strong>
+            <p>네 신호를 동일 세션 기준의 판독 보드로 정렬합니다.</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>핵심 구조</h2>
+        </div>
+        <p>동일 검체, 동일 세션, 동시 판독을 아이콘과 짧은 상태값으로 보여줍니다.</p>
+      </div>
+      <div class="concept-grid">
+        <article class="concept-card">
+          <strong>01</strong>
+          <h3>단일 검체</h3>
+          <p>한 번 측정합니다.</p>
+        </article>
+        <article class="concept-card">
+          <strong>02</strong>
+          <h3>동시 보드</h3>
+          <p>4개 항목을 함께 봅니다.</p>
+        </article>
+        <article class="concept-card">
+          <strong>03</strong>
+          <h3>정돈된 밀도</h3>
+          <p>작은 화면에서도 먼저 읽힙니다.</p>
+        </article>
+        <article class="concept-card">
+          <strong>04</strong>
+          <h3>맥락 중심</h3>
+          <p>상대 위치와 추세를 봅니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>판독 모드</h2>
+        </div>
+        <p>주도 신호만 빠르게 바꿔 보며 판독 상태를 확인합니다.</p>
+      </div>
+      <div class="scenario-row" id="scenario-row"></div>
+      <div class="scenario-info" id="scenario-info"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>S26 화면 분할</h2>
+        </div>
+        <p>각 화면은 텍스트보다 아이콘 보드와 상태값을 우선합니다.</p>
+      </div>
+      <div class="phones">
+        <div class="phone-wrap">
+          <div class="phone-meta"><strong>1. 온보딩</strong><span>S26 frame</span></div>
+          <div class="phone"><div class="screen" id="screen-onboarding"></div></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone-meta"><strong>2. 홈</strong><span>4-신호 보드</span></div>
+          <div class="phone"><div class="screen" id="screen-home"></div></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone-meta"><strong>3. 가이드</strong><span>1회 검사, 4개 결과</span></div>
+          <div class="phone"><div class="screen" id="screen-guide"></div></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone-meta"><strong>4. 결과</strong><span>동시 판독</span></div>
+          <div class="phone"><div class="screen" id="screen-result"></div></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone-meta"><strong>5. 트렌드</strong><span>4라인 비교</span></div>
+          <div class="phone"><div class="screen" id="screen-trend"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>데이터 규칙</h2>
+        </div>
+        <p>네 호르몬은 같은 데이터 구조를 공유하고, 화면은 `비교`, `상태`, `다음 행동` 순서로 읽히게 설계합니다.</p>
+      </div>
+      <div class="contract-grid">
+        <div class="contract-list">
+          <article class="contract-item">
+            <h3>4호르몬 보드 유지</h3>
+            <p>완료와 지연 모두 2x2 보드로 유지합니다.</p>
+          </article>
+          <article class="contract-item">
+            <h3>S26 세로 밀도</h3>
+            <p>한 손 화면에서 상태값이 먼저 보이게 합니다.</p>
+          </article>
+          <article class="contract-item">
+            <h3>비교 중심 문구</h3>
+            <p>확정 판정보다 비교와 추세를 말합니다.</p>
+          </article>
+        </div>
+        <div>
+          <pre id="contract-output"></pre>
+          <div class="footer-note">
+            Variant file: <code>outputs/premium_hormone_reader_app_s26_quad_panel.html</code><br>
+            Mock file: <code>data/premium_hormone_reader_quad_panel_mock.json</code>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script>
+  const mock = {
+    meta: {
+      app_name: "Surearly Objet Quad",
+      device_name: "Surearly Objet Reader",
+      panel_name: "4-hormone panel",
+      panel_markers: ["hCG", "FSH", "LH", "E+P"],
+      target_phone: "Galaxy S26 class 6.3-inch compact flagship portrait frame"
+    },
+    scenarios: {
+      quad_overview: {
+        device_status: {
+          connection_state: "connected",
+          battery_level: 84,
+          last_sync_at: "2026-04-23 08:52",
+          firmware_notice: "4-아날라이트 패널 준비 완료"
+        },
+        test_session: {
+          captured_at: "2026-04-23 08:41",
+          cycle_day: 13,
+          sync_state: "synced",
+          assay_status: "complete",
+          summary_label: "하나의 검체에서 4개 호르몬 신호가 동일 세션으로 정리됐습니다."
+        },
+        reading_items: [
+          { analyte_name: "hCG", level_band: "baseline", trend_direction: "flat", relative_change_note: "최근 비교 구간에서 뚜렷한 상승은 보이지 않습니다." },
+          { analyte_name: "FSH", level_band: "steady", trend_direction: "flat", relative_change_note: "FSH는 최근 기준 범위 부근에서 안정적으로 유지됩니다." },
+          { analyte_name: "LH", level_band: "rising", trend_direction: "up", relative_change_note: "LH는 직전 두 세션보다 높은 방향으로 움직입니다." },
+          { analyte_name: "E+P", level_band: "active", trend_direction: "up", relative_change_note: "에스트로겐+프로게스테론 결합 신호가 더 활발해지는 흐름입니다." }
+        ],
+        coach_tip: {
+          title: "4개 신호를 개별 판정이 아니라 동시 비교 보드로 읽으세요.",
+          why_it_matters: "hCG, FSH, LH, E+P를 한 화면에서 함께 보면 별도 테스트를 이어붙일 때보다 동일 세션 비교가 분명해집니다.",
+          recommended_action: "내일 비슷한 시간대에 동일한 4호르몬 패널을 다시 측정해 세션 간 차이를 비교하세요.",
+          caution_copy: "이 패널은 추세와 상대 비교를 위한 참고 정보이며, 의료적 확정 진단을 대신하지 않습니다."
+        },
+        timeline_events: [
+          { date: "2026-04-19", event_type: "quad-panel", linked_session_id: "Q-0419", short_note: "4개 신호의 기준선이 함께 기록됐습니다." },
+          { date: "2026-04-21", event_type: "quad-panel", linked_session_id: "Q-0421", short_note: "LH와 E+P가 약하게 분리되기 시작했습니다." },
+          { date: "2026-04-23", event_type: "quad-panel", linked_session_id: "Q-0423", short_note: "4개 신호 간 차이가 가장 또렷하게 보입니다." }
+        ]
+      },
+      ovulation_window: {
+        device_status: {
+          connection_state: "connected",
+          battery_level: 84,
+          last_sync_at: "2026-04-23 08:52",
+          firmware_notice: "4-아날라이트 패널 준비 완료"
+        },
+        test_session: {
+          captured_at: "2026-04-23 08:41",
+          cycle_day: 14,
+          sync_state: "synced",
+          assay_status: "complete",
+          summary_label: "현재 패널에서는 LH와 E+P가 앞서는 패턴이 보입니다."
+        },
+        reading_items: [
+          { analyte_name: "hCG", level_band: "baseline", trend_direction: "flat", relative_change_note: "현재 시점에서 hCG 상승 패턴은 뚜렷하지 않습니다." },
+          { analyte_name: "FSH", level_band: "steady", trend_direction: "flat", relative_change_note: "FSH는 최근 안정 범위 안에서 유지됩니다." },
+          { analyte_name: "LH", level_band: "peak-leaning", trend_direction: "up", relative_change_note: "현재 비교 세트에서 LH가 가장 강하게 움직이는 신호입니다." },
+          { analyte_name: "E+P", level_band: "high active", trend_direction: "up", relative_change_note: "E+P는 단독이 아니라 LH와 함께 높아지는 흐름입니다." }
+        ],
+        coach_tip: {
+          title: "이 구간에서 4호르몬 동시 판독의 가치가 분명해집니다.",
+          why_it_matters: "한 화면에서 hCG, FSH, LH, E+P를 함께 보면 개별 제품 조합보다 패턴 해석이 단순해집니다.",
+          recommended_action: "다음 예정 간격 이후 한 번 더 측정해 LH 중심 패턴이 유지되는지 확인하세요.",
+          caution_copy: "신호 변화는 추세 맥락으로만 읽고, 진단적 결론으로 확정하지 않습니다."
+        },
+        timeline_events: [
+          { date: "2026-04-20", event_type: "quad-panel", linked_session_id: "Q-0420", short_note: "4개 신호가 서로 더 가깝게 보였습니다." },
+          { date: "2026-04-22", event_type: "quad-panel", linked_session_id: "Q-0422", short_note: "LH가 기준선에서 분리되기 시작했습니다." },
+          { date: "2026-04-23", event_type: "quad-panel", linked_session_id: "Q-0423", short_note: "LH와 E+P가 함께 앞서는 상태입니다." }
+        ]
+      },
+      pregnancy_watch: {
+        device_status: {
+          connection_state: "connected",
+          battery_level: 81,
+          last_sync_at: "2026-04-23 07:18",
+          firmware_notice: "4-아날라이트 패널 준비 완료"
+        },
+        test_session: {
+          captured_at: "2026-04-23 07:08",
+          cycle_day: 0,
+          sync_state: "synced",
+          assay_status: "complete",
+          summary_label: "현재 보드에서는 hCG가 먼저 두드러지고, 나머지 3개 신호가 비교용 맥락으로 유지됩니다."
+        },
+        reading_items: [
+          { analyte_name: "hCG", level_band: "rising", trend_direction: "up", relative_change_note: "현재 패널 비교에서 hCG가 가장 먼저 움직이는 신호입니다." },
+          { analyte_name: "FSH", level_band: "quiet", trend_direction: "down", relative_change_note: "FSH는 현재 hCG 중심 패턴에 비해 낮은 편입니다." },
+          { analyte_name: "LH", level_band: "steady low", trend_direction: "flat", relative_change_note: "LH는 이번 판독에서 주도 신호가 아닙니다." },
+          { analyte_name: "E+P", level_band: "supportive", trend_direction: "up", relative_change_note: "E+P는 보조 맥락으로 보이며, 주요 이동 신호는 아닙니다." }
+        ],
+        coach_tip: {
+          title: "한 번의 4호르몬 판독으로 오늘 어떤 신호가 먼저 움직이는지 확인합니다.",
+          why_it_matters: "hCG를 다른 세 신호와 분리하지 않고 같은 세션 안에서 읽을 수 있다는 점이 핵심입니다.",
+          recommended_action: "선행 신호의 변화를 보려면 같은 조건에서 동일 패널로 계속 비교하세요.",
+          caution_copy: "앱은 비교용 신호 맥락만 보여주며, 임신 또는 기타 의학적 상태를 확정하지 않습니다."
+        },
+        timeline_events: [
+          { date: "2026-04-19", event_type: "quad-panel", linked_session_id: "Q-0419", short_note: "hCG는 기준선 부근에 머물렀습니다." },
+          { date: "2026-04-21", event_type: "quad-panel", linked_session_id: "Q-0421", short_note: "작은 hCG 변화가 보이기 시작했습니다." },
+          { date: "2026-04-23", event_type: "quad-panel", linked_session_id: "Q-0423", short_note: "현재는 hCG가 가장 먼저 보드를 이끕니다." }
+        ]
+      },
+      sync_delayed: {
+        device_status: {
+          connection_state: "connected",
+          battery_level: 79,
+          last_sync_at: "2026-04-23 08:41",
+          firmware_notice: "패널 동기화 지연"
+        },
+        test_session: {
+          captured_at: "2026-04-23 08:41",
+          cycle_day: 13,
+          sync_state: "delayed",
+          assay_status: "processing",
+          summary_label: "하나의 검체에서 4개 호르몬 패널을 캡처했지만 아직 동기화 중입니다."
+        },
+        reading_items: [
+          { analyte_name: "hCG", level_band: "processing", trend_direction: "pending", relative_change_note: "hCG는 패널 동기화 완료를 기다리는 중입니다." },
+          { analyte_name: "FSH", level_band: "processing", trend_direction: "pending", relative_change_note: "FSH는 패널 동기화 완료를 기다리는 중입니다." },
+          { analyte_name: "LH", level_band: "processing", trend_direction: "pending", relative_change_note: "LH는 패널 동기화 완료를 기다리는 중입니다." },
+          { analyte_name: "E+P", level_band: "processing", trend_direction: "pending", relative_change_note: "E+P는 패널 동기화 완료를 기다리는 중입니다." }
+        ],
+        coach_tip: {
+          title: "전체 패널이 도착할 때까지 한 보드로 유지합니다.",
+          why_it_matters: "사용자에게 일부 항목만 먼저 보이면 4호르몬 개념이 무너지므로, 전체 보드는 함께 도착해야 합니다.",
+          recommended_action: "리더기를 가까이 둔 상태로 최대 1분까지 기다린 뒤 다시 동기화하세요.",
+          caution_copy: "4호르몬 전체 패널이 수신되기 전에는 해석을 표시하지 않습니다."
+        },
+        timeline_events: [
+          { date: "2026-04-23", event_type: "sync", linked_session_id: "Q-0423", short_note: "패널은 캡처됐고, 전체 동기화를 기다리는 중입니다." }
+        ]
+      }
+    }
+  };
+
+  const scenarioMeta = {
+    quad_overview: {
+      label: "기본 보드",
+      description: "동일 검체 기반의 4호르몬 동시 판독 보드를 기본 상태로 보여줍니다."
+    },
+    ovulation_window: {
+      label: "LH + E+P 선행",
+      description: "LH와 E+P가 앞서는 경우, 동일 세션 안에서 어떤 패턴이 형성되는지 보여줍니다."
+    },
+    pregnancy_watch: {
+      label: "hCG 선행",
+      description: "hCG가 먼저 움직여도 FSH, LH, E+P가 함께 남아 비교 맥락을 유지하는 상태입니다."
+    },
+    sync_delayed: {
+      label: "동기화 지연",
+      description: "전체 4호르몬 패널이 모두 도착할 때까지 부분 결과를 숨기고 하나의 판독 보드로 유지합니다."
+    }
+  };
+
+  const state = { currentScenario: "quad_overview" };
+
+  const markerLabels = {
+    hCG: "Pregnancy",
+    FSH: "Reserve",
+    LH: "Peak",
+    "E+P": "Context"
+  };
+
+  const screens = {
+    onboarding: document.getElementById("screen-onboarding"),
+    home: document.getElementById("screen-home"),
+    guide: document.getElementById("screen-guide"),
+    result: document.getElementById("screen-result"),
+    trend: document.getElementById("screen-trend")
+  };
+
+  function toneForItem(item) {
+    if (item.trend_direction === "up" && (item.level_band.includes("high") || item.level_band.includes("peak"))) return "warn";
+    if (item.trend_direction === "up") return "good";
+    if (item.trend_direction === "pending") return "bad";
+    if (item.trend_direction === "down") return "bad";
+    return "neutral";
+  }
+
+  function toneForScenario(data) {
+    if (data.test_session.sync_state === "delayed") return { className: "warn", label: "Delayed" };
+    if (data.device_status.connection_state === "disconnected") return { className: "bad", label: "Disconnected" };
+    return { className: "good", label: "Ready" };
+  }
+
+  function markerClass(key) {
+    if (key === "hCG") return "hcg";
+    if (key === "FSH") return "fsh";
+    if (key === "LH") return "lh";
+    if (key === "E+P") return "ep";
+    return "";
+  }
+
+  function iconSvg(key) {
+    const icons = {
+      hCG: '<path d="M12 3v5l-4.8 7.3a3.8 3.8 0 0 0 3.2 5.7h3.2a3.8 3.8 0 0 0 3.2-5.7L12 8V3Z"></path><path d="M9.5 13h5"></path>',
+      FSH: '<circle cx="12" cy="12" r="7"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path>',
+      LH: '<path d="M4 18h16"></path><path d="M6 15l4-5 3 4 5-8"></path>',
+      "E+P": '<path d="M5 15c5-8 11-8 14-8-1 6-5 10-12 10"></path><path d="M7 17c2-3 5-5 10-7"></path>',
+      sample: '<path d="M9 3h6"></path><path d="M10 3v5l-4 7a4 4 0 0 0 3.5 6h5a4 4 0 0 0 3.5-6l-4-7V3"></path>',
+      carry: '<path d="M5 12h12"></path><path d="M13 8l4 4-4 4"></path><path d="M4 18h6"></path>',
+      insert: '<path d="M4 12h11"></path><path d="M15 7v10"></path><path d="M19 9v6"></path>',
+      review: '<rect x="5" y="5" width="14" height="14" rx="3"></rect><path d="M8 12h8"></path><path d="M12 8v8"></path>'
+    };
+    const className = markerClass(key);
+    return `<span class="marker-icon ${className}" aria-hidden="true"><svg viewBox="0 0 24 24">${icons[key] || icons.review}</svg></span>`;
+  }
+
+  function compactReading(item) {
+    if (item.trend_direction === "pending") return "전체 패널 수신 대기";
+    if (item.trend_direction === "up") return "이전 세션 대비 상승";
+    if (item.trend_direction === "down") return "상대적으로 낮음";
+    return "기준 범위 부근 유지";
+  }
+
+  function renderHeroAnalytes() {
+    const target = document.getElementById("hero-analytes");
+    if (!target) return;
+    target.innerHTML = mock.meta.panel_markers.map((marker) => `
+      <div class="analyte-tile">
+        ${iconSvg(marker)}
+        <div>
+          <strong>${marker}</strong>
+          <span>${markerLabels[marker]}</span>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  const levelBandLabels = {
+    baseline: "기준선",
+    steady: "안정",
+    rising: "상승",
+    active: "활성",
+    "peak-leaning": "피크 근접",
+    "high active": "고활성",
+    quiet: "낮음",
+    "steady low": "낮은 안정",
+    supportive: "보조 활성",
+    processing: "동기화 대기"
+  };
+
+  const trendLabels = {
+    up: "상승",
+    flat: "유지",
+    down: "하향",
+    pending: "대기"
+  };
+
+  const eventTypeLabels = {
+    "quad-panel": "동시 패널",
+    sync: "동기화"
+  };
+
+  function displayLevelBand(value) {
+    return levelBandLabels[value] || value;
+  }
+
+  function displayTrend(value) {
+    return trendLabels[value] || value;
+  }
+
+  function displayEventType(value) {
+    return eventTypeLabels[value] || value;
+  }
+
+  function hormoneCards(items) {
+    return items.map((item) => `
+      <div class="hormone-card">
+        <div class="hormone-card-head">
+          <div>
+            <strong>${item.analyte_name}</strong>
+            <h4>${displayLevelBand(item.level_band)}</h4>
+          </div>
+          ${iconSvg(item.analyte_name)}
+        </div>
+        <div class="tag ${toneForItem(item)}">${displayTrend(item.trend_direction)}</div>
+        <p>${compactReading(item)}</p>
+      </div>
+    `).join("");
+  }
+
+  function scenarioButtons() {
+    const target = document.getElementById("scenario-row");
+    target.innerHTML = Object.keys(scenarioMeta).map((key) => {
+      const active = key === state.currentScenario ? "is-active" : "";
+      return `<button class="scenario-btn ${active}" data-key="${key}">${scenarioMeta[key].label}</button>`;
+    }).join("");
+    target.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.currentScenario = button.dataset.key;
+        render();
+      });
+    });
+  }
+
+  function renderScenarioInfo() {
+    const target = document.getElementById("scenario-info");
+    const current = scenarioMeta[state.currentScenario];
+    target.innerHTML = `<strong>${current.label}</strong><br>${current.description}`;
+  }
+
+  function renderOnboarding(data) {
+    screens.onboarding.innerHTML = `
+      <div class="screen-inner">
+        <div class="statusline"><strong>시작</strong><span>S26 portrait</span></div>
+        <h3 class="screen-title">한 번의 검체로<br>4개 분석항목.</h3>
+        <div class="visual-summary">
+          ${mock.meta.panel_markers.map((marker) => iconSvg(marker)).join("")}
+        </div>
+        <div class="cover">
+          <div class="cover-kicker">Main device</div>
+          <img src="../assets/premium-reader-device.png" alt="Surearly Objet Reader">
+          <h4>검체 1회. 삽입 1회. 4항목 동시 판독.</h4>
+        </div>
+        <button class="cta">4호르몬 패널 연결</button>
+        <div class="tabbar">
+          <span class="active">홈</span>
+          <span>트렌드</span>
+          <span>코치</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderHome(data) {
+    const tone = toneForScenario(data);
+    screens.home.innerHTML = `
+      <div class="screen-inner">
+        <div class="statusline"><strong>홈</strong><span>Cycle day ${data.test_session.cycle_day || "--"}</span></div>
+        <h3 class="screen-title">동일 세션<br>4호르몬 보드.</h3>
+        <div class="visual-summary">
+          ${data.reading_items.map((item) => iconSvg(item.analyte_name)).join("")}
+        </div>
+        <div class="panel">
+          <div class="panel-label">최신 동시 패널</div>
+          <div class="panel-title">${data.test_session.sync_state === "delayed" ? "전체 패널 수신 대기" : "4항목 판독 완료"}</div>
+          <div class="hormone-grid">${hormoneCards(data.reading_items)}</div>
+        </div>
+        <div class="banner ${tone.className}">
+          ${data.test_session.sync_state === "delayed"
+            ? "부분 결과 표시 전, 전체 패널 대기"
+            : "동일 검체 기준 비교 보드"}
+        </div>
+        <button class="cta">다음 4호르몬 세션 시작</button>
+        <div class="tabbar">
+          <span class="active">홈</span>
+          <span>트렌드</span>
+          <span>코치</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderGuide(data) {
+    const delayed = data.test_session.sync_state === "delayed";
+    screens.guide.innerHTML = `
+      <div class="screen-inner">
+        <div class="statusline"><strong>가이드</strong><span>1 test, 4 outputs</span></div>
+        <h3 class="screen-title">검사는 1회,<br>판독은 4항목.</h3>
+        <div class="panel">
+          <div class="panel-label">검사 흐름</div>
+          <div class="guide-steps">
+            <div class="guide-step ${delayed ? "" : "current"}">
+              ${iconSvg("sample")}
+              <div><h4>Dip</h4><p>검체 적용</p></div>
+            </div>
+            <div class="guide-step">
+              ${iconSvg("carry")}
+              <div><h4>Move</h4><p>리더기로 이동</p></div>
+            </div>
+            <div class="guide-step">
+              ${iconSvg("insert")}
+              <div><h4>Insert</h4><p>1회 삽입</p></div>
+            </div>
+            <div class="guide-step ${delayed ? "current" : ""}">
+              ${iconSvg("review")}
+              <div><h4>Review</h4><p>4항목 동시 확인</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="banner ${delayed ? "warn" : "good"}">
+          ${delayed
+            ? "전체 패널 동기화 중"
+            : "검사 1회 → 4항목 판독"}
+        </div>
+        <div class="tabbar">
+          <span>홈</span>
+          <span class="active">트렌드</span>
+          <span>코치</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderResult(data) {
+    screens.result.innerHTML = `
+      <div class="screen-inner">
+        <div class="statusline"><strong>결과</strong><span>${data.test_session.captured_at}</span></div>
+        <h3 class="screen-title">한 세션의 4신호를<br>함께 판독.</h3>
+        <div class="visual-summary">
+          ${data.reading_items.map((item) => iconSvg(item.analyte_name)).join("")}
+        </div>
+        <div class="panel">
+          <div class="panel-label">4호르몬 판독 결과</div>
+          <div class="panel-title">${data.test_session.sync_state === "delayed" ? "판독 보류" : "동시 판독 완료"}</div>
+          <div class="hormone-grid">${hormoneCards(data.reading_items)}</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">다음 행동</div>
+          <div class="panel-body">${data.test_session.sync_state === "delayed" ? "리더기 근처에서 재동기화" : "같은 시간대 재측정"}</div>
+        </div>
+        <div class="banner good">추세 참고용</div>
+        <div class="tabbar">
+          <span>홈</span>
+          <span>트렌드</span>
+          <span class="active">코치</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function trendWidth(item) {
+    if (item.level_band.includes("peak")) return 86;
+    if (item.level_band.includes("high")) return 78;
+    if (item.level_band.includes("active")) return 72;
+    if (item.level_band.includes("rising")) return 64;
+    if (item.level_band.includes("supportive")) return 58;
+    if (item.level_band.includes("steady")) return 42;
+    if (item.level_band.includes("baseline")) return 32;
+    if (item.level_band.includes("quiet")) return 24;
+    if (item.level_band.includes("processing")) return 48;
+    return 36;
+  }
+
+  function fillClass(item) {
+    if (item.analyte_name === "hCG") return "deep";
+    if (item.analyte_name === "FSH") return "muted";
+    if (item.analyte_name === "LH") return "";
+    return "soft";
+  }
+
+  function renderTrend(data) {
+    screens.trend.innerHTML = `
+      <div class="screen-inner">
+        <div class="statusline"><strong>트렌드</strong><span>4-line compare</span></div>
+        <h3 class="screen-title">네 호르몬을<br>같은 시간축에서 비교.</h3>
+        <div class="trend-panel">
+          <div class="panel-label">4신호 변화</div>
+          <div class="mini-chart">
+            ${data.reading_items.map((item) => `
+              <div class="mini-line">
+                <strong>${item.analyte_name}</strong>
+                <div class="track"><div class="fill ${fillClass(item)}" style="width:${trendWidth(item)}%"></div></div>
+                <span>${displayTrend(item.trend_direction)}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">최근 세션</div>
+          <div class="list">
+            ${data.timeline_events.map((event) => `
+              <div class="row">
+                <div>
+                  <strong>${event.date} · ${displayEventType(event.event_type)}</strong>
+                  <p>${event.short_note}</p>
+                </div>
+                <span>${event.linked_session_id}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+        <div class="banner good">동일 세션 기준 변화 방향</div>
+        <div class="tabbar">
+          <span>홈</span>
+          <span class="active">트렌드</span>
+          <span>코치</span>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderContract() {
+    const contract = {
+      device_status: ["connection_state", "battery_level", "last_sync_at", "firmware_notice"],
+      test_session: ["captured_at", "cycle_day", "sync_state", "assay_status", "summary_label"],
+      reading_item: ["analyte_name", "level_band", "trend_direction", "relative_change_note"],
+      coach_tip: ["title", "why_it_matters", "recommended_action", "caution_copy"],
+      timeline_event: ["date", "event_type", "linked_session_id", "short_note"],
+      panel_markers: ["hCG", "FSH", "LH", "E+P"]
+    };
+    document.getElementById("contract-output").textContent = JSON.stringify(contract, null, 2);
+  }
+
+  function render() {
+    scenarioButtons();
+    renderHeroAnalytes();
+    renderScenarioInfo();
+    renderContract();
+    const data = mock.scenarios[state.currentScenario];
+    renderOnboarding(data);
+    renderHome(data);
+    renderGuide(data);
+    renderResult(data);
+    renderTrend(data);
+  }
+
+  render();
+</script>
+</body>
+</html>

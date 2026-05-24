@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Lane Preview</title>
+  <style>
+    :root {
+      --ink: #11262d;
+      --muted: #627780;
+      --paper: #ffffff;
+      --cloud: #f5fbff;
+      --mint: #dff8ee;
+      --mint-strong: #0b7d7b;
+      --blue: #2f80ed;
+      --coral: #ff6b4a;
+      --yellow: #ffcf4a;
+      --green: #36c98c;
+      --line: #d8e8e7;
+      --shadow-lg: 0 30px 80px rgba(17, 38, 45, 0.18);
+      --shadow-md: 0 14px 34px rgba(17, 38, 45, 0.1);
+      --font: "Aptos", "Segoe UI", "Malgun Gothic", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(47, 128, 237, 0.08) 25%, transparent 25%) 0 0 / 24px 24px,
+        linear-gradient(180deg, #fbfdff 0%, #eefaf4 100%);
+    }
+
+    body {
+      overflow-x: hidden;
+      word-break: keep-all;
+    }
+
+    .stage {
+      min-height: 100vh;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: minmax(320px, 430px) minmax(340px, 1fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .side {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      width: fit-content;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--mint-strong);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: var(--shadow-md);
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      max-width: 400px;
+      font-size: 54px;
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .view-tabs {
+      margin-top: 28px;
+      width: fit-content;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-md);
+    }
+
+    .view-tabs button {
+      appearance: none;
+      border: 0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--muted);
+      font: 900 14px/1 var(--font);
+      cursor: pointer;
+    }
+
+    body[data-view="home"] .view-tabs button[data-view="home"],
+    body[data-view="editor"] .view-tabs button[data-view="editor"],
+    body[data-view="reminder"] .view-tabs button[data-view="reminder"] {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .swatches {
+      margin-top: 28px;
+      display: flex;
+      gap: 9px;
+    }
+
+    .swatch {
+      width: 44px;
+      height: 44px;
+      border: 5px solid #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .swatch.teal {
+      background: var(--mint-strong);
+    }
+
+    .swatch.blue {
+      background: var(--blue);
+    }
+
+    .swatch.coral {
+      background: var(--coral);
+    }
+
+    .swatch.yellow {
+      background: var(--yellow);
+    }
+
+    .notes-copy {
+      margin-top: 24px;
+      display: grid;
+      gap: 11px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .notes-copy strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .phone-area {
+      position: relative;
+      min-height: 780px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .poster-card {
+      position: absolute;
+      width: min(620px, 92%);
+      height: 620px;
+      border: 1px solid rgba(216, 232, 231, 0.9);
+      border-radius: 36px;
+      background:
+        linear-gradient(90deg, rgba(11, 125, 123, 0.07) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42));
+      background-size: 26px 26px, auto;
+      transform: rotate(-2deg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .phone {
+      position: relative;
+      width: min(406px, 91vw);
+      aspect-ratio: 9 / 19.5;
+      padding: 11px;
+      border-radius: 48px;
+      background: linear-gradient(180deg, #172f37, #071418);
+      box-shadow: 0 34px 86px rgba(17, 38, 45, 0.28);
+    }
+
+    .phone::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 47px;
+      pointer-events: none;
+    }
+
+    .notch {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      width: 126px;
+      height: 25px;
+      border-radius: 0 0 18px 18px;
+      transform: translateX(-50%);
+      background: #071418;
+      z-index: 5;
+    }
+
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 38px;
+      background:
+        linear-gradient(90deg, rgba(11, 125, 123, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, #f8fdff 0%, #effbf4 100%);
+      background-size: 22px 22px, auto;
+    }
+
+    .screen-inner {
+      position: relative;
+      height: 100%;
+      padding: 30px 16px 16px;
+      overflow: hidden;
+    }
+
+    .home {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .topbar {
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--mint-strong), var(--blue));
+      box-shadow: 0 10px 20px rgba(11, 125, 123, 0.22);
+    }
+
+    .today-pill {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: var(--shadow-md);
+    }
+
+    .focus-card {
+      padding: 17px;
+      border-radius: 28px;
+      color: #fff;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.22), transparent 34%),
+        linear-gradient(135deg, #0b7d7b 0%, #2f80ed 60%, #ff6b4a 100%);
+      box-shadow: 0 22px 42px rgba(47, 128, 237, 0.22);
+      overflow: hidden;
+    }
+
+    .focus-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .now-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .time-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: #4b3500;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .focus-title {
+      margin-top: 16px;
+      max-width: 13ch;
+      font-size: 34px;
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .focus-body {
+      margin-top: 10px;
+      max-width: 260px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .focus-actions {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .focus-action {
+      min-height: 42px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.19);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .focus-action.primary {
+      background: #fff;
+      color: var(--mint-strong);
+    }
+
+    .quick {
+      padding: 13px;
+      border: 1px solid rgba(216, 232, 231, 0.95);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow-md);
+    }
+
+    .quick-title,
+    .lane-title,
+    .sheet-title,
+    .notification-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .capture {
+      margin-top: 10px;
+      height: 48px;
+      padding: 0 12px;
+      border: 2px solid rgba(11, 125, 123, 0.12);
+      border-radius: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9fffc;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .plus {
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--coral);
+      color: #fff;
+    }
+
+    .lanes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .lane {
+      min-height: 78px;
+      border-radius: 19px;
+      padding: 11px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .lane b {
+      display: block;
+      margin-top: 6px;
+      font-size: 21px;
+    }
+
+    .lane span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .lane.main {
+      background: #fff0eb;
+      color: #aa3b22;
+    }
+
+    .lane.ref {
+      background: #e6fbf1;
+      color: #0b7567;
+    }
+
+    .lane.park {
+      background: #fff5cc;
+      color: #765408;
+    }
+
+    .task-list {
+      display: grid;
+      gap: 8px;
+      padding-bottom: 68px;
+    }
+
+    .task {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow-md);
+    }
+
+    .task h3 {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .task p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .mini-tag {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--mint-strong);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .bottom-nav {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      height: 58px;
+      padding: 8px;
+      border: 1px solid rgba(216, 232, 231, 0.9);
+      border-radius: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-item {
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+    }
+
+    .nav-item.active {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 180ms ease, transform 240ms ease;
+    }
+
+    body[data-view="editor"] .editor,
+    body[data-view="reminder"] .reminder {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body[data-view="editor"] .home,
+    body[data-view="reminder"] .home {
+      opacity: 0.22;
+      filter: blur(2px);
+    }
+
+    .editor {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 15px 18px;
+      transform: translateY(34px);
+    }
+
+    .sheet {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      display: grid;
+      gap: 11px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .handle {
+      justify-self: center;
+      width: 44px;
+      height: 4px;
+      border-radius: 99px;
+      background: #d7e4e2;
+    }
+
+    .field {
+      display: grid;
+      gap: 5px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .fake-input,
+    .fake-textarea {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #f8fffb;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .fake-textarea {
+      min-height: 70px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .field-grid,
+    .sheet-actions,
+    .reminder-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .mini-button {
+      min-height: 39px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .mini-button.primary {
+      border-color: transparent;
+      background: var(--mint-strong);
+      color: #fff;
+    }
+
+    .mini-button.danger {
+      color: var(--coral);
+    }
+
+    .reminder {
+      padding: 48px 16px 0;
+      transform: translateY(-24px);
+    }
+
+    .push {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      display: grid;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .push-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .push-body {
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .push-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .push-actions span {
+      padding: 10px 8px;
+      border-radius: 15px;
+      background: #f6fbff;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .push-actions .primary {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .ico {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .ico svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    .ico-lg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 880px) {
+      .stage {
+        padding: 24px 14px 34px;
+        display: block;
+      }
+
+      .side {
+        display: block;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .notes-copy,
+      .swatches {
+        display: none;
+      }
+
+      .phone-area {
+        margin-top: 26px;
+        min-height: 740px;
+      }
+
+      .poster-card {
+        width: 100%;
+        height: 570px;
+      }
+
+      .phone {
+        width: min(358px, calc(100vw - 32px));
+      }
+
+      .view-tabs {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .view-tabs button {
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+      }
+
+      .focus-actions {
+        display: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .stage {
+        padding-left: 12px;
+        padding-right: 12px;
+        overflow: hidden;
+      }
+
+      .view-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+      }
+
+      .view-tabs button {
+        min-width: 0;
+        padding: 11px 7px;
+        font-size: 13px;
+      }
+
+      .phone-area {
+        overflow: hidden;
+      }
+
+      .phone {
+        width: calc(100vw - 32px);
+        max-width: 358px;
+      }
+    }
+  </style>
+</head>
+<body data-view="home">
+  <main class="stage">
+    <section class="side">
+      <div class="badge">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M13 2v3.05c3.39.49 6.08 3.18 6.57 6.57H22v2h-2.43c-.49 3.39-3.18 6.08-6.57 6.57V23h-2v-2.81c-3.39-.49-6.08-3.18-6.57-6.57H2v-2h2.43C4.92 8.23 7.61 5.54 11 5.05V2h2z"/></svg></span>
+        FOCUS LANE
+      </div>
+      <h1>지금 할 일만 예쁘게 남기는 메모 앱</h1>
+      <p class="lead">첫 화면은 하나의 현재 작업을 크게 보여주고, 나머지는 Main / Ref / Park로 가볍게 정리합니다.</p>
+      <nav class="view-tabs" aria-label="preview states">
+        <button type="button" data-view="home">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6z"/></svg></span>
+          홈
+        </button>
+        <button type="button" data-view="editor">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 17.25V21h3.75L18.8 9.95l-3.75-3.75L4 17.25zM20.7 8.05c.4-.4.4-1 0-1.4l-2.35-2.35c-.4-.4-1-.4-1.4 0l-1.85 1.85 3.75 3.75 1.85-1.85z"/></svg></span>
+          편집
+        </button>
+        <button type="button" data-view="reminder">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 6c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm.5 3H11v4l3.25 1.95.75-1.23-2.5-1.47V9z"/></svg></span>
+          알림
+        </button>
+      </nav>
+      <div class="swatches">
+        <span class="swatch teal"></span>
+        <span class="swatch blue"></span>
+        <span class="swatch coral"></span>
+        <span class="swatch yellow"></span>
+      </div>
+      <div class="notes-copy">
+        <div><strong>화면감</strong>하얀 종이 위에 선명한 컬러 블록을 얹은 가벼운 생산성 앱 느낌.</div>
+        <div><strong>중심</strong>“지금 바로 해야할일”을 앱에서 가장 예쁜 카드로 만들었습니다.</div>
+        <div><strong>아이콘</strong>목표, 추가, 알림, 완료, 미루기 액션을 모두 즉시 읽히게 배치했습니다.</div>
+      </div>
+    </section>
+
+    <section class="phone-area">
+      <div class="poster-card"></div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="screen-inner">
+            <section class="home">
+              <div class="topbar">
+                <div class="brand">
+                  <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M13 2v3.05c3.39.49 6.08 3.18 6.57 6.57H22v2h-2.43c-.49 3.39-3.18 6.08-6.57 6.57V23h-2v-2.81c-3.39-.49-6.08-3.18-6.57-6.57H2v-2h2.43C4.92 8.23 7.61 5.54 11 5.05V2h2z"/></svg></span></span>
+                  Focus Lane
+                </div>
+                <div class="today-pill">오늘 7개</div>
+              </div>
+
+              <article class="focus-card">
+                <div class="focus-top">
+                  <div class="now-chip">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8H7z"/></svg></span>
+                    지금 바로 해야할일
+                  </div>
+                  <div class="time-chip">18:30</div>
+                </div>
+                <div class="focus-title">회의 전<br>3개만 체크</div>
+                <div class="focus-body">제품 방향, 일정 리스크, 오늘 꼭 물어볼 질문만 적기.</div>
+                <div class="focus-actions">
+                  <div class="focus-action primary">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></span>
+                    완료
+                  </div>
+                  <div class="focus-action">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 15H8v-2l5-6H8V7h8v2l-5 6h5v2z"/></svg></span>
+                    15분 뒤
+                  </div>
+                </div>
+              </article>
+
+              <section class="quick">
+                <div class="quick-title">
+                  <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span></span>
+                  빠른 캡처
+                </div>
+                <div class="capture">
+                  <span>지금 떠오른 일이나 메모</span>
+                  <span class="plus"><span class="ico"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span></span>
+                </div>
+              </section>
+
+              <section class="lanes" aria-label="lanes">
+                <div class="lane main">
+                  <span>Main</span>
+                  <b>3</b>
+                </div>
+                <div class="lane ref">
+                  <span>Ref</span>
+                  <b>2</b>
+                </div>
+                <div class="lane park">
+                  <span>Park</span>
+                  <b>2</b>
+                </div>
+              </section>
+
+              <section class="task-list">
+                <article class="task">
+                  <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4V5zm0 5.5h10v4H4v-4zM4 16h16v3H4v-3z"/></svg></span></span>
+                  <div>
+                    <h3>참고 링크 모아두기</h3>
+                    <p>디자인 레퍼런스, 경쟁 앱, 알림 UX 사례</p>
+                  </div>
+                  <span class="mini-tag">Ref</span>
+                </article>
+                <article class="task">
+                  <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 6c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm.5 3H11v4l3.25 1.95.75-1.23-2.5-1.47V9z"/></svg></span></span>
+                  <div>
+                    <h3>내일 아침 다시 보기</h3>
+                    <p>결정 전 마지막 확인만 남기기</p>
+                  </div>
+                  <span class="mini-tag">Park</span>
+                </article>
+              </section>
+
+              <nav class="bottom-nav" aria-label="bottom navigation">
+                <div class="nav-item active"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm2 2v12h12V6H6z"/></svg></span></div>
+                <div class="nav-item"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4V5zm0 5.5h10v4H4v-4zM4 16h16v3H4v-3z"/></svg></span></div>
+                <div class="nav-item"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 6c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm.5 3H11v4l3.25 1.95.75-1.23-2.5-1.47V9z"/></svg></span></div>
+                <div class="nav-item"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span></div>
+              </nav>
+            </section>
+
+            <section class="overlay editor">
+              <div class="sheet">
+                <div class="handle"></div>
+                <div class="sheet-title">
+                  <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 17.25V21h3.75L18.8 9.95l-3.75-3.75L4 17.25zM20.7 8.05c.4-.4.4-1 0-1.4l-2.35-2.35c-.4-.4-1-.4-1.4 0l-1.85 1.85 3.75 3.75 1.85-1.85z"/></svg></span></span>
+                  메모 편집
+                </div>
+                <div class="field">
+                  <label>제목</label>
+                  <div class="fake-input">회의 전 3개만 체크</div>
+                </div>
+                <div class="field">
+                  <label>상세 메모</label>
+                  <div class="fake-textarea">제품 방향, 일정 리스크, 오늘 꼭 물어볼 질문만 적기.</div>
+                </div>
+                <div class="field-grid">
+                  <div class="field">
+                    <label>분류</label>
+                    <div class="fake-input">Main</div>
+                  </div>
+                  <div class="field">
+                    <label>반복</label>
+                    <div class="fake-input">반복 없음</div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label>알림</label>
+                  <div class="fake-input">오늘 18:30</div>
+                </div>
+                <div class="reminder-actions">
+                  <div class="mini-button">+15분</div>
+                  <div class="mini-button">내일 09:00</div>
+                </div>
+                <div class="sheet-actions">
+                  <div class="mini-button danger">삭제</div>
+                  <div class="mini-button primary">저장</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="overlay reminder">
+              <div class="push">
+                <div class="push-top">
+                  <div class="notification-title">
+                    <span class="mark"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 6c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm.5 3H11v4l3.25 1.95.75-1.23-2.5-1.47V9z"/></svg></span></span>
+                    Focus Lane
+                  </div>
+                  <span>18:30</span>
+                </div>
+                <div class="push-body">회의 전 3개만 체크할 시간입니다.</div>
+                <div class="push-actions">
+                  <span class="primary">완료</span>
+                  <span>15분 뒤</span>
+                  <span>내일</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".view-tabs button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        document.body.dataset.view = button.dataset.view;
+      });
+    });
+  </script>
+</body>
+</html>

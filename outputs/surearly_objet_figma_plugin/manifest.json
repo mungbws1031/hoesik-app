@@ -1,0 +1,9 @@
+{
+  "name": "Surearly Objet Board Generator",
+  "id": "surearly-objet-board-generator",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ]
+}
