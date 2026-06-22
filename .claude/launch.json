@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "ivdr-wiki",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "ivdr-wiki",
+      "port": 5173
+    },
+    {
       "name": "folder-mindmap",
       "runtimeExecutable": "node",
       "runtimeArgs": ["C:/Users/redna/Desktop/mindmap-server/server.js"],
