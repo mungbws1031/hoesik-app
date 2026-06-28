@@ -7,6 +7,9 @@ import { DocumentTree } from "./components/DocumentTree";
 import { ConceptPage } from "./components/ConceptPage";
 import { WikiIndex } from "./components/WikiIndex";
 import { HistoryPage } from "./components/HistoryPage";
+import { IVDDMap } from "./components/IVDDMap";
+import { MDSAPMap } from "./components/MDSAPMap";
+import { PrepNotePage } from "./components/PrepNotePage";
 
 export default function App() {
   const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -29,6 +32,14 @@ export default function App() {
         <Route path="/wiki/:slug" element={<ConceptPage />} />
         {/* 규제 역사 인포그래픽 */}
         <Route path="/history" element={<HistoryPage />} />
+        {/* IVDD 여정 */}
+        <Route path="/ivdd" element={<IVDDMap />} />
+        <Route path="/ivdd/station/:id" element={<IVDDMap />} />
+        {/* MDSAP 여정 */}
+        <Route path="/mdsap" element={<MDSAPMap />} />
+        <Route path="/mdsap/station/:id" element={<MDSAPMap />} />
+        {/* 사전 준비 체크리스트 */}
+        <Route path="/prep-notes" element={<PrepNotePage />} />
         <Route path="*" element={<CertHub />} />
       </Routes>
     </BrowserRouter>

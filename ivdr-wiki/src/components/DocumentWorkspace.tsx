@@ -13,6 +13,7 @@ import {
   Image as ImageIcon,
   FlaskConical,
   Paperclip,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { resolveDoc, toMarkdown } from "../data/documents";
@@ -35,6 +36,7 @@ import { EffortTimeline } from "./EffortTimeline";
 import { SensSpecCalc } from "./calcs/SensSpecCalc";
 import { SampleSizeCalc } from "./calcs/SampleSizeCalc";
 import { RiskMatrixCalc } from "./calcs/RiskMatrixCalc";
+import { LodCalc } from "./calcs/LodCalc";
 import { InlineEditor } from "./InlineEditor";
 
 // 준비물 종류 → 아이콘·색
@@ -214,6 +216,30 @@ export function DocumentWorkspace() {
                 </span>
                 <p className="text-text" style={{ fontSize: "var(--t-base)", lineHeight: "var(--lh-base)", marginTop: 2 }}>
                   {doc.rationale}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* 기획 의도 — 이 문서를 시스템에 추가한 배경 */}
+          {doc.intent && (
+            <div
+              className="flex gap-3 rounded-[var(--r-md)]"
+              style={{
+                background: "var(--accent-weak)",
+                borderLeft: "4px solid var(--accent)",
+                padding: "var(--s-4)",
+                marginTop: "var(--s-3)",
+                maxWidth: 760,
+              }}
+            >
+              <Sparkles size={20} style={{ color: "var(--accent)" }} className="mt-0.5 shrink-0" aria-hidden />
+              <div>
+                <span className="font-bold" style={{ color: "var(--accent)", fontSize: "var(--t-sm)" }}>
+                  기획 의도
+                </span>
+                <p className="text-text" style={{ fontSize: "var(--t-base)", lineHeight: "var(--lh-base)", marginTop: 2 }}>
+                  {doc.intent}
                 </p>
               </div>
             </div>
@@ -519,6 +545,7 @@ export function DocumentWorkspace() {
             {doc.calcTools.includes("sens-spec") && <SensSpecCalc />}
             {doc.calcTools.includes("sample-size") && <SampleSizeCalc />}
             {doc.calcTools.includes("risk-matrix") && <RiskMatrixCalc />}
+            {doc.calcTools.includes("lod-calc") && <LodCalc />}
           </div>
         )}
 

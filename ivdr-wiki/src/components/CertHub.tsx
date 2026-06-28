@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Compass, CheckCircle, Layers, Clock } from "lucide-react";
+import { Compass, CheckCircle, Layers, Clock, Activity, Globe, CheckSquare } from "lucide-react";
 import { useProgress } from "../data/progress";
 import { allLeaves } from "../data/docTree";
 import { sharedDocIds } from "../data/schemes";
@@ -110,7 +110,85 @@ export function CertHub() {
               여정 시작 →
             </span>
           </Link>
+
+          <Link
+            to="/ivdd"
+            className="rounded-[var(--r-lg)] border block hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--p2)]"
+            style={{ borderColor: "var(--p2)", background: "var(--surface)", padding: "var(--s-8)", transition: "box-shadow 0.15s" }}
+          >
+            <div className="flex items-center gap-3" style={{ marginBottom: "var(--s-4)" }}>
+              <span className="inline-flex items-center justify-center rounded-full shrink-0" style={{ width: 48, height: 48, background: "var(--p2-tint)" }}>
+                <Activity size={24} style={{ color: "var(--p2)" }} aria-hidden />
+              </span>
+              <div>
+                <div className="font-extrabold text-text" style={{ fontSize: "var(--t-xl)" }}>IVDD</div>
+                <div className="text-text-muted" style={{ fontSize: "var(--t-sm)" }}>98/79/EC 체외진단기기 지침</div>
+              </div>
+            </div>
+            <p className="text-text-muted" style={{ fontSize: "var(--t-base)", lineHeight: "var(--lh-base)", marginBottom: "var(--s-6)" }}>
+              4 페이즈 · 7 정거장 · IVDR 전환 기한 대응<br />
+              Class D→2025 · Class C→2026 · Class B→2027
+            </p>
+            <span className="font-bold" style={{ color: "var(--p2)", fontSize: "var(--t-sm)" }}>
+              여정 시작 →
+            </span>
+          </Link>
+
+          <Link
+            to="/mdsap"
+            className="rounded-[var(--r-lg)] border block hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--p4)]"
+            style={{ borderColor: "var(--p4)", background: "var(--surface)", padding: "var(--s-8)", transition: "box-shadow 0.15s" }}
+          >
+            <div className="flex items-center gap-3" style={{ marginBottom: "var(--s-4)" }}>
+              <span className="inline-flex items-center justify-center rounded-full shrink-0" style={{ width: 48, height: 48, background: "var(--p4-tint)" }}>
+                <Globe size={24} style={{ color: "var(--p4)" }} aria-hidden />
+              </span>
+              <div>
+                <div className="font-extrabold text-text" style={{ fontSize: "var(--t-xl)" }}>MDSAP</div>
+                <div className="text-text-muted" style={{ fontSize: "var(--t-sm)" }}>의료기기 단일 심사 프로그램</div>
+              </div>
+            </div>
+            <p className="text-text-muted" style={{ fontSize: "var(--t-base)", lineHeight: "var(--lh-base)", marginBottom: "var(--s-6)" }}>
+              4 페이즈 · 7 정거장 · 5개국 동시 인정<br />
+              🇺🇸🇨🇦🇧🇷🇦🇺🇯🇵 FDA · Health Canada · ANVISA · TGA · PMDA
+            </p>
+            <span className="font-bold" style={{ color: "var(--p4)", fontSize: "var(--t-sm)" }}>
+              여정 시작 →
+            </span>
+          </Link>
         </div>
+
+        {/* 사전 준비 체크리스트 */}
+        <Link
+          to="/prep-notes"
+          className="block rounded-[var(--r-lg)] border hover:shadow-md"
+          style={{
+            borderColor: "var(--border)",
+            background: "var(--surface)",
+            padding: "var(--s-5) var(--s-8)",
+            marginBottom: "var(--s-6)",
+            transition: "box-shadow 0.15s",
+            display: "grid",
+            gridTemplateColumns: "auto 1fr auto",
+            gap: "var(--s-5)",
+            alignItems: "center",
+          }}
+        >
+          <span className="inline-flex items-center justify-center rounded-full shrink-0" style={{ width: 44, height: 44, background: "var(--success-bg)" }}>
+            <CheckSquare size={20} style={{ color: "var(--success)" }} aria-hidden />
+          </span>
+          <div>
+            <div className="font-bold text-text" style={{ fontSize: "var(--t-base)" }}>
+              업무 시작 전 사전 준비 체크리스트
+            </div>
+            <div className="text-text-muted" style={{ fontSize: "var(--t-sm)", marginTop: 2 }}>
+              인증별 문서 작성 전 미리 준비해 둘 자료·메모 목록 · IVDR · ISO 13485 · IVDD · MDSAP
+            </div>
+          </div>
+          <span className="font-bold shrink-0" style={{ color: "var(--success)", fontSize: "var(--t-sm)" }}>
+            보기 →
+          </span>
+        </Link>
 
         {/* 규제 역사 진입점 */}
         <Link
@@ -166,7 +244,24 @@ export function CertHub() {
             문서 전체 보기
           </Link>
         </section>
+
+        {/* Attribution */}
+        <footer
+          className="text-center"
+          style={{
+            borderTop: "1px solid var(--border)",
+            marginTop: "var(--s-12)",
+            paddingTop: "var(--s-8)",
+          }}
+        >
+          <p className="text-text-subtle" style={{ fontSize: "var(--t-xs)", lineHeight: "var(--lh-base)" }}>
+            작성/기획/아이디어: 연구개발본부 Self-Test 시스템팀 노미희<br />
+            목적: IVDR 인증 여정별 산출물, 작성 가이드, 체크리스트, 선행문서를 한눈에 파악하기 위한 문서 시스템<br />
+            기대효과: 신규 작성자 온보딩, 문서 누락 방지, 담당/기한 관리, 규제 요구사항-증거 연결
+          </p>
+        </footer>
       </main>
     </div>
   );
 }
+
