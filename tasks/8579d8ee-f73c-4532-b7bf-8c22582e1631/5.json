@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Task 4: 별자리 매핑",
+  "description": "src/zodiac.js: sunSign 계산 + zodiacSignals(원소/양음/모드)",
+  "activeForm": "별자리 매핑 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

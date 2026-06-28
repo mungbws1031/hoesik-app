@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "엔진 검증 + 폰 서버 갱신",
+  "description": "PRD 수동테스트 Test1~5 + 기존 존맛 엔진 케이스를 node로 검증(그램 범위 일치 확인). _taste_serve/index.html 재복사하여 폰에서 최신본 확인.",
+  "activeForm": "엔진 검증·서버 갱신 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

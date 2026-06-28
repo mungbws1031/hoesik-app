@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Task 2: JourneyMap /ivdr 경로 적용",
+  "description": "JourneyMap navigate를 /ivdr/station/:id 로 변경. DocumentWorkspace 브레드크럼 업데이트.",
+  "activeForm": "JourneyMap /ivdr 경로 마이그레이션 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

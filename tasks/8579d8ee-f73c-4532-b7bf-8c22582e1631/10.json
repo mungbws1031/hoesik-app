@@ -1,0 +1,9 @@
+{
+  "id": "10",
+  "subject": "Task 9: 엔진 조립",
+  "description": "src/engine.js: runEngine 입력→5축/강점/갭/시주플래그, 가중 0.85",
+  "activeForm": "엔진 조립 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

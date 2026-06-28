@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Task 6: 진행률 추적 — useProgress 훅 + UI",
+  "description": "src/data/progress.ts (useProgress 훅). DocumentWorkspace 상태 토글 버튼. CertHub 진행률 카운터.",
+  "activeForm": "진행률 추적 훅 + UI 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Task 1: 라우팅 재구성 + CertHub",
+  "description": "App.tsx 라우팅 재구성 (/ → CertHub, /ivdr → JourneyMap, /iso13485 → ISO13485Map). CertHub.tsx 신규 생성. ISO13485Map stub 추가.",
+  "activeForm": "라우팅 재구성 + CertHub 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

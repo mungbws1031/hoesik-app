@@ -1,0 +1,9 @@
+{
+  "id": "17",
+  "subject": "앱 탭 네비게이션 + 통합",
+  "description": "상단 탭(프로파일/궁합/타로) + main.js 라우팅 + 브라우저 검증 + 최종 리뷰",
+  "activeForm": "네비/통합 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

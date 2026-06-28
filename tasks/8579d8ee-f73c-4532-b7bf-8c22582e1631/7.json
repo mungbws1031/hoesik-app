@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Task 6: 사주 매핑",
+  "description": "src/saju.js: clustersToSignals(순수) + tallyTenGods(만세력) + sajuSignals + 시주미상",
+  "activeForm": "사주 매핑 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

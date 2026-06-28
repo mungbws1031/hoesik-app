@@ -1,0 +1,526 @@
+                                                                                                                                1
+
+           HEAT TRANSFER EQUATION SHEET
+
+Heat Conduction Rate Equations (Fourier's Law)
+
+ Heat Flux:             =     -                                           k  :  Thermal     Conductivity   
+                                               2                                                          
+ Heat Rate:  =                                                            Ac : Cross-Sectional Area
+                                               
+
+Heat Convection Rate Equations (Newton's Law of Cooling)
+
+ Heat Flux:  = ( - )                                           h  :  Convection       Heat  Transfer  Coefficient    
+                                                    2                                                              2
+ Heat Rate:  = ( - )                                           As : Surface Area 2
+
+Heat Radiation emitted ideally by a blackbody surface has a surface emissive power:  =  4                              
+                                                                                                                       2
+                                                    
+ Heat Flux emitted:  = 4                            2  where  is the emissivity with range of 0    1
+
+                and  = 5.67 × 10-8                       
+
+                                                       24 is the Stefan-Boltzmann constant
+ Irradiation:  =  but we assume small body in a large enclosure with  =  so that  =   4
+
+     Net Radiation heat flux from surface:             =  =          () -                        =    (4 -           4 )
+
+                                                           
+ Net radiation heat exchange rate:  = (4 - 4) where for a real surface 0    1
+
+This can ALSO be expressed as:  = ( - ) depending on the application
+
+        where  is the radiation heat transfer coefficient which is:  = ( + )(2 + 2)                                                       
+                                                                                                                                        2
+ TOTAL heat transfer from a surface:  =  +  = ( - ) + (4 - 4) 
+
+                                               Conservation of Energy (Energy Balance)
+
+      +   -  =  (Control Volume Balance) ;  -  = 0 (Control Surface Balance)
+
+where   is the conversion of internal energy (chemical, nuclear, electrical) to thermal or mechanical energy, and
+
+     =  0  for  steady-state  conditions.  If  not  steady-state  (i.e.,  transient)  then       =            
+                                                                                                              
+
+                                    Heat Equation (used to find the temperature distribution)
+
+Heat Equation (Cartesian):                     +                     +                   +       =          
+                                                                                                            
+
+If   is constant then the above  simplifies    to:  2  +       2     +    2     +       =   1       where     =        is the  thermal  diffusivity
+                                                    2          2          2                                        
+
+Heat Equation (Cylindrical):  1                     +  1                     +                     +      =          
+                                                       2                                                             
+
+Heat Eqn. (Spherical):  1     2                +    2   1   2                      +    2   1               sin        +         =      
+                        2                              sin                                  sin                                         
+
+                                                               Thermal Circuits
+
+        Plane Wall:  ,           =                  Cylinder:  ,          =     ln12               Sphere:  ,          =  (r11-r12)
+                                                                                2                                           4
+                                                                                                                            2
+
+                        ,     =   1                         ,                             =    1
+                                                                                              
+
+_____________________________________________________________________________________________________________
+
+                              General Lumped Capacitance Analysis
+
+                  , +    -  [( - ) +           (4 -                                    4 )](,)      =       
+                                                                                                        
+
+                                   Radiation Only Equation
+
+         =              ln    +  -   ln    +         +      2                          tan-1        -  tan-1  
+
+             4  ,  3         -            -                                                     
+
+                    Heat Flux, Energy Generation, Convection, and No Radiation Equation
+
+                  --    =  exp(-)    ; where  = ,                                            and    =  ,+ 
+                  - -                                                                                       
+
+                                   Convection Only Equation
+
+                              =    -           =     exp    -                           
+                                   -  
+
+     = 1 () =  ;  =   1 - exp -  ;  =  
+
+                                                = 
+
+                                                          
+
+If there is an additional resistance either in series or in parallel, then replace  with  in all the above lumped capacitance
+
+equations, where
+
+ =    1           2 ;  = overall heat transfer coefficient,  = total resistance,  = surface area.
+    
+
+                                   Convection Heat Transfer
+
+     =             =        [Reynolds Number]     ;                                    =          [Average Nusselt Number]
+                                                                                          
+
+where  is the density,  is the velocity,  is the characteristic length,  is the dynamic viscosity,  is the kinematic viscosity,  is the mass flow
+
+rate,  is the average convection coefficient, and  is the fluid thermal conductivity.
+                                                                                                                                    3
+
+                                                                 Internal Flow
+
+                                   =      4             [For Internal Flow in a Pipe of Diameter D]
+                                          
+
+For Constant Heat Flux [ = ]:                                     = (  ) ; where P = Perimeter, L = Length
+
+                                              ()                 =  ,        +     ·      
+                                                                                    
+
+For Constant Surface Temperature [ = ]:
+
+If there is only convection between the surface temperature, , and the mean fluid temperature, , use
+
+                                             -()                 =           -     
+                                              -,                                
+
+If there are multiple resistances between the outermost temperature, , and the mean fluid temperature, , use
+
+                                   - ()      =                -                 =         -         1     
+                                    - ,                                                             
+
+Total heat transfer rate over the entire tube length:
+         =     , - , =            ;  = 
+
+Log mean temperature difference:                        =  -              ;  =  - , ;                     =  - ,
+                                                           ln
+
+                                                        Free Convection Heat Transfer
+
+                                             =          (-)3                    [Grashof Number]
+                                                               2
+
+                                             =          (-)3                    [Rayleigh Number]
+                                                               
+
+                                                                          2
+
+Vertical Plates:               =  0.825   +   0.387 1/6                      ; [Entire range of RaL; properties evaluated at Tf ]
+                                             1+0.4929/16          8/27
+
+                                                                 
+
+- For better accuracy for Laminar Flow:                       =  0.68   +    0.670 1/4          ;   109 [Properties evaluated at Tf ]
+
+                                                                             1+0.4929/16   4/9
+
+                                                                                          
+
+Inclined Plates: for the top and bottom surfaces of cooled and heated inclined plates, respectively, the equations of the vertical
+
+plate can be used by replacing (g) with ( cos ) in RaL for 0    60°.
+
+Horizontal  Plates:  use  the  following  correlations  with     =        where As = Surface Area and P = Perimeter
+                                                                    
+
+- Upper surface of Hot Plate or Lower Surface of Cold Plate:
+
+ = 0.54 1/4 (104    107,   0.7) ;  = 0.15 1/3 (107    1011,  )
+
+- Lower Surface of Hot Plate or Upper Surface of Cold Plate:
+
+                                = 0.52 1/5 (104    109,   0.7)
+                                                                                                                                         4
+
+Vertical Cylinders: the equations for the Vertical Plate can be applied to vertical cylinders of height L if the following criterion is
+
+met:          35
+            1 /4
+
+                                                              2
+
+Long Horizontal Cylinders:       =  0.60  +      0.387 1/6       ;   1012 [Properties evaluated at Tf ]
+
+                                             1+0.5599/168/27
+
+Spheres:          =  2+         0.589 1/4    ;   1011 ;   0.7    [Properties evaluated at Tf ]
+                            1+0.4699/164/9
+
+                                                Heat Exchangers
+
+Heat Gain/Loss Equations:  =  ( - ) =   ; where  is the overall heat transfer
+
+coefficient and As is the total heat exchanger surface area
+
+Log-Mean Temperature Difference:     = ,     ,-,-,-,                 [Parallel-Flow Heat Exchanger]
+                                                   ln ,-, 
+                                                ,-,
+
+Log-Mean Temperature Difference:     = ,     ,-,-,-,                 [Counter-Flow Heat Exchanger]
+                                                   ln,-,
+                                                ,-,
+
+For Cross-Flow and Shell-and-Tube Heat Exchangers:  =  , ; where  is a correction factor
+
+obtained from the figures by calculating P & R values
+
+Effectiveness ­ NTU Method ( ­ NTU):
+
+Number of Transfer Units (NTU):       =         ; where  is the minimum heat capacity rate in [W/K]
+                                             
+
+Heat Capacity Rates:  =  , [Cold Fluid] ;  =  , [Hot Fluid]
+
+      =     [Heat Capacity Ratio]
+          
+
+Note: The condensation or evaporation side of the heat exchanger is associated with  = 
+
+                   = ,, - , = ,, - , =  
+
+                                  = , - , where                   =    
+                                                                     
+
+                  Use:  = (, ) relations or  = (, ) relations as appropriate
+5
+                                              6
+
+If Pr  10  n = 0.37
+If Pr  10  n = 0.36
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+726  Chapter 11  Heat Exchangers
+
+     1.0                                                        1.0
+
+                0                                                                                                                                           =0
+
+                                  0.25
+                  C
+                    min /C
+                         max =
+
+                                                                                
+                                                                                                C
+                                                                                                  min /C
+
+                                                                                                                                                      ma x
+     0.8                                                        0.8
+                                                                                                                        1.00
+
+                                  0.50                                                                                                                                              0.75
+
+     0.6                          0.75                          0.6                                                                                                        0.50
+
+                                  1.00                                                                                                                                     0.25
+
+     0.4                                                        0.4
+
+     0.2                                                        0.2
+
+     0    0  1     2                    3       4  5            0    0  1                                                                                       2  3             4        5
+
+                                  NTU                                                                                                                              NTU
+
+     FIGURE 11.10 Effectiveness of a parallel-                  FIGURE 11.11 Effectiveness of a
+     flow heat exchanger (Equation 11.28).                      counterflow heat exchanger (Equation 11.29).
+
+                                                                                                                                                                   Th,i or Tc,i
+                                                                                                                                                                                     Tc,o or Th,o
+
+                                  Th,i or Tc,i
+
+                                                  Tc,o or Th,o                                                                                                                   Tc,i or Th,i
+                                                  Tc,i or Th,i
+      Th,o or Tc,o                                                                         Th,o or Tc,o
+     1.0                                   0.25
+                                           0.50                 1.0
+                           =0              0.75                                         =0
+     0.8                                   1.00
+                                                                                              max
+     0.6
+                                                                0.8
+     
+                    C                                                                                                                                                                     1.00
+                      min /C
+                                                                0.6                                                                                                                       0.75
+                                    ma x
+                                                                                                                                                                                          0.50
+                                                                                
+                                                                                                  C
+                                                                                                    min /C
+
+     0.4                                                        0.4                                                                                                                       0.25
+
+     0.2                                                        0.2
+
+     0                                                          0    0  1                                                                                       2       3        4        5
+
+          0  1                 2        3       4  5
+
+                                  NTU                                                                                                                              NTU
+
+     FIGURE 11.12 Effectiveness of a shell-and-                 FIGURE 11.13 Effectiveness of a shell-and-
+     tube heat exchanger with one shell and any                 tube heat exchanger with two shell passes and
+     multiple of two tube passes (two, four, etc.               any multiple of four tube passes (four, eight,
+     tube passes) (Equation 11.30).                             etc. tube passes) (Equation 11.31 with n  2).
+11.4  Heat Exchanger Analysis: The Effectiveness­NTU Method                                                                                                                               727
+
+                      Th,i or Tc,i                                                                                                                            Th,i or Tc,i
+
+Tc,i or Th,i                           Tc,o or Th,o  Tc,i or Th,i                                                                                                           Tc,o or Th,o
+
+                      Th,o or Tc,o                                                                                                                            Th,o or Tc,o
+
+1.0                                                  1.0                                                                                                      = 0, 
+
+                 max  =0                                                                                                                                ixed
+
+0.8                                                  0.8
+                C
+                   min /C                 1.00
+
+                                                                           0.6
+                                                                                           C
+                                                                                              mixed /C
+
+                                                                                                                                                   unm
+                                          0.75       0.6
+                                                                                                           1
+                                          0.50
+                                                                                                                                                                               1.33
+
+0.4                                       0.25       0.4                                                                                                      Cmin             0.75
+                                                                                                                                                              mixed            2
+
+                                                                                                                                                                               0.5
+
+0.2                                                  0.2                                                                                                      Cmax             4
+                                                                                                                                                              mixed            0.25
+
+0    0        1       2             3  4  5          0
+
+                                                          0        1                                                                                          2      3      4        5
+
+                          NTU                                                                                                                                    NTU
+
+FIGURE 11.14 Effectiveness of a single-              FIGURE 11.15 Effectiveness of a single-
+pass, cross-flow heat exchanger with both            pass, cross-flow heat exchanger with one fluid
+fluids unmixed (Equation 11.32).                     mixed and the other unmixed (Equations
+                                                     11.33, 11.34).
+c11_supl.qxd 1/19/06 4:57 PM Page W-37
+
+Chapter 11 Supplemental Material
+
+11S.1
+Log Mean Temperature Difference
+Method for Multipass and Cross-Flow
+Heat Exchangers
+
+Although flow conditions are more complicated in multipass and cross-flow heat
+exchangers, Equations 11.6, 11.7, 11.14, and 11.15 may still be used if the follow-
+ing modification is made to the log mean temperature difference [1]:
+
+                                                         Tlm  F Tlm,CF                            (11S.1)
+
+That is, the appropriate form of Tlm is obtained by applying a correction factor to
+the value of Tlm that would be computed under the assumption of counterflow con-
+ditions. Hence from Equation 11.17, T1  Th,i  Tc,o and T2  Th,o  Tc,i.
+
+     Algebraic expressions for the correction factor F have been developed for vari-
+
+ous shell-and-tube and cross-flow heat exchanger configurations [1­3], and the
+
+results may be represented graphically. Selected results are shown in Figures 11S.1
+
+through 11S.4 for common heat exchanger configurations. The notation (T, t) is used
+
+to specify the fluid temperatures, with the variable t always assigned to the tube-side
+
+                                                         Ti
+
+                                                                     to
+                                                                     ti
+
+                            To
+   1.0
+
+   0.9
+
+   0.8
+
+F
+
+   0.7
+
+   0.6                                                   6.0 4.0 3.0 2.0 1.5 1.0 0.8 0.6 0.4 0.2
+
+                                        R=  _T_i_­__T_o
+                                            to ­ ti
+   0.5
+                                        0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+
+                                                                         P  =  _t_o_­__ti
+                                                                               Ti ­ ti
+
+FIGURE 11S.1 Correction factor for a shell-and-tube heat exchanger
+with one shell and any multiple of two tube passes (two, four, etc. tube
+passes).
+c11_supl.qxd 1/19/06 4:57 PM Page W-38
+
+W-38  11S.1  Log Mean Temperature Difference Method
+
+                                                               Ti
+                                                                            to
+
+                                                                            ti
+
+                                                             To
+         1.0
+
+         0.9                                                6.0 4.0 3.0 2.0 1.5  1.0 0.8 0.6 0.4 0.2
+
+         0.8
+
+      F
+
+         0.7
+
+         0.6                                  _T_i _­__T_o
+                                              to ­ ti
+                                        R  =
+
+         0.5  0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+
+                                                                                     P  =  _t_o_­__ti
+                                                                                           Ti ­ ti
+
+      FIGURE 11S.2 Correction factor for a shell-and-tube heat exchanger with two
+      shell passes and any multiple of four tube passes (four, eight, etc. tube passes).
+
+                                                                Ti
+
+                                                            ti                   to
+
+                                                              To
+         1.0
+
+         0.9
+
+         0.8                                                4.0 3.0 2.0 1.5      1.0 0.8 0.6 0.4 0.2
+
+      F
+
+         0.7
+
+         0.6                            R=    _T_i _­__T_o
+                                              to ­ ti
+
+         0.5                                  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+             0
+
+                                                                                        P  =  _t_o_­__ti
+                                                                                              Ti ­ ti
+
+      FIGURE 11S.3 Correction factor for a single-pass, cross-flow heat
+      exchanger with both fluids unmixed.
+c11_supl.qxd 1/19/06 4:57 PM Page W-39
+
+11S.1  Log Mean Temperature Difference Method                                                    W-39
+
+                                                       Ti
+
+                                                            ti  to
+
+                                                        To
+   1.0
+
+   0.9
+
+   0.8
+
+F
+
+   0.7
+
+                                                            4.0 3.0 2.0 1.5 1.0 0.8 0.6 0.4 0.2
+
+   0.6                                  R  =  _T_i _­__T_o
+                                              to ­ ti
+
+   0.5                                        0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+       0
+
+                                                                    P  =  _to__­_t_i
+                                                                          Ti ­ ti
+
+FIGURE 11S.4 Correction factor for a single-pass, cross-flow heat
+exchanger with one fluid mixed and the other unmixed.
+
+fluid. With this convention it does not matter whether the hot fluid or the cold fluid
+flows through the shell or the tubes. An important implication of Figures 11S.1
+through 11S.4 is that, if the temperature change of one fluid is negligible, either P or
+R is zero and F is 1. Hence heat exchanger behavior is independent of the specific
+configuration. Such would be the case if one of the fluids underwent a phase change.
+

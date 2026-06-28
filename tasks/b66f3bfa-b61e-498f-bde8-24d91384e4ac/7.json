@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Task 7: 이중 인증 배지 + schemes.ts 업데이트",
+  "description": "schemes.ts에 iso13485SpecificDocIds/isISO13485Doc 추가. DocumentWorkspace에 IVDR + ISO 13485 배지 표시.",
+  "activeForm": "이중 인증 배지 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

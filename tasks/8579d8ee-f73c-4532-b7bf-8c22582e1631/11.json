@@ -1,0 +1,9 @@
+{
+  "id": "11",
+  "subject": "Task 10: 리포트 렌더",
+  "description": "src/report.js: renderReport 캐치프레이즈/배지/강점/갭/고지",
+  "activeForm": "리포트 렌더 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

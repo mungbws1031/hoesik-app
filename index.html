@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/ivdr-wiki/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IVDR 여정 위키 — 한눈에 보는 인증 가이드</title>
+    <!-- Pretendard: 비차단 로드. 미적용 시 system-ui로 우아하게 폴백. -->
+    <link
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+      />
+    </noscript>
+    <!-- GitHub Pages SPA 라우팅: 404.html에서 전달된 경로를 복원 -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        var search = window.location.search;
+        if (search) {
+          var p = search.match(/[?&]p=([^&]+)/);
+          var q = search.match(/[?&]q=([^&]*)/);
+          if (p) {
+            var path = decodeURIComponent(p[1]).replace(/~and~/g, '&');
+            var query = q ? '?' + decodeURIComponent(q[1]).replace(/~and~/g, '&') : '';
+            window.history.replaceState(null, null,
+              '/ivdr-wiki' + path + query + window.location.hash
+            );
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/ivdr-wiki/assets/index-DW__s41q.js"></script>
+    <link rel="stylesheet" crossorigin href="/ivdr-wiki/assets/index-BID_ktLZ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

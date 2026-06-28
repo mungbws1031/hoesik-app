@@ -1,0 +1,9 @@
+{
+  "id": "14",
+  "subject": "별자리 상세 섹션",
+  "description": "zodiacInfo.js(원소/모드/양음/성향) + report에 별자리 카드 추가",
+  "activeForm": "별자리 섹션 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

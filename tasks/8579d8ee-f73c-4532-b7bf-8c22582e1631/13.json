@@ -1,0 +1,9 @@
+{
+  "id": "13",
+  "subject": "Task 12: 통합 점검 + README",
+  "description": "npm test 전체 통과 + penta/README.md",
+  "activeForm": "통합 점검 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

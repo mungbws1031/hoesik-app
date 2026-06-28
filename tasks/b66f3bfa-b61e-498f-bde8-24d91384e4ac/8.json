@@ -1,0 +1,9 @@
+{
+  "id": "8",
+  "subject": "Task 1: useDraftStore 훅 — localStorage 초안 저장",
+  "description": "Create ivdr-wiki/src/hooks/useDraftStore.ts with getDraft, setDraft, clearDraft, hasDraft, clearAllDrafts functions",
+  "activeForm": "Creating useDraftStore hook",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

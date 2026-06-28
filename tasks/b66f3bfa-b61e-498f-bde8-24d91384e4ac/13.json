@@ -1,0 +1,9 @@
+{
+  "id": "13",
+  "subject": "Task 6: RiskMatrixCalc — ISO 14971 위험 매트릭스 계산기",
+  "description": "Create ivdr-wiki/src/components/calcs/RiskMatrixCalc.tsx with P×S matrix and risk acceptance levels",
+  "activeForm": "Building RiskMatrixCalc widget",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

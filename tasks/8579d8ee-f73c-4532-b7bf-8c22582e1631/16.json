@@ -1,0 +1,9 @@
+{
+  "id": "16",
+  "subject": "궁합 모드 (2인)",
+  "description": "compat.js(사주오행/MBTI/별자리/혈액형 궁합) + saju 일간오행 + 2인 입력 화면 + 궁합 리포트",
+  "activeForm": "궁합 모드 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

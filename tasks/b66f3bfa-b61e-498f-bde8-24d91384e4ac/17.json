@@ -1,0 +1,9 @@
+{
+  "id": "17",
+  "subject": "Task 10: GitHub Pages 배포 (subtree push)",
+  "description": "Build verification + git subtree split/push to mungbws1031/ivdr-wiki main branch → trigger GitHub Actions",
+  "activeForm": "Deploying to GitHub Pages",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

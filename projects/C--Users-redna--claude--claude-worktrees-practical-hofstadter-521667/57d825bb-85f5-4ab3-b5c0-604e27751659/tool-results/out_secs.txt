@@ -1,0 +1,9475 @@
+Chapter 6
+
+6-1 Eq. (2-36): Sut  3.4HB  3.4(300)  1020 MPa Eq. (6-10): Se  0.5Sut  0.5(1020)  510 MPa Table 6-2: a  1.38, b  0.067 Eq. (6-18): ka  aSubt  1.38(1020)0.067  0.868 Eq. (6-19): kb  1.24d 0.107  1.24(10)0.107  0.969 Eq. (6-17): Se  kakbSe  (0.868)(0.969)(510)  429 MPa Ans.
+______________________________________________________________________________
+
+6-2 (a) Table A-20:
+
+Sut = 80 kpsi
+
+Eq. (6-10):
+
+Se  0.5(80)  40 kpsi Ans.
+
+(b) Table A-20:
+
+Sut = 90 kpsi
+
+Eq. (6-10):
+
+Se  0.5(90)  45 kpsi Ans.
+
+(c) Aluminum has no endurance limit. Ans.
+
+(d) Eq. (6-10):
+
+Sut > 200 kpsi, Se  100 kpsi Ans.
+
+______________________________________________________________________________
+
+6-3 Sut  120 kpsi,  ar  70 kpsi
+
+Fig. 6-23:
+
+f  0.82
+
+Eq. (6-10): Se  Se  0.5(120)  60 kpsi
+
+Eq. (6-13):
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.82(120)2
+60
+
+ 161.4
+
+kpsi
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.82(120) 60
+
+
+
+
+
+0.0716
+
+Eq. (6-15):
+
+N
+
+
+
+ 
+
+ ar a
+
+1/b 
+
+
+
+1
+ 70 0.0716  161.4 
+
+ 117
+
+000
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-4 Sut  1600 MPa,  ar  900 MPa
+
+Fig. 6-23: Eq. (6-10):
+Eq. (6-13):
+
+Sut = 1600 MPa. Off the graph, so estimate f = 0.77.
+
+Sut > 1400 MPa, so Se = 700 MPa
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+
+
+0.77(1600)2
+700
+
+ 2168.3
+
+MPa
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 1/58
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.77(1600) 700
+
+
+
+
+
+0.081838
+
+Eq. (6-15):
+
+N
+
+
+
+ 
+
+ ar a
+
+1/b 
+
+
+
+
+
+1
+900  0.081838 2168.3 
+
+
+
+46
+
+400
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-5 Sut  230 kpsi, N  150 000 cycles
+
+Fig. 6-23, point is off the graph, so estimate:
+
+f = 0.77
+
+Eq. (6-10): Sut > 200 kpsi, so Se  Se  100 kpsi
+
+Eq. (6-13): Eq. (6-14):
+
+a
+
+
+
+(
+
+f
+
+Sut )2 Se
+
+
+
+0.77(230)2
+100
+
+ 313.6
+
+kpsi
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.77(230) 100
+
+
+
+
+
+0.08274
+
+Eq. (6-12): S f  aN b  313.6(150 000)0.08274  117.0 kpsi Ans. ______________________________________________________________________________
+
+6-6 Sut  1100 MPa = 160 kpsi
+
+Fig. 6-23: f = 0.79
+
+Eq. (6-10): Se  Se  0.5(1100)  550 MPa
+
+Eq. (6-13): Eq. (6-14):
+
+a
+
+
+
+(
+
+f
+
+Sut )2 Se
+
+
+
+0.79(1100)2
+550
+
+ 1373
+
+MPa
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.79(1100) 550
+
+
+
+
+
+0.06622
+
+Eq. (6-12): S f  aN b  1373(150 000)0.06622  624 MPa Ans. ______________________________________________________________________________
+
+6-7 Sut  150 kpsi, Syt  135 kpsi, N  500 cycles
+
+Fig. 6-23: f = 0.80 From Fig. 6-21, we note that below 103 cycles on the S-N diagram constitutes the lowcycle region. The stress-life approach is not very reliable in this region, but for a rough
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 2/58
+
+response to this question, we can write an equation in log-log scale for the line between
+
+(100, Sut) and (103, fSut) as
+
+  S f  Sut N log f /3  150 500 log0.80/3  123 kpsi
+
+Ans.
+
+The testing should be done at a completely reversed stress of 123 kpsi, which is below the yield strength, so it is possible. Ans. ______________________________________________________________________________
+
+6-8 d = 1.5 in, Sut = 110 kpsi
+
+Eq. (6-10): Se  0.5(110)  55 kpsi
+Table 6-2: a = 2.00, b =  0.217 Eq. (6-18): ka  aSutb  2.00(110)0.217  0.721 Eq. (6-19): kb = 0.879 d 0.107= 0.879(1.5) 0.107 =0.842 Eq. (6-17): Se = kakb Se = 0.721(0.842)(55) = 33.4 kpsi Ans. ______________________________________________________________________________
+
+6-9 For AISI 4340 as-forged steel,
+
+Eq. (6-10): Table 6-2: Eq. (6-18):
+Eq. (6-19):
+
+Se = 100 kpsi
+
+a = 12.7, b =  0.758
+
+ka = 12.7(260)0.758 = 0.188
+
+kb
+
+
+
+
+
+0.75 0.30
+
+0.107
+
+
+
+0.907
+
+Each of the other modifying factors is unity. Se = 0.188(0.907)(100) = 17.1 kpsi Ans.
+
+For AISI 1040: Se  0.5(113)  56.5 kpsi ka  12.7(113)0.758  0.353 kb  0.907 (same as 4340)
+
+Each of the other modifying factors is unity
+
+Se  0.353(0.907)(56.5)  18.1 kpsi Ans.
+
+Not only is AISI 1040 steel a contender, it has a superior endurance strength. Ans. ______________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 3/58
+
+6-10 From Table A-20, Sut = 570 MPa, Sy = 310 MPa. From a free-body diagram analysis, the bearing reaction forces are found to be R1 = 3.25 kN and R2 = 9.75 kN. The shear-force and bendingmoment diagrams are shown. The critical location is at the section where the bending moment is maximum, on the outer surface where the bending stress is maximum. With a rotating shaft, the bending stress will be completely reversed.
+
+ max
+
+  ar
+
+
+
+Mc I
+
+
+
+487 500(25 / 2) ( / 64)(25)4
+
+
+
+317.8
+
+MPa
+
+(a)
+
+ny
+
+
+
+Sy  max
+
+
+
+310 317.8
+
+ 0.98
+
+Ans.
+
+Yielding is predicted, on the outer surface. For
+
+some applications, this might not prevent the part
+
+from being used, so we will continue checking for
+
+fatigue.
+
+(b) Eq. (6-10):
+
+Se'  0.5Sut  0.5(570)  285 MPa
+
+Eq. (6-18): ka  aSubt  3.04(570)0.217  0.767
+
+Eq. (6-19): kb  1.24d 0.107  1.24(25)0.107  0.879
+
+Eq. (6-25): kc  1
+
+Eq. (6-17): Se  kakbkcSe'  (0.767)(0.879)(1)(285)  192 MPa
+
+Ans.
+
+(c) For completely reversed stress, the fatigue factor of safety can be assessed as the ratio
+
+of the endurance limit to the completely reversed stress.
+
+nf
+
+
+
+Se  ar
+
+
+
+192 317.8
+
+ 0.60
+
+Ans.
+
+Infinite life is not predicted. Use the S-N diagram to estimate the life.
+
+(d) Fig. 6-23, or Eq. (6-11): f = 0.87
+
+Eq. (6-13):
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.87(570)2
+192
+
+ 1280.8
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(570) 192
+
+
+
+
+
+0.1374
+
+Eq. (6-15):
+
+1
+
+1
+
+N
+
+
+
+ 
+
+ ar a
+
+b 
+
+
+
+ 317.8 0.1374  1280.8 
+
+
+
+25444
+
+N = 25000 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 4/58
+
+6-11 From Table A-20, Sut = 400 MPa, Sy = 220 MPa.
+
+Free-body, shear-force, and bending-moment
+
+diagrams are shown.
+
+ max
+
+
+
+32M d3
+
+
+
+32(45000) d3
+
+ 458366 / d 3
+
+The load is repeatedly applied and released, so from
+
+Eqs. (6-8) and (6-9),
+
+ m   a   max / 2  229183 / d 3
+
+Be sure to confirm that the units are legitimate for
+
+stress in MPa and d in mm.
+
+For yielding,
+
+ny
+
+
+
+1.5
+
+
+
+Sy  max
+
+
+
+220 458366 / d 3
+
+d  14.62 mm
+
+Now check fatigue, opting for the linear Goodman criterion for simplicity of solving for
+
+the diameter. First, determine the adjusted endurance limit.
+
+Eq. (6-10): Se'  0.5Sut  0.5(400)  200 MPa
+
+Eq. (6-18): ka  aSubt  3.04(400)0.217  0.828
+
+Estimate the size factor from the diameter determined for yielding. It can be adjusted
+
+later.
+
+Eq. (6-19): kb  1.24d 0.107  1.24(15)0.107  0.93
+
+Eq. (6-25): kc  1
+
+Eq. (6-17): Se  kakbkcSe'  (0.767)(0.879)(1)(285)  192 MPa
+
+Ans.
+
+(c) For completely reversed stress, the fatigue factor of safety can be assessed as the ratio
+
+of the endurance limit to the completely reversed stress.
+
+nf
+
+
+
+Se  ar
+
+
+
+192 317.8
+
+ 0.60
+
+Ans.
+
+Infinite life is not predicted. Use the S-N diagram to estimate the life.
+
+(d) Fig. 6-23, or Eq. (6-11): f = 0.87
+
+Eq. (6-13):
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.87(570)2
+192
+
+ 1280.8
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(570) 192
+
+
+
+
+
+0.1374
+
+Eq. (6-15):
+
+1
+
+1
+
+N
+
+
+
+ 
+
+ ar a
+
+b 
+
+
+
+ 317.8 0.1374  1280.8 
+
+
+
+25444
+
+N = 25000 cycles
+
+Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 5/58
+
+6-12 D = 1 in, d = 0.8 in, T = 1800 lbfin, and from Table A-20 for AISI 1020 CD,
+
+Sut = 68 kpsi, and Sy = 57 kpsi.
+
+(a) Fig. A-15-15:
+
+r d
+
+
+
+0.1 0.8
+
+ 0.125,
+
+D d
+
+
+
+1 0.8
+
+ 1.25,
+
+Kts
+
+ 1.40
+
+Get the notch sensitivity either from Fig. 6-27, or from the curve-fit Eqs. (6-33) and (6-36). Using the equations,
+
+       a  0.190  2.51 103 68 1.35 105 682  2.67 108 683  0.07335
+
+qs
+
+1 1
+
+a r
+
+
+
+1
+
+1 0.07335
+0.1
+
+ 0.812
+
+Eq. (6-32): Kfs = 1 + qs (Kts  1) = 1 + 0.812(1.40  1) = 1.32
+
+For a purely reversing torque of T = 1800 lbfin,
+
+Eq. (6-10):
+
+a
+
+
+
+K fs
+
+Tr J
+
+
+
+K fs16T d3
+
+
+
+1.32(16)(1800)  (0.8)3
+
+ 23 635
+
+psi
+
+ 23.6
+
+kpsi
+
+Se  0.5(68)  34 kpsi
+
+Eq. (6-18): ka = 2.00(68)0.217 = 0.80
+
+Eq. (6-19): kb = 0.879(0.8)0.107 = 0.90
+
+Eq. (6-25): kc = 0.59
+
+Eq. (6-17) (labeling for shear):
+
+Sse = 0.80(0.90)(0.59)(34) = 14.4 kpsi
+
+For purely reversing torsion, use Eq. (6-58) for the ultimate strength in shear. Eq. (6-58): Ssu = 0.67 Sut = 0.67(68) = 45.6 kpsi Fig. 6-23: f = 0.9
+
+Adjusting the fatigue strength equations for shear,
+
+Eq. (6-13):
+
+a
+
+
+
+
+
+ f Ssu 2
+Sse
+
+
+
+0.9(45.6)2
+14.4
+
+ 117.0
+
+kpsi
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Ssu Sse
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(45.6) 14.4
+
+
+
+
+
+0.151 61
+
+Eq. (6-15):
+
+1
+
+1
+
+  N
+
+
+
+
+
+a a
+
+b 
+
+
+
+ 23.6 0.151 61  117.0 
+
+
+
+38.5
+
+103
+
+cycles
+
+Ans.
+
+(b) Estimate the ultimate strength at the operating temperature.
+
+Eq. (6-26): (ST SRT )750  0.98  3.5(104 )(750)  6.3(107 )7502  0.89
+
+Thus,
+
+      Sut  750 ST SRT 750 Sut 70  0.89(68)  60.5 kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 6/58
+
+Eq. (6-10): Eq. (6-17):
+
+ Se 750    0.5 Sut 750  0.5(60.5)  30.3 kpsi
+Sse = 0.80(0.90)(0.59)(30.3) = 12.9 kpsi
+
+Note that we use kd = 1 since the ultimate strength has been adjusted for the operating
+
+temperature.
+
+Eq. (6-58): Ssu    0.67 Sut  750 0.67 60.5  40.5 kpsi
+
+  a 
+
+f Ssu 2 Sse
+
+
+
+0.9(40.5)2
+12.9
+
+ 103.0
+
+kpsi
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Ssu Sse
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(40.5) 12.9
+
+
+
+
+
+0.150
+
+37
+
+1
+
+1
+
+  N
+
+
+
+ 
+
+a a
+
+b 
+
+
+
+ 23.6 0.150 37  103.0 
+
+ 18.0
+
+103
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-13 L  0.6 m, Fa  2 kN, n  1.5, N  104 cycles, Sut  770 MPa, Sy  420 MPa (Table A-20) First evaluate the fatigue strength.
+
+Se  0.5(770)  385 MPa ka  38.6(770)0.650  0.51
+
+Since the size is not yet known, assume a typical value of kb = 0.85 and check later. All other modifiers are equal to one.
+
+Eq. (6-17): Fig. 6-23: Eq. (6-13):
+Eq. (6-14): Eq. (6-12):
+
+Se = 0.51(0.85)(385) = 167 MPa f = 0.83
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.83(770)2
+167
+
+ 2446
+
+MPa
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+ 
+
+
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.83(770) 167
+
+
+
+
+
+0.1943
+
+S f  aN b  2446(104 )0.1943  409 MPa
+
+Now evaluate the stress.
+
+M max  (2000 N)(0.6 m)  1200 N  m
+
+a
+
+  max
+
+
+
+Mc I
+
+
+
+M b / 2
+b(b3) / 12
+
+
+
+6M b3
+
+
+
+6 1200 
+b3
+
+
+
+7200 b3
+
+Pa,
+
+with
+
+b
+
+in
+
+m.
+
+Compare strength to stress and solve for the necessary b.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 7/58
+
+  n
+
+
+
+S 
+
+f a
+
+
+
+409 106 7200 / b3
+
+ 1.5
+
+b = 0.0298 m Select b = 30 mm.
+
+Since the size factor was guessed, go back and check it now.
+
+Eq. (6-24): de  0.808hb1/2  0.808b  0.80830  24.2 mm
+
+Eq. (6-19):
+
+kb
+
+
+
+
+
+24.2 7.62
+
+ 0.107 
+
+
+
+0.88
+
+Our guess of 0.85 was slightly conservative, so we will accept the result of
+
+b = 30 mm. Ans.
+
+Checking yield,
+
+   max
+
+
+
+7200 0.0303
+
+106
+
+ 267 MPa
+
+ny
+
+
+
+Sy  max
+
+
+
+420 267
+
+ 1.57
+
+______________________________________________________________________________
+
+6-14 Given: w =2.5 in, t = 3/8 in, d = 0.5 in, nd = 2. From Table A-20, for AISI 1020 CD, Sut = 68 kpsi and Sy = 57 kpsi.
+
+Eq. (6-10): Table 6-2: Eq. (6-20): Eq. (6-25):
+
+Se  0.5(68)  34 kpsi ka  2.00(68)0.217  0.80 kb = 1 (axial loading) kc = 0.85
+
+Eq. (6-17): Se = 0.80(1)(0.85)(34) = 23.1 kpsi Table A-15-1: d / w  0.5 / 2.5  0.2, Kt  2.5
+Get the notch sensitivity either from Fig. 6-26, or from the curve-fit Eqs. (6-33) and (6-35). The relatively large radius is off the graph of Fig. 6-26, so we will assume the curves continue according to the same trend and use the equations to estimate the notch sensitivity.
+
+       a  0.246  3.08 103 68 1.51 105 682  2.67 108 683  0.09799
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+
+
+1
+
+
+
+1 0.09799
+
+0.25
+
+ 0.836
+
+K f  1 q(Kt 1)  1 0.836(2.5 1)  2.25
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 8/58
+
+a
+
+ Kf
+
+Fa A
+
+=
+
+(3
+
+/
+
+2.25Fa 8)(2.5 
+
+0.5)
+
+ 3Fa
+
+Since a finite life was not mentioned, we'll assume infinite life is desired, so the completely reversed stress must stay below the endurance limit.
+
+nf
+
+
+
+Se a
+
+
+
+23.1 3Fa
+
+
+
+2
+
+Fa  3.85 kips Ans.
+
+______________________________________________________________________________
+
+6-15 Given: D  2 in, d  1.8 in, r  0.1 in, M max  25 000 lbf in, M min  0. From Table A-20, for AISI 1095 HR, Sut = 120 kpsi and Sy = 66 kpsi.
+
+Eq. (6-10):
+Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-25): Eq. (6-17):
+
+Se  0.5Sut  0.5120  60 kpsi
+ka  aSubt  2.00(120)0.217  0.71 de  0.370d  0.370(1.8)  0.666 in kb  0.879de0.107  0.879(0.666)0.107  0.92
+kc  1 Se  kakbkcSe  (0.71)(0.92)(1)(60)  39.2 kpsi
+
+Fig. A-15-14: D / d  2 / 1.8  1.11, r / d  0.1 / 1.8  0.056  Kt  2.1
+
+Get the notch sensitivity either from Fig. 6-26, or from the curve-fit Eqs. (6-33) and (6-35). Using the equations,
+
+       a  0.246  3.08 103 120 1.51 105 1202  2.67 108 1203  0.04770
+
+q 1 1
+
+a r
+
+
+
+1
+
+
+
+1 0.04770
+0.1
+
+ 0.87
+
+Eq. (6-32):
+
+K f  1 q(Kt 1)  1 0.87(2.11)  1.96 I  ( / 64)d 4  ( / 64)(1.8)4  0.5153 in4
+
+ max
+
+
+
+Mc I
+
+
+
+25
+
+000(1.8 / 0.5153
+
+2)
+
+
+
+43 664
+
+psi
+
+
+
+43.7
+
+kpsi
+
+ min  0
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 9/58
+
+Eqs. (6-8) and (6-9):
+
+m
+
+
+
+Kf
+
+ max
+
+  min 2
+
+
+
+1.96
+
+
+
+43.7 2
+
+
+
+0
+
+ 42.8
+
+kpsi
+
+a  Kf
+
+ max   min 2
+
+
+
+1.96
+
+43.7 
+2
+
+0
+
+ 42.8 kpsi
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+ 
+
+42.8 39.2
+
+
+
+42.8 120
+
+1 
+
+n f  0.69 Ans. A factor of safety less than unity indicates a finite life.
+
+Check for yielding. It is not necessary to include the stress concentration for static yielding of a ductile material.
+
+ny
+
+
+
+Sy  max
+
+
+
+66 43.7
+
+ 1.51
+
+Ans.
+
+______________________________________________________________________________
+
+6-16 From a free-body diagram analysis, the bearing reaction forces are found to be 2.1 kN at the left bearing and 3.9 kN at the right bearing. The critical location will be at the shoulder fillet between the 35 mm and the 50 mm diameters, where the bending moment is large, the diameter is smaller, and the stress concentration exists. The bending moment at this point is M = 2.1(200) = 420 kNmm. With a rotating shaft, the bending stress will be completely reversed.
+
+ ar
+
+
+
+Mc I
+
+
+
+420 (35 / 2) ( / 64)(35)4
+
+ 0.09978
+
+kN/mm2
+
+ 99.8
+
+MPa
+
+This stress is far below the yield strength of 390 MPa, so yielding is not predicted. Find
+
+the stress concentration factor for the fatigue analysis.
+
+Fig. A-15-9: r/d = 3/35 = 0.086, D/d = 50/35 = 1.43, Kt =1.7
+
+Get the notch sensitivity either from Fig. 6-26, or from the curve-fit Eqs. (6-33) and (6-35). Using the equations, with Sut = 470 MPa and r = 3 mm,
+      a  1.24  2.25 103 (470) 1.60 106 (470)2  4.11 1010 (470)3  0.4933
+
+q 1 1
+
+a r
+
+
+
+1
+
+
+
+1 0.4933
+3
+
+ 0.78
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 10/58
+
+Eq. (6-32): Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-25): Eq. (6-17):
+
+K f  1 q(Kt 1)  1 0.78(1.7 1)  1.55 Se'  0.5Sut  0.5(470)  235 MPa ka  aSubt  3.04(470)0.217  0.80 kb  1.24d 0.107  1.24(35)0.107  0.85 kc  1 Se  kakbkcSe'  (0.80)(0.85)(1)(235)  160 MPa
+
+nf
+
+
+
+Se K f  ar
+
+
+
+160
+1.55  99.8
+
+ 1.03
+
+Infinite life is predicted.
+
+Ans.
+
+______________________________________________________________________________
+
+6-17 From a free-body diagram analysis, the bearing reaction forces are found to be RA = 2000 lbf and RB = 1500 lbf. The shearforce and bending-moment diagrams are shown. The critical location will be at the shoulder fillet between the 1-5/8 in and the 1-7/8 in diameters, where the bending moment is large, the diameter is smaller, and the stress concentration exists.
+
+M = 16 000 ­ 500 (2.5) = 14 750 lbf  in
+
+With a rotating shaft, the bending stress will be completely reversed.
+
+ ar
+
+
+
+Mc I
+
+
+
+14 750(1.625 / 2) ( / 64)(1.625)4
+
+
+
+35.0
+
+kpsi
+
+This stress is far below the yield strength of 71 kpsi, so yielding is not predicted.
+
+Fig. A-15-9: r/d = 0.0625/1.625 = 0.04, D/d = 1.875/1.625 = 1.15, Kt =1.95 Get the notch sensitivity either from Fig. 6-26, or from the curve-fit Eqs. (6-33) and
+
+(6-35). Using the equations,
+
+      a  0.246  3.08 103 85 1.51 105 852  2.67 108 853  0.07690
+
+q
+
+1 1
+
+a r
+
+ 1
+
+1 0.07690
+0.0625
+
+ 0.76 .
+
+Eq. (6-32): K f  1 q(Kt 1)  1 0.76(1.95 1)  1.72
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 11/58
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-25): Eq. (6-17):
+
+Se'  0.5Sut  0.5(85)  42.5 kpsi ka  aSubt  2.00(85)0.217  0.76 kb  0.879d 0.107  0.879(1.625)0.107  0.835 kc  1 Se  kakbkcSe'  (0.76)(0.835)(1)(42.5)  27.0 kpsi
+
+nf
+
+
+
+Se K f  ar
+
+
+
+27.0
+1.72 35.0
+
+ 0.45
+
+Ans.
+
+Infinite life is not predicted. Use the S-N diagram to estimate the life.
+
+Fig. 6-23: Eq. (6-13):
+Eq. (6-14):
+
+f = 0.87
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.87(85)2
+27.0
+
+
+
+202.5
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(85) 27.0
+
+
+
+
+
+0.1459
+
+Eq. (6-15):
+
+N
+
+
+
+ 
+
+K f  ar a
+
+1
+b 
+
+1
+
+
+
+
+
+(1.72)(35.0) 202.5
+
+
+
+0.1459
+
+
+
+4082
+
+cycles
+
+N = 4100 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-18 From a free-body diagram analysis, the bearing reaction forces are found to be RA = 1600 lbf and RB = 2000 lbf. The shear-force and bending-moment diagrams are shown. The critical location will be at the shoulder fillet between the 1-5/8 in and the 1-7/8 in diameters, where the bending moment is large, the diameter is smaller, and the stress concentration exists.
+
+M = 12 800 + 400 (2.5) = 13 800 lbf  in
+
+With a rotating shaft, the bending stress will
+
+be completely reversed.
+
+ ar
+
+
+
+Mc I
+
+
+
+13 800(1.625 / 2) ( / 64)(1.625)4
+
+
+
+32.8
+
+kpsi
+
+This stress is far below the yield strength of 71 kpsi, so yielding is not predicted. Fig. A-15-9: r/d = 0.0625/1.625 = 0.04, D/d = 1.875/1.625 = 1.15, Kt =1.95
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 12/58
+
+Get the notch sensitivity either from Fig. 6-26, or from the curve-fit Eqs. (6-33) and (6-35). Using the equations,
+
+      a  0.246  3.08 103 85 1.51 105 852  2.67 108 853  0.07690
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+ 1
+
+1 0.07690
+0.0625
+
+ 0.76
+
+K f  1 q(Kt 1)  1 0.76(1.95 1)  1.72
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-25): Eq. (6-17):
+
+Se'  0.5Sut  0.5(85)  42.5 kpsi
+
+ka  aSubt  2.00(85)0.217  0.76
+
+kb  0.879d 0.107  0.879(1.625)0.107  0.835
+
+kc  1
+
+Se
+
+
+
+ka
+
+kb
+
+kc
+
+S
+
+' e
+
+
+
+(0.76)(0.835)(1)(42.5)
+
+
+
+27.0
+
+kpsi
+
+nf
+
+
+
+Se K f  ar
+
+
+
+27.0
+1.72  32.8
+
+ 0.48
+
+Ans.
+
+Infinite life is not predicted. Use the S-N diagram to estimate the life.
+
+Fig. 6-23: f = 0.87
+
+Eq. (6-13):
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.87(85)2
+27.0
+
+
+
+202.5
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(85) 27.0
+
+
+
+
+
+0.1459
+
+Eq. (6-15):
+
+N
+
+
+
+ 
+
+K f  ar a
+
+1
+b 
+
+
+
+
+
+(1.72)(32.8) 202.5
+
+1
+ 0.1459 
+
+
+
+6370
+
+cycles
+
+N = 6400 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-19 Table A-20: Sut  120 kpsi, Sy  66 kpsi N = (950 rev/min)(10 hr)(60 min/hr) = 570 000 cycles
+
+One approach is to guess a diameter and solve the problem as an iterative analysis problem. Alternatively, we can estimate the few modifying parameters that are dependent on the diameter and solve the stress equation for the diameter, then iterate to check the estimates. We'll use the second approach since it should require only one iteration, since the estimates on the modifying parameters should be pretty close.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 13/58
+
+First, we will evaluate the stress. From a free-body diagram analysis, the reaction forces at the bearings are R1 = 2 kips and R2 = 6 kips. The critical stress location is in the middle of the span at the shoulder, where the bending moment is high, the shaft diameter is smaller, and a stress concentration factor exists. If the critical location is not obvious, prepare a complete bending moment diagram and evaluate at any potentially critical locations. Evaluating at the critical shoulder,
+
+M  2 kip 10 in   20 kip in
+
+ ar
+
+
+
+Mc I
+
+
+
+M d / 2
+ d 4 / 64
+
+
+
+32M d3
+
+
+
+32  20 
+d3
+
+
+
+203.7 d3
+
+kpsi
+
+Now we will get the notch sensitivity and stress concentration factor. The notch sensitivity depends on the fillet radius, which depends on the unknown diameter. For now, let us estimate a value of q = 0.85 from observation of Fig. 6-26, and check it later.
+
+Fig. A-15-9: D / d  1.4d / d  1.4, r / d  0.1d / d  0.1, Kt  1.65
+
+Eq. (6-32): K f  1 q(Kt 1)  1 0.85(1.65 1)  1.55
+
+Now, evaluate the fatigue strength.
+
+Se'  0.5(120)  60 kpsi ka  2.00(120)0.217  0.71
+
+Since the diameter is not yet known, assume a typical value of kb = 0.85 and check later. All other modifiers are equal to one.
+
+Se = (0.71)(0.85)(60) = 36.2 kpsi
+
+Determine the desired fatigue strength from the S-N diagram.
+
+Fig. 6-23: Eq. (6-13): Eq. (6-14): Eq. (6-12):
+
+f = 0.82
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.82(120)2
+36.2
+
+ 267.5
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.82(120) 36.2
+
+
+
+
+
+0.1448
+
+S f  aN b  267.5(570 000)0.1448  39.3 kpsi
+
+Compare strength to stress and solve for the necessary d.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 14/58
+
+  nf
+
+
+
+Sf K f  ar
+
+
+
+1.55
+
+39.3 203.7 / d 3
+
+ 1.6
+
+d = 2.34 in
+
+Since the size factor and notch sensitivity were guessed, go back and check them now.
+
+Eq. (6-19):   kb  0.91d 0.157  0.91 2.34 0.157  0.80
+This is a little lower than our initial guess. From Fig. 6-26 with r = d/10 = 0.234 in, we are off the graph, but it appears our guess for q of 0.85 is low. Assuming the trend of the graph continues, we'll choose q = 0.91 and iterate the problem with the new values of kb and q. Intermediate results are Se = 34.1 kpsi, Sf = 37.2 kpsi, and Kf = 1.59. This gives
+
+  nf
+
+
+
+Sf K f  ar
+
+
+
+1.59
+
+37.2 203.7 / d 3
+
+ 1.6
+
+d = 2.41 in
+
+Ans.
+
+A quick check of kb and q show that our estimates are still reasonable for this diameter. ______________________________________________________________________________
+
+6-20 Se  40 kpsi, Sy  60 kpsi, Sut  80 kpsi,  m  15 kpsi,  a  25 kpsi,  m   a  0
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a
+
+
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/ 2
+
+ 252  302 1/2
+
+ 25.00 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  3152 1/2  25.98 kpsi
+
+       m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2    a   m
+
+2 3
+
+a m
+
+2 1/2
+
+   252  3 152 1/2  36.06 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+60 36.06
+
+ 1.66
+
+Ans.
+
+(a) Goodman, Equation (6-41)
+
+nf
+
+
+
+1 (25.00 / 40)  (25.98 / 80)
+
+ 1.05
+
+Ans.
+
+(b) Gerber, Equation (6-48)
+
+nf
+
+
+
+1 2
+
+
+
+80 25.98
+
+2 
+
+
+
+25.00 40
+
+
+
+ 1
+
+
+
+1
+
+
+
+ 
+
+2(25.98)(40) 80(25.00)
+
+2 
+
+  
+
+
+
+1.31
+
+Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 15/58
+
+(c) Morrow
+
+Estimate the fatigue strength coefficient.
+
+Eq. (6-44):  f  Sut  50  80  50  130 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+1 (25.00 / 40)  (25.98 / 130)
+
+ 1.21
+
+Ans.
+
+______________________________________________________________________________
+
+6-21 Se  40 kpsi, Sy  60 kpsi, Sut  80 kpsi,  m  20 kpsi,  a  10 kpsi,  m   a  0
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  102  302 1/2  10.00 kpsi
+
+   m
+
+
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/ 2
+
+ 02  3202 1/2
+
+ 34.64 kpsi
+
+       m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2    a   m
+
+2 3
+
+a m
+
+2 1/2
+
+   102  3 202 1/2  36.06 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+60 36.06
+
+ 1.66
+
+Ans.
+
+(a) Goodman, Equation (6-41)
+
+nf
+
+
+
+1 (10.00 / 40)  (34.64 / 80)
+
+ 1.46
+
+Ans.
+
+(b) Gerber, Equation (6-48)
+
+nf
+
+
+
+1 2
+
+
+
+80 34.64
+
+2 
+
+
+
+10.00 40
+
+
+
+1 
+
+
+
+1
+
+
+
+ 
+
+2(34.64)(40) 80(10.00)
+
+2 
+
+ 
+
+
+
+1.74
+
+Ans.
+
+(c) Morrow
+
+Estimate the fatigue strength coefficient.
+
+Eq. (6-44):  f  Sut  50  80  50  130 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+1 (10.00 / 40)  (34.64 / 130)
+
+ 1.94
+
+Ans.
+
+______________________________________________________________________________
+
+6-22 Se  40 kpsi, S y  60 kpsi, Sut  80 kpsi,  a  10 kpsi,  m  15 kpsi,  a  12 kpsi,  m  0
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  122  3102 1/2  21.07 kpsi
+
+   m
+
+
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+  1/2  02  3 15 2 1/2
+
+ 25.98 kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 16/58
+
+       m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2    a   m
+
+2 3
+
+a m
+
+2 1/2
+
+ 12  02  310 152 1/2  44.93 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+60 44.93
+
+ 1.34
+
+Ans.
+
+(a) Goodman, Equation (6-41)
+
+nf
+
+
+
+1 (21.07 / 40)  (25.98 / 80)
+
+ 1.17
+
+Ans.
+
+(b) Gerber, Equation (6-48)
+
+nf
+
+
+
+1 2
+
+
+
+80 25.98
+
+
+
+2
+
+
+
+21.07 40
+
+
+
+1 
+
+
+
+1
+
+
+
+ 
+
+2(25.98)(40) 80(21.07)
+
+2 
+
+ 
+
+
+
+1.47
+
+Ans.
+
+(c) Morrow Estimate the fatigue strength coefficient. Eq. (6-44):  f  Sut  50  80  50  130 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+1 (21.07 / 40)  (25.98 / 130)
+
+ 1.38
+
+Ans.
+
+______________________________________________________________________________
+
+6-23 Se  40 kpsi, Sy  60 kpsi, Sut  80 kpsi,  a  30 kpsi,  m   a   a  0
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a
+
+
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+  1/2  02  3 30 2 1/2
+
+ 51.96 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  0 kpsi
+
+       m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2    a   m
+
+2 3
+
+a m
+
+2 1/2
+
+ 3302 1/2  51.96 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+60 51.96
+
+ 1.15
+
+Ans.
+
+(a) through (c) With a mean stress of zero, the Goodman, Gerber, and Morrow criteria all simplify to the same simple comparison of the alternating stress to the endurance limit,
+
+nf
+
+
+
+Se  a
+
+
+
+40 51.96
+
+ 0.77
+
+Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 17/58
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. Since 'm = 0, the stress state is completely reversed and the S-N diagram is applicable for 'a. Fig. 6-23: f = 0.875
+
+Eq. (6-13):
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.875(80)2
+40
+
+ 122.5
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.875(80) 40
+
+
+
+
+
+0.08101
+
+Eq. (6-15):
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+51.96 122.5
+
+1
+ 0.08101 
+
+
+
+39
+
+600
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-24 Se  40 kpsi, Sy  60 kpsi, Sut  80 kpsi,  a  15 kpsi,  m  15 kpsi,  m   a  0
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+  a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  02  3152 1/2  25.98 kpsi
+
+  m
+
+
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  152  302 1/2  15.00 kpsi
+
+       m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2    a   m
+
+2 3
+
+a m
+
+2 1/2
+
+ 152  3152 1/2  30.00 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+60 30
+
+ 2.00
+
+Ans.
+
+(a) Goodman, Eq. (6-41)
+
+nf
+
+
+
+1 (25.98 / 40)  (15.00 / 80)
+
+ 1.19
+
+Ans.
+
+(b) Gerber, Eq. (6-48)
+
+nf
+
+
+
+1 2
+
+
+
+80 15.00
+
+2 
+
+
+
+25.98 40
+
+
+
+1 
+
+
+
+1
+
+
+
+ 
+
+2(15.00)(40) 80(25.98)
+
+ 
+
+2
+
+ 
+
+
+
+1.43
+
+Ans.
+
+(c) Morrow
+
+Estimate the fatigue strength coefficient.
+
+Eq. (6-44):  f  Sut  50  80  50  130 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+1 (25.98 / 40)  (15.00 /130)
+
+ 1.31
+
+Ans.
+
+______________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 18/58
+
+6-25 Given: Fmax  28 kN, Fmin  28 kN . From Table A-20, for AISI 1040 CD,
+
+Sut  590 MPa, Sy  490 MPa,
+
+Check for yielding
+
+ max
+
+
+
+Fmax A
+
+
+
+28 000 10(25  6)
+
+ 147.4
+
+N/mm2
+
+ 147.4
+
+MPa
+
+ny
+
+
+
+Sy  max
+
+
+
+490 147.4
+
+ 3.32
+
+Ans.
+
+Determine the fatigue factor of safety based on infinite life
+
+Eq. (6-10): Eq. (6-18): Eq. (6-20): Eq. (6-25): Eq. (6-17):
+
+Se'  0.5(590)  295 MPa ka  aSubt  3.04(590)0.217  0.76 kb  1 (axial) kc  0.85 Se  kakbkcSe'  (0.76)(1)(0.85)(295)  190.6 MPa
+
+Fig. 6-26: Fig. A-15-1:
+
+q = 0.83 d / w  0.24, Kt  2.44
+K f  1 q(Kt 1)  1 0.83(2.44 1)  2.20
+
+a  Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+28 000  28 000
+2(10)(25  6)
+
+ 324.2 MPa
+
+m
+
+ Kf
+
+Fmax  Fmin 2A
+
+0
+
+Note, since m = 0, the stress is completely reversing, and
+
+nf
+
+
+
+Se a
+
+
+
+190.6 324.2
+
+ 0.59
+
+Ans.
+
+Since infinite life is not predicted, estimate the life from the S-N diagram. With m = 0,
+
+the stress state is completely reversed, and the S-N diagram is applicable for a.
+
+Fig. 6-23: Eq. (6-13): Eq. (6-14):
+Eq. (6-15):
+
+f = 0.87
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.87(590)2
+190.6
+
+ 1382
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(590) 190.6
+
+
+
+
+
+0.1434
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+324.2 1382
+
+1
+ 0.1434 
+
+
+
+24 613
+
+cycles
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 19/58
+
+N = 25 000 cycles
+
+Ans.
+
+________________________________________________________________________
+
+6-26 Sut  590 MPa, S y  490 MPa, Fmax  28 kN, Fmin  12 kN
+
+Check for yielding
+
+ max
+
+
+
+Fmax A
+
+
+
+28 000 10(25  6)
+
+ 147.4
+
+N/mm2
+
+ 147.4
+
+MPa
+
+ny
+
+
+
+Sy  max
+
+
+
+490 147.4
+
+ 3.32
+
+Ans.
+
+Determine the fatigue factor of safety based on infinite life.
+
+From Prob. 6-25: Se  190.6 MPa, K f  2.2
+
+a  Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+28 000  12 000
+2(10)(25  6)
+
+ 92.63 MPa
+
+m
+
+ Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+ 
+
+28 000 12 000 2(10)(25  6)
+
+ 
+
+
+
+231.6
+
+MPa
+
+Goodman criteria, Equation (6-41):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+92.63 190.6
+
+
+
+231.6 590
+
+1 
+
+n f  1.14 Ans.
+
+Gerber criteria, Equation (6-48):
+
+nf
+
+
+
+1 2
+
+ 
+
+Sut m
+
+2  
+
+a Se
+
+  1 
+
+1
+
+ 
+
+2 mSe Sut a
+
+2  
+
+  
+
+
+
+1 2
+
+
+
+590 231.6
+
+2
+
+92.63 190.6
+
+ 1 
+
+1
+
+
+
+ 
+
+2(231.6)(190.6) 590(92.63)
+
+2 
+
+  
+
+n f  1.42 Ans.
+
+Morrow criteria:
+
+Estimate the fatigue strength coefficient.
+
+Eq. (6-44):
+
+ f  Sut  345  590  345  935 MPa
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+ 
+
+m
+f
+
+1 
+
+
+
+
+
+92.63 190.6
+
+
+
+231.6 935
+
+1 
+
+n f  1.36 Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 20/58
+
+The results are consistent with Fig. 6-36, where for a mean stress that is about half of the yield strength, the Goodman line should predict failure significantly before the other two. ______________________________________________________________________________ 6-27 Sut  590 MPa, Sy  490 MPa
+From Prob. 6-25: Se  190.6 MPa, K f  2.2
+
+(a) Fmax  28 kN, Fmin  0 kN
+
+Check for yielding
+
+ max
+
+
+
+Fmax A
+
+
+
+28 000 10(25  6)
+
+ 147.4
+
+N/mm2
+
+ 147.4
+
+MPa
+
+ny
+
+
+
+Sy  max
+
+
+
+490 147.4
+
+ 3.32
+
+Ans.
+
+a  Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+28 000  0 2(10)(25  6)
+
+ 162.1 MPa
+
+m
+
+ Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+ 
+
+28 000  0 2(10)(25  6)
+
+ 
+
+ 162.1
+
+MPa
+
+For the Goodman criteria, Eq. (6-41):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+ 
+
+162.1 190.6
+
+
+
+162.1 590
+
+1 
+
+ 0.89
+
+Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an
+
+equivalent completely reversed stress. Using the Goodman criterion,
+
+Eq. (6-58):
+
+ ar
+
+
+
+a 1 ( m /
+
+Sut )
+
+
+
+162.1 1 (162.1 / 590)
+
+
+
+223.5
+
+MPa
+
+Fig. 6-23: Eq. (6-13): Eq. (6-14):
+Eq. (6-15):
+
+f = 0.87
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.87(590)2
+190.6
+
+ 1382
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.87(590) 190.6
+
+
+
+
+
+0.1434
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+1
+
+223.5 1382
+
+
+
+0.1434
+
+
+
+329
+
+000
+
+cycles
+
+Ans.
+
+(b) Fmax  28 kN, Fmin  12 kN
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 21/58
+
+The maximum load is the same as in part (a), so  max  147.4 MPa
+ny  3.32 Ans.
+
+Factor of safety based on infinite life:
+
+Eq. (6-41):
+
+a  Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+28 000 12 000 2(10)(25  6)
+
+ 92.63 MPa
+
+m
+
+ Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+ 28 000 12 000  2(10)(25  6)
+
+ 
+
+
+
+231.6
+
+MPa
+
+nf
+
+
+
+  
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+92.63 190.6
+
+
+
+231.6 590
+
+1 
+
+ 1.14
+
+Ans.
+
+(c) Fmax  12 kN, Fmin  28 kN
+
+The compressive load is the largest, so check it for yielding.
+
+ min
+
+
+
+Fmin A
+
+
+
+28 000 10(25  6)
+
+ 147.4
+
+MPa
+
+ny
+
+
+
+S yc  min
+
+
+
+490  147.4
+
+ 3.32
+
+Ans.
+
+Factor of safety based on infinite life:
+
+a  Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+12 000  28 000
+2(10)(25  6)
+
+
+
+231.6
+
+MPa
+
+m
+
+ Kf
+
+Fmax  Fmin 2A
+
+
+
+2.2
+
+12  
+
+000  28 000
+2(10)(25  6)
+
+  
+
+
+
+92.63
+
+MPa
+
+For m < 0, Eq. (6-42):
+
+nf
+
+
+
+Se a
+
+
+
+190.6 231.6
+
+ 0.82
+
+Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. For a negative
+
+mean stress, we shall assume the equivalent completely reversed stress is the same as the
+
+actual alternating stress, consistent with the horizontal fatigue line in Fig. 6-34. Get a
+
+and b from part (a).
+
+Eq. (6-15):
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+231.6 1382
+
+1
+ 0.1434 
+
+
+
+257
+
+000
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-28 Eq. (2-36): Sut = 0.5(400) = 200 kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 22/58
+
+Eq. (6-10): Eq. (6-18): Eq. (6-24): Eq. (6-19):
+
+Se'  0.5(200)  100 kpsi ka  aSubt  11.0(200)0.650  0.35 de  0.37d  0.37(0.375)  0.1388 in kb  0.879de0.107  0.879(0.1388)0.107  1.09
+
+Since we have used the equivalent diameter method to get the size factor, and in doing so introduced greater uncertainties, we will choose not to use a size factor greater than one. Let kb = 1.
+
+Eq. (6-17):
+
+Se  (0.35)(1)(100)  35.0 kpsi
+
+Fa
+
+
+
+40  2
+
+20
+
+ 10
+
+lb
+
+Fm
+
+
+
+40
+
+ 2
+
+20
+
+
+
+30
+
+lb
+
+a
+
+
+
+32M a d3
+
+
+
+32(10)(12)  (0.375)3
+
+ 23.18
+
+kpsi
+
+m
+
+
+
+32M m d3
+
+
+
+32(30)(12)  (0.375)3
+
+
+
+69.54
+
+kpsi
+
+(a) Goodman criterion, Eq. (6-41):
+
+1 nf
+
+
+
+a Se
+
+
+
+m Sut
+
+
+
+23.18 35.0
+
+
+
+69.54 200
+
+n f  0.99
+
+Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an
+
+equivalent completely reversed stress. Using the Goodman criterion,
+
+Eq. (6-58):
+
+ ar
+
+
+
+a 1 ( m /
+
+Sut )
+
+
+
+23.18 1 (69.54 / 200)
+
+
+
+35.54
+
+kpsi
+
+Fig. 6-23: f = 0.78
+
+Eq. (6-13):
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.78(200)2
+35
+
+ 695.3
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.78(200) 35.0
+
+
+
+
+
+0.2164
+
+Eq. (6-15):
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+ 
+
+1
+35.54 0.2164 695.3 
+
+ 929
+
+000
+
+cycles
+
+Ans.
+
+(b) Gerber criterion, Eq. (6-48):
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 23/58
+
+nf
+
+
+
+1 2
+
+ 
+
+Sut m
+
+2  
+
+a Se
+
+  1 
+
+1
+
+ 
+
+2 mSe Sut a
+
+2  
+
+  
+
+
+
+1 2
+
+
+
+200 69.54
+
+2 
+
+23.18 35.0
+
+  1 
+
+1
+
+
+
+ 
+
+2(69.54)(35.0) 200(23.18)
+
+2 
+
+  
+
+ 1.23 Infinite life is predicted Ans.
+
+______________________________________________________________________________
+
+6-29 E  207.0 GPa
+
+(a)
+
+I
+
+
+
+1 12
+
+(20)(43
+
+)
+
+
+
+106.7
+
+mm4
+
+y
+
+
+
+Fl 3 3EI
+
+
+
+F
+
+
+
+3EIy l3
+
+Fmin
+
+
+
+3(207)(109 )(106.7)(1012 )(2)(103) 1403 (109 )
+
+
+
+48.3
+
+N
+
+Ans.
+
+Fmax
+
+
+
+3(207)(109 )(106.7)(1012 )(6)(103 ) 1403 (109 )
+
+ 144.9
+
+N
+
+Ans.
+
+(b) Get the fatigue strength information.
+
+Eq. (2-36): Sut = =3.4HB = 3.4(490) = 1666 MPa
+
+From problem statement: Sy = 0.9Sut = 0.9(1666) = 1499 MPa
+
+Eq. (6-10): Se  700 MPa
+
+Eq. (6-18): Eq. (6-24): Eq. (6-19):
+
+ka = 1.38(1666)-0.067 = 0.84 de = 0.808[20(4)]1/2 = 7.23 mm kb = 1.24(7.23)-0.107 = 1.00
+
+Eq. (6-17): Se = 0.84(1)(700) = 588 MPa
+
+This is a relatively thick curved beam, so use the method in Sect. 3-18 to find the stresses. The maximum bending moment will be to the centroid of the section as shown.
+
+M = 142F Nmm, A = 4(20) = 80 mm2, h = 4 mm, ri = 4 mm, ro = ri + h = 8 mm, rc = ri + h/2 = 6 mm
+
+Table 3-4:
+
+rn
+
+
+
+h ln(ro /
+
+ri )
+
+
+
+4 ln(8 /
+
+4)
+
+
+
+5.7708
+
+mm
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 24/58
+
+e  rc  rn  6  5.7708  0.2292 mm
+ci  rn  ri  5.7708  4  1.7708 mm
+co  ro  rn  8  5.7708  2.2292 mm Get the stresses at the inner and outer surfaces from Eq. (3-76) with the axial stresses added. The signs have been set to account for tension and compression as appropriate.
+
+i
+
+
+
+
+
+Mci Aeri
+
+
+
+F A
+
+
+
+
+
+(142F )(1.7708) 80(0.2292)(4)
+
+
+
+F 80
+
+
+
+3.441F
+
+MPa
+
+o
+
+
+
+Mco Aero
+
+
+
+F A
+
+
+
+(142F )(2.2292) 80(0.2292)(8)
+
+
+
+F 80
+
+
+
+2.145 F
+
+MPa
+
+(i )min  3.441(144.9)  498.6 MPa (i )max  3.441(48.3)  166.2 MPa
+
+( o )min  2.145(48.3)  103.6 MPa ( o )max  2.145(144.9)  310.8 MPa
+
+(i )a
+
+
+
+166.2  498.6
+2
+
+ 166.2 MPa
+
+( i )m
+
+
+
+166.2  498.6
+2
+
+
+
+332.4
+
+MPa
+
+( o )a
+
+
+
+310.8 103.6 2
+
+ 103.6
+
+MPa
+
+( o )m
+
+
+
+310.8
+
+ 103.6 2
+
+
+
+207.2
+
+MPa
+
+To check for yielding, we note that the largest stress is ­498.6 MPa (compression) on the
+
+inner radius. This is considerably less than the estimated yield strength of 1499 MPa, so
+
+yielding is not predicted.
+
+Check for fatigue on both inner and outer radii since one has a compressive mean stress
+
+and the other has a tensile mean stress.
+
+Inner radius:
+
+Since m < 0, Eq. (6-42):
+
+nf
+
+
+
+Se a
+
+
+
+588 166.2
+
+ 3.54
+
+Outer radius: Since m > 0, using the Goodman line, Eq. (6-41),
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 25/58
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+103.6 588
+
+
+
+207.2 1666
+
+1 
+
+nf  3.33
+
+Infinite life is predicted at both inner and outer radii. The outer radius is critical, with a
+
+fatigue factor of safety of nf = 3.33. Ans.
+
+______________________________________________________________________________
+
+6-30 From Table A-20, for AISI 1018 CD, Sut  64 kpsi, Sy  54 kpsi
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-25): Eq. (6-17):
+
+Se'  0.5(64)  32 kpsi ka  2.00(64)0.217  0.81 kb  1 (axial) kc  0.85 Se  (0.81)(1)(0.85)(32)  22.0 kpsi
+
+Fillet: Fig. A-15-5: D / d  3.5 / 3  1.17, r / d  0.25 / 3  0.083, Kt  1.85
+Use Fig. 6-26 or Eqs. (6-33) and (6-35) for q. Estimate a little high since it is off the graph. q = 0.85
+
+K f  1 q(Kt 1)  1 0.85(1.85 1)  1.72
+
+ max
+
+
+
+Fmax w2h
+
+
+
+5 3.0(0.5)
+
+
+
+3.33
+
+kpsi
+
+ min
+
+
+
+16 3.0(0.5)
+
+
+
+10.67
+
+kpsi
+
+a  Kf
+
+ max   min 2
+
+
+
+1.72
+
+3.33 
+
+(10.67) 2
+
+ 12.0 kpsi
+
+m
+
+
+
+K
+
+f
+
+ 
+
+
+
+max
+
+  min 2
+
+ 
+
+ 1.72
+
+3.33 
+
+(10.67) 2
+
+
+
+
+
+6.31
+
+kpsi
+
+ny 
+
+Sy  min
+
+
+
+54 10.67
+
+ 5.06
+
+Does not yield.
+
+Since the mean stress is negative, use Eq. (6-42).
+
+nf
+
+
+
+Se a
+
+
+
+22.0 12.0
+
+ 1.83
+
+Hole:
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 26/58
+
+Fig. A-15-1: d / w1  0.4 / 3.5  0.11  Kt  2.68 Use Fig. 6-26 or Eqs. (6-33) and (6-35) for q. Estimate a little high since it is off the graph, q = 0.85
+
+K f  1 0.85(2.68 1)  2.43
+
+ max
+
+
+
+Fmax
+h  w1 
+
+d
+
+
+
+
+
+5 0.5(3.5 
+
+0.4)
+
+
+
+3.226
+
+kpsi
+
+ min
+
+
+
+Fmin
+h  w1 
+
+d
+
+
+
+
+
+16 0.5(3.5  0.4)
+
+
+
+10.32
+
+kpsi
+
+a  Kf
+
+ max   min 2
+
+
+
+2.43
+
+3.226
+
+
+
+(10.32) 2
+
+ 16.5 kpsi
+
+m
+
+
+
+Kf
+
+  max
+
+  min 2
+
+
+
+
+
+2.43
+
+3.226  (10.32) 2
+
+
+
+
+
+8.62
+
+kpsi
+
+ny 
+
+Sy  min
+
+
+
+54 10.32
+
+ 5.23
+
+does not yield
+
+Since the mean stress is negative, use Eq. (6-42).
+
+nf
+
+
+
+Se a
+
+
+
+22.0 16.5
+
+ 1.33
+
+Thus the design is controlled by the threat of fatigue at the hole with a minimum factor of safety of n f  1.33. Ans.
+______________________________________________________________________________
+
+6-31 Sut  64 kpsi, Sy  54 kpsi Eq. (6-10): Se'  0.5(64)  32 kpsi Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  1 (axial) Eq. (6-25): kc  0.85 Eq. (6-17): Se  (0.81)(1)(0.85)(32)  22.0 kpsi
+
+Fillet: Fig. A-15-5: D / d  2.5 / 1.5  1.67, r / d  0.25 /1.5  0.17, Kt  2.1 Use Fig. 6-26 or Eqs. (6-33) and (6-35) for q. Estimate a little high since it is off the graph. q = 0.85
+K f  1 q(Kt 1)  1 0.85(2.11)  1.94
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 27/58
+
+ max
+
+
+
+Fmax w2h
+
+
+
+16 1.5(0.5)
+
+
+
+21.3
+
+kpsi
+
+ min
+
+
+
+4 1.5(0.5)
+
+
+
+5.33
+
+kpsi
+
+a  Kf
+
+ max   min 2
+
+ 1.94
+
+21.3  (5.33) 2
+
+ 25.8 kpsi
+
+m
+
+
+
+K
+
+f
+
+  max
+
+  min 2
+
+
+
+ 1.94
+
+21.3  (5.33) 2
+
+
+
+ 15.5
+
+kpsi
+
+ny
+
+
+
+Sy  max
+
+
+
+54 21.3
+
+ 2.54
+
+ Does not yield.
+
+Using Goodman criteria, Eq. (6-41),
+
+nf
+
+
+
+  
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+25.8 22.0
+
+
+
+15.5 64
+
+1 
+
+ 0.71
+
+Hole: Fig. A-15-1: d / w1  0.4 / 2.5  0.16  Kt  2.55
+Use Fig. 6-26 or Eqs. (6-33) and (6-35) for q. Estimate a little high since it is off the graph. q = 0.85
+
+K f  1 0.85(2.55 1)  2.32
+
+ max
+
+
+
+Fmax
+h w1  d
+
+
+
+
+
+16 0.5(2.5  0.4)
+
+ 15.2
+
+kpsi
+
+ min
+
+
+
+Fmin
+hw1  d 
+
+
+
+4 0.5(2.5  0.4)
+
+
+
+3.81
+
+kpsi
+
+a  Kf
+
+ max   min 2
+
+
+
+2.32
+
+
+
+15.2
+
+
+
+(3.81) 2
+
+
+
+
+
+22.1
+
+kpsi
+
+m
+
+
+
+Kf
+
+  max
+
+  min 2
+
+
+
+
+
+2.32
+
+
+
+15.2
+
+
+
+(3.81) 2
+
+
+
+ 13.2
+
+kpsi
+
+ny
+
+
+
+Sy  max
+
+
+
+54 15.2
+
+ 3.55
+
+ Does not yield.
+
+Using Goodman criteria, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+22.1 22.0
+
+
+
+13.2 64
+
+1 
+
+ 0.83
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 28/58
+
+Thus the design is controlled by the threat of fatigue at the fillet with a minimum factor of safety of n f  0.71 Ans.
+______________________________________________________________________________
+
+6-32 Sut  64 kpsi, Sy  54 kpsi
+
+From Prob. 6-30, the fatigue factor of safety at the hole is nf = 1.33. To match this at the
+
+fillet,
+
+nf
+
+
+
+Se a
+
+
+
+a
+
+
+
+Se nf
+
+
+
+22.0 1.33
+
+ 16.5 kpsi
+
+where Se is unchanged from Prob. 6-30. The only aspect of a that is affected by the fillet radius is the fatigue stress concentration factor. Obtaining a in terms of Kf,
+
+a  Kf
+
+ max   min 2
+
+ Kf
+
+3.33  (10.67) 2
+
+ 7.00K f
+
+Equating to the desired stress, and solving for Kf,
+
+ a  7.00K f  16.5  K f  2.36
+Assume since we are expecting to get a smaller fillet radius than the original, that q will be back on the graph of Fig. 6-26, so we will estimate q = 0.8.
+K f  1 0.80(Kt 1)  2.36  Kt  2.7 From Fig. A-15-5, with D / d = 3.5/3 = 1.17 and Kt = 2.6, find r / d. Choosing r / d = 0.03, and with d = w2 = 3.0,
+r  0.03w2  0.033.0  0.09 in
+At this small radius, our estimate for q is too high. From Fig. 6-26, with r = 0.09, q should be about 0.75. Iterating, we get Kt = 2.8. This is at a difficult range on Fig. A-155 to read the graph with any confidence, but we'll estimate r / d = 0.02, giving r = 0.06 in. This is a very rough estimate, but it clearly demonstrates that the fillet radius can be relatively sharp to match the fatigue factor of safety of the hole. Ans. ______________________________________________________________________________
+
+6-33 Sy  60 kpsi, Sut  110 kpsi
+
+Inner fiber where rc  3 / 4 in
+
+ro
+
+
+
+3 4
+
+
+
+3 16(2)
+
+
+
+0.84375
+
+ri
+
+
+
+3 4
+
+
+
+3 32
+
+
+
+0.65625
+
+Table 3-4,
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 29/58
+
+rn
+
+
+
+h
+
+ln
+
+ro ri
+
+
+
+ln
+
+3 / 16 0.84375
+0.65625
+
+ 0.74608 in
+
+Eq. (3-65),
+
+e  rc  rn  0.75  0.74608  0.00392 in
+
+ci  rn  ri  0.74608  0.65625  0.08983
+
+A
+
+
+
+
+
+3 16
+
+
+
+
+
+3 16
+
+
+
+
+
+0.035156
+
+in 2
+
+i
+
+
+
+Mci Aeri
+
+
+
+T (0.08983) (0.035156)(0.00392)(0.65625)
+
+ 993.3T
+
+where T is in lbfin and  i is in psi.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-24):
+Eq. (6-19): Eq. (6-18):
+
+m
+
+
+
+1 2
+
+(993.3)T
+
+
+
+496.7T
+
+ a  496.7T
+
+Se'  0.5110  55 kpsi
+
+ka  2.00(110)0.217  0.72
+
+de  0.808 3 /163 /161/2  0.1515 in
+
+kb  0.879   0.1515 0.107  1.08 (round to 1)
+
+Se  (0.72)(1)(55)  39.6 kpsi
+
+For a compressive mean component, from Eq. (6-42),  a  Se / nf . Thus,
+
+0.4967T
+
+
+
+39.6 3
+
+T  26.6 lbf in
+
+Outer fiber where rc  2.5 in
+
+ro
+
+
+
+2.5 
+
+3 32
+
+
+
+2.59375
+
+ri
+
+
+
+2.5 
+
+3 32
+
+
+
+2.40625
+
+rn
+
+
+
+ln
+
+3 / 16 2.59375
+2.40625
+
+
+
+2.49883
+
+e  2.5  2.49883  0.00117 in
+
+co  2.59375  2.49883  0.09492 in
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 30/58
+
+o
+
+
+
+Mco Aero
+
+
+
+T (0.09492) (0.035156)(0.00117)(2.59375)
+
+ 889.7T
+
+psi
+
+m
+
+a
+
+
+
+1 2
+
+(889.7T
+
+)
+
+
+
+444.9T
+
+psi
+
+(a) Using Eq. (6-41), for Goodman, we have
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+0.4449T 39.6
+
+
+
+0.4449T 110
+
+1 
+
+
+
+3
+
+T  21.8 lbf in Ans.
+
+(b) For Morrow, estimate the fatigue strength coefficient from Eq. (6-44),
+
+ f  Sut  50  110  50  160 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+ 
+
+m
+f
+
+1 
+
+
+
+
+
+0.4449T 39.6
+
+
+
+0.4449T 160
+
+1 
+
+
+
+3
+
+T  23.8 lbf in Ans. (c) To guard against yield, use T of part (b) and the inner stress.
+
+ny
+
+
+
+Sy i
+
+
+
+60 0.9933(23.8)
+
+ 2.54
+
+Ans.
+
+______________________________________________________________________________
+
+6-34 From Prob. 6-33, Se  39.6 kpsi, S y  60 kpsi, and Sut  110 kpsi
+
+(a) Assuming the beam is straight,
+
+ max
+
+
+
+Mc I
+
+
+
+M h / 2
+bh3 /12
+
+
+
+6M bh2
+
+
+
+6T (3 / 16)3
+
+ 910.2T
+
+Using Eq. (6-41), for Goodman, we have
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+m Sut
+
+1  
+
+
+
+
+
+0.4551T 39.6
+
+
+
+0.4551T 110
+
+1  3
+
+T  21.3 lbf  in Ans.
+
+(b) ) For Morrow, estimate the fatigue strength coefficient from Eq. (6-44),
+
+ f  Sut  50  110  50  160 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+a Se
+
+
+
+ 
+
+m
+f
+
+1 
+
+
+
+
+
+0.4551T 39.6
+
+
+
+0.4551T 160
+
+1 
+
+
+
+3
+
+T  23.3 lbf  in Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 31/58
+
+(c)
+
+ny
+
+
+
+Sy  max
+
+
+
+60 0.9102(23.3)
+
+ 2.83
+
+Ans.
+
+______________________________________________________________________________
+
+6-35 K f ,bend  1.4, K f ,axial  1.1, K f ,tors  2.0, S y  300 MPa, Sut  400 MPa, Se  160 MPa
+
+Bending:
+
+ m  0,  a  60 MPa
+
+Axial:
+
+ m  20 MPa,  a  0
+
+Torsion:
+
+ m  35 MPa,  a  35 MPa
+
+Eqs. (6-66) and (6-67):
+
+ a  1.4(60)  02  32.0(35)2  147.5 MPa  m  0 1.1(20)2  32.0(35)2  123.2 MPa
+
+Check for yielding, using the conservative m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+300 147.5 123.2
+
+ 1.11
+
+Yielding is not predicted. Ans.
+
+Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+147.5 160
+
+
+
+123.2 400
+
+1 
+
+n f  0.81 Ans. Finite life is predicted. To use the Walker criterion for estimating an equivalent completely reversed stress, estimate the material fitting parameter for steels with Eq. (657).
+
+Eq. (6-61): Fig. 6-23: Eq. (6-13):
+Eq. (6-14):
+Eq. (6-15):
+
+  0.0002Sut  0.8818  0.0002(400)  0.8818  0.8018
+
+     ar
+
+
+
+m a
+
+ 1  a
+
+
+
+123.2 147.5 10.8018 147.50.8018  166.4 MPa
+
+Off the chart, so use f = 0.9
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.9(400)2
+160
+
+ 810
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(400) 160
+
+
+
+ 0.1174
+
+N
+
+
+
+ 
+
+ ar a
+
+1/b 
+
+1
+
+
+
+
+
+166.4 810
+
+
+
+0.1174
+
+
+
+716
+
+000
+
+cycles
+
+Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 32/58
+
+______________________________________________________________________________
+
+6-36 K f ,bend  1.4, K f ,tors  2.0, S y  300 MPa, Sut  400 MPa, Se  160 MPa
+Bending:  max  150 MPa,  min  40 MPa,  m  55 MPa,  a  95 MPa Torsion:  m  90 MPa,  a  9 MPa Eqs. (6-66) and (6-67):
+
+ a  1.4(95)2  32.0(9)2  136.6 MPa  m  1.4(55)2  32.0(90)2  321.1 MPa
+
+Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+136.6 160
+
+
+
+321.1 400
+
+1 
+
+ 0.60
+
+Ans.
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+300 136.6  321.1
+
+
+
+0.66
+
+Ans.
+
+Since the conservative yield check indicates yielding, we will check more carefully with  m ax obtained directly from the maximum stresses, using the distortion energy failure theory, without stress concentrations. Note that this is exactly the method used for static failure in Ch. 5.
+
+ m ax 
+
+   2 max
+
+ 3 max 2
+
+
+
+1502  390  92  227.8 MPa
+
+ny
+
+
+
+Sy  m ax
+
+
+
+300 227.8
+
+ 1.32
+
+Ans.
+
+Since yielding is not predicted, and infinite life is not predicted, we would like to
+
+estimate a life from the S-N diagram.
+
+To use the Walker criterion for estimating an equivalent completely reversed stress, estimate the material fitting parameter for steels with Eq. (6-57).
+
+Eq. (6-61): Fig. 6-23:
+Eq. (6-13):
+
+  0.0002Sut  0.8818  0.0002(400)  0.8818  0.8018
+
+     ar 
+
+m a
+
+ 1  a
+
+
+
+321.1 136.6 10.8018 136.60.8018  173.6 MPa
+
+Off the chart, so use f = 0.9
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.9(400)2
+160
+
+ 810
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 33/58
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(400) 160
+
+
+
+ 0.1174
+
+Eq. (6-15):
+
+N
+
+
+
+ 
+
+ ar a
+
+1/b 
+
+1
+
+
+
+
+
+173.6 810
+
+
+
+0.1174
+
+
+
+499
+
+000
+
+cycles
+
+Ans.
+
+_____________________________________________________________________________
+
+6-37 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-79, the critical stress element experiences  = 15.3 kpsi and  = 4.43 kpsi. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 15.3 kpsi, m = 0 kpsi, a = 0 kpsi, m = 4.43 kpsi. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  15.32  302 1/2  15.3 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  34.432 1/2  7.67 kpsi
+
+     m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  15.32  3
+
+4.43
+
+2 1/2  17.11 kpsi
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 17.11
+
+
+
+3.16
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.564  32 kpsi
+Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  0.879(1.25)0.107  0.86
+Eq. (6-17): Se  0.81(0.86)(32)  22.3 kpsi Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+15.3 22.3
+
+
+
+7.67 64
+
+1 
+
+ 1.24
+
+Ans.
+
+______________________________________________________________________________
+
+6-38 Table A-20: Sut  440 MPa, Sy  370 MPa From Prob. 3-80, the critical stress element experiences  = 263 MPa and  = 57.7 MPa. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 263 MPa, m = 0, a = 0 MPa, m = 57.7 MPa. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 34/58
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  2632  302 1/2  263 MPa
+
+   m
+
+
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+  1/2  02  3 57.7 2 1/2
+
+ 99.9 MPa
+
+     m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  2632  3
+
+57.7
+
+2 1/2  281 MPa
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+370 281
+
+
+
+1.32
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-17):
+
+Se  0.5440  220 MPa
+ka  3.04(440)0.217  0.81 kb  1.24(30)0.107  0.86
+Se  0.81(0.86)(220)  153 MPa
+
+Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+263 153
+
+
+
+99.9 440
+
+1 
+
+n f  0.51 Infinite life is not predicted. Ans. ______________________________________________________________________________
+
+6-39 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-81, the critical stress element experiences  = 21.5 kpsi and  = 5.09 kpsi. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 21.5 kpsi, m = 0 kpsi, a = 0 kpsi, m = 5.09 kpsi. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  21.52  302 1/2  21.5 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  35.092 1/2  8.82 kpsi
+
+     m ax 
+
+
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  21.52  3
+
+5.09
+
+2 1/2  23.24 kpsi
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 23.24
+
+
+
+2.32
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 35/58
+
+Obtain the modifying factors and endurance limit.
+Eq. (6-10): Se  0.564  32 kpsi
+Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  0.879(1)0.107  0.88
+Eq. (6-17): Se  0.81(0.88)(32)  22.8 kpsi Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+21.5 22.8
+
+
+
+8.82 64
+
+1 
+
+ 0.93
+
+Ans.
+
+______________________________________________________________________________
+
+6-40 Table A-20: Sut  440 MPa, Sy  370 MPa From Prob. 3-82, the critical stress element experiences  = 72.9 MPa and  = 20.3 MPa. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 72.9 MPa, m = 0 MPa, a = 0 MPa, m = 20.3 MPa. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  72.92  302 1/2  72.9 MPa
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  320.32 1/2  35.2 MPa
+
+     m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  72.92  3
+
+20.3
+
+2 1/2  80.9 MPa
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+370 80.9
+
+
+
+4.57
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.5440  220 MPa
+Eq. (6-18): ka  3.04(440)0.217  0.81 Eq. (6-19): kb  1.24(20)0.107  0.90
+Eq. (6-17): Se  0.81(0.90)(220)  160.4 MPa Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+72.9 160.4
+
+
+
+35.2 440
+
+1 
+
+
+
+1.87
+
+Ans.
+
+______________________________________________________________________________
+
+6-41 Table A-20: Sut  64 kpsi, Sy  54 kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 36/58
+
+From Prob. 3-83, the critical stress element experiences  = 35.2 kpsi and  = 7.35 kpsi. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 35.2 kpsi, m = 0 kpsi, a = 0 kpsi, m = 7.35 kpsi. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  35.22  302 1/2  35.2 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  37.352 1/2  12.7 kpsi
+
+     m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  35.22  3
+
+7.35
+
+2 1/2  37.4 kpsi
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 37.4
+
+ 1.44
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.5(64)  32 kpsi Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  0.879(1.25)0.107  0.86
+Eq. (6-17): Se  0.81(0.86)(32)  22.3 kpsi Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+35.2 22.3
+
+
+
+12.7 64
+
+1 
+
+ 0.56
+
+Ans.
+
+______________________________________________________________________________
+
+6-42 Table A-20: Sut  440 MPa, Sy  370 MPa From Prob. 3-84, the critical stress element experiences  = 333.9 MPa and  = 126.3 MPa. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 333.9 MPa, m = 0 MPa, a = 0 MPa, m = 126.3 MPa. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  333.92  302 1/2  333.9 MPa
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  3126.32 1/2  218.8 MPa
+
+     m ax 
+
+
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  333.92  3
+
+126.3
+
+2 1/2  399.2 MPa
+
+Check for yielding, using the distortion energy failure theory.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 37/58
+
+ny
+
+
+
+Sy  m ax
+
+
+
+370 399.2
+
+
+
+0.93
+
+The sample fails by yielding, infinite life is not predicted. Ans.
+
+The fatigue analysis will be continued only to obtain the requested fatigue factor of safety, though the yielding failure will dictate the life.
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.5(440)  220 MPa Eq. (6-18): ka  3.04(440)0.217  0.81 Eq. (6-19): kb  1.24(50)0.107  0.82
+Eq. (6-17): Se  0.81(0.82)(220)  146.1 MPa Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+333.9 146.1
+
+
+
+218.8 440
+
+1 
+
+ 0.36
+
+Ans.
+
+______________________________________________________________________________
+
+6-43 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-85, the critical stress element experiences completely reversed bending stress due to the rotation, and steady torsional and axial stresses.
+
+ a,bend  9.495 kpsi,  m,bend  0 kpsi  a,axial  0 kpsi,  m,axial  0.362 kpsi  a  0 kpsi,  m  11.07 kpsi
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  9.4952  302 1/2  9.495 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  0.3622  311.072 1/2  19.18 kpsi
+
+   m ax
+
+
+
+
+
+2 max
+
+
+
+3
+
+2 max
+
+1/ 2
+
+ 9.495  0.3622  311.072 1/2
+
+ 21.56 kpsi
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 21.56
+
+
+
+2.50
+
+Obtain the modifying factors and endurance limit.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 38/58
+
+Eq. (6-10): Se  0.5(64)  32 kpsi Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  0.879(1.13)0.107  0.87
+Eq. (6-17): Se  0.81(0.87)(32)  22.6 kpsi Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+9.495 22.6
+
+
+
+19.18 64
+
+1 
+
+
+
+1.39
+
+Ans.
+
+______________________________________________________________________________
+
+6-44 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-87, the critical stress element experiences completely reversed bending stress due to the rotation, and steady torsional and axial stresses.  a,bend  33.99 kpsi,  m,bend  0 kpsi  a,axial  0 kpsi,  m,axial  0.153 kpsi  a  0 kpsi,  m  7.847 kpsi
+
+Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  33.992  302 1/2  33.99 kpsi
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  0.1532  37.8472 1/2  13.59 kpsi
+
+   m ax
+
+
+
+
+
+2 max
+
+
+
+3
+
+2 max
+
+1/ 2
+
+ 33.99  0.1532  37.8472 1/2
+
+ 36.75 kpsi
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 36.75
+
+
+
+1.47
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.5(64)  32 kpsi Eq. (6-18): ka  2.00(64)0.217  0.81 Eq. (6-19): kb  0.879(0.88)0.107  0.89
+Eq. (6-17): Se  0.81(0.89)(32)  23.1 kpsi Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+ 
+
+33.99 23.1
+
+
+
+13.59 64
+
+1 
+
+
+
+0.59
+
+Ans.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 39/58
+
+______________________________________________________________________________
+
+6-45 Table A-20: Sut  440 MPa, Sy  370 MPa
+
+From Prob. 3-88, the critical stress element experiences  = 68.6 MPa and  = 37.7 MPa.
+
+The bending is completely reversed due to the rotation, and the torsion is steady, giving
+
+a = 68.6 MPa, m = 0 MPa, a = 0 MPa, m = 37.7 MPa. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  68.62  302 1/2  68.6 MPa
+
+   m 
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  337.72 1/2  65.3 MPa
+
+     m ax 
+
+
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  68.62  3
+
+37.7
+
+2 1/2  94.7 MPa
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+370 94.7
+
+
+
+3.91
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Se  0.5(440)  220 MPa Eq. (6-18): ka  3.04(440)0.217  0.81 Eq. (6-19): kb  1.24(30)0.107  0.86
+Eq. (6-17): Se  0.81(0.86)(220)  153 MPa Using Goodman, Eq. (6-41),
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+68.6 153
+
+
+
+65.3 440
+
+1 
+
+ 1.68
+
+Ans.
+
+______________________________________________________________________________
+
+6-46 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-90, the critical stress element experiences  = 3.46 kpsi and  = 0.882 kpsi. The bending is completely reversed due to the rotation, and the torsion is steady, giving a = 3.46 kpsi, m = 0, a = 0 kpsi, m = 0.882 kpsi. Obtain von Mises stresses for the alternating, mean, and maximum stresses.
+
+   a 
+
+
+
+2 a
+
+
+
+3
+
+2 a
+
+1/2  3.462  302 1/2  3.46 kpsi
+
+   m
+
+
+
+
+
+2 m
+
+
+
+3
+
+2 m
+
+1/2  02  30.8822 1/2  1.53 kpsi
+
+     m ax 
+
+2 max
+
+
+
+3
+
+2 max
+
+1/2  3.462  3
+
+0.882
+
+2 1/2  3.78 kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 40/58
+
+Check for yielding, using the distortion energy failure theory.
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 3.78
+
+
+
+14.3
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-17):
+
+Se  0.5(64)  32 kpsi ka  2.00(64)0.217  0.81 kb  0.879(1.375)0.107  0.85 Se  0.81(0.85)(32)  22.0 kpsi
+
+Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+ 
+
+3.46 22.0
+
+
+
+1.53 64
+
+ 
+
+1
+
+n f  5.5
+
+Ans.
+
+______________________________________________________________________________
+
+6-47 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-91, the critical stress element experiences  = 16.3 kpsi and  = 5.09 kpsi. Since the load is applied and released repeatedly, this gives max = 16.3 kpsi, min = 0 kpsi, max = 5.09 kpsi, min = 0 kpsi. Consequently,m = a = 8.15 kpsi, m = a = 2.55 kpsi.
+For bending, from Eqs. (6-33) and (6-35),
+
+      a  0.246  3.08 103 64 1.51 105 642  2.67 108 643  0.10373
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.10373
+
+0.1
+
+ 0.75
+
+Eq. (6-32): K f  1 q(Kt 1)  1 0.75(1.5 1)  1.38
+
+For torsion, from Eqs. (6-33) and (6-36),
+
+      a  0.190  2.51 103 64 1.35 105 642  2.67 108 643  0.07800
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.07800
+
+0.1
+
+ 0.80
+
+Eq. (6-32): K fs  1 qs (Kts 1)  1 0.80(2.1 1)  1.88
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 41/58
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (667).
+
+  a 
+
+1.388.152  3 1.882.552
+
+1/ 2
+ 13.98 kpsi
+
+ m   a  13.98 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+54 13.98 13.98
+
+ 1.93
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81
+de  0.370d  0.3701  0.370 in
+kb  0.879de0.107  0.879(0.370)0.107  0.98
+Se  (0.81)(0.98)(32)  25.4 kpsi
+
+Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+13.98 25.4
+
+
+
+13.98 64
+
+1 
+
+n f  1.3 Ans. ______________________________________________________________________________
+
+6-48 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-92, the critical stress element experiences  = 16.4 kpsi and  = 4.46 kpsi. Since the load is applied and released repeatedly, this gives max = 16.4 kpsi, min = 0 kpsi, max = 4.46 kpsi, min = 0 kpsi. Consequently,m = a = 8.20 kpsi, m = a = 2.23 kpsi.
+
+For bending, from Eqs. (6-33) and (6-35),
+
+      a  0.246  3.08 103 64 1.51 105 642  2.67 108 643  0.10373
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.10373
+0.1
+
+ 0.75
+
+K f  1 q(Kt 1)  1 0.75(1.5 1)  1.38
+
+For torsion, from Eqs. (6-33) and (6-36),
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 42/58
+
+      a  0.190  2.51 103 64 1.35 105 642  2.67 108 643  0.07800
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.07800
+0.1
+
+ 0.80
+
+K fs  1 qs (Kts 1)  1 0.80(2.1 1)  1.88
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (6-
+
+67).
+
+  a 
+
+1.388.202  3 1.882.232
+
+1/ 2
+ 13.45 kpsi
+
+ m   a  13.45 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+54 13.45 13.45
+
+ 2.01
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+Using Goodman,
+Eq. (6-41):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81 de  0.370d  0.370(1)  0.370 in kb  0.879de0.107  0.879(0.370)0.107  0.98 Se  (0.81)(0.98)(32)  25.4 kpsi
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+13.45 25.4
+
+
+
+13.45 64
+
+1 
+
+n f  1.35 Ans. ______________________________________________________________________________
+6-49 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-93, the critical stress element experiences repeatedly applied bending, axial, and torsional stresses of x,bend = 20.2 kpsi, x,axial = 0.1 kpsi, and  = 5.09 kpsi.. Since the axial stress is practically negligible compared to the bending stress, we will simply combine the two and not treat the axial stress separately for stress concentration factor and load factor. This gives max = 20.3 kpsi, min = 0 kpsi, max = 5.09 kpsi, min = 0 kpsi. Consequently,m = a = 10.15 kpsi, m = a = 2.55 kpsi.
+For bending, from Eqs. (6-33) and (6-35),
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 43/58
+
+      a  0.246  3.08 103 64 1.51 105 642  2.67 108 643  0.10373
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.10373
+0.1
+
+ 0.75
+
+K f  1 q(Kt 1)  1 0.75(1.5 1)  1.38
+
+For torsion, from Eqs. (6-33) and (6-36),
+
+      a  0.190  2.51 103 64 1.35 105 642  2.67 108 643  0.07800
+
+Eq. (6-32):
+
+q 1 1
+
+a r
+
+
+
+1
+
+1 0.07800
+
+0.1
+
+ 0.80
+
+K fs  1 qs (Kts 1)  1 0.80(2.1 1)  1.88
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (6-
+
+67).
+
+  a 
+
+1.3810.152  3 1.882.552
+
+1/ 2
+ 16.28 kpsi
+
+ m   a  16.28 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+54 16.28 16.28
+
+ 1.66
+
+Obtain the modifying factors and endurance limit.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81 de  0.370d  0.370(1)  0.370 in kb  0.879de0.107  0.879(0.370)0.107  0.98 Se  (0.81)(0.98)(32)  25.4 kpsi
+
+Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+ 
+
+16.28 25.4
+
+
+
+16.28 64
+
+1 
+
+n f  1.12 Ans.
+
+____________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 44/58
+
+6-50 Table A-20: Sut  64 kpsi, Sy  54 kpsi
+
+From Prob. 3-94, the critical stress element on the neutral axis in the middle of the
+
+longest side of the rectangular cross section experiences a repeatedly applied shear stress
+
+of max = 14.3 kpsi, min = 0 kpsi. Thus, m = a = 7.15 kpsi. Since the stress is entirely
+
+shear, it is convenient to check for yielding using the standard Maximum Shear Stress
+
+theory.
+
+ny
+
+
+
+Sy / 2  max
+
+
+
+54 / 2 14.3
+
+ 1.89
+
+Find the modifiers and endurance limit.
+
+Eq. (6-10): Eq. (6-18):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81
+
+The size factor for a rectangular cross section loaded in torsion is not readily available. An equivalent diameter based on the 95 percent stress area is not readily obtained, since the stress situation in this case is nonlinear, as described in Section 3-12. Noting that the maximum stress occurs at the middle of the longest side, or with a radius from the center of the cross section equal to half of the shortest side, we will simply choose an equivalent diameter equal to the length of the shortest side.
+
+Eq. (6-19):
+
+de  0.25 in kb  0.879de0.107  0.879(0.25)0.107  1.02
+
+We will round down to kb = 1.
+
+Eq. (6-25): Eq. (6-17):
+
+kc  0.59 Sse  0.81(1)(0.59)(32)  15.3 kpsi
+
+Since the stress is entirely shear, we choose to use a load factor kc = 0.59, and convert the ultimate strength to a shear value rather than using the combination loading method of Sec. 6-16. From Eq. (6-58), Ssu = 0.67Su = 0.67 (64) = 42.9 kpsi.
+
+Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+  
+
+a Sse
+
+
+
+m Ssu
+
+1  
+
+
+
+
+
+7.15 15.3
+
+
+
+7.15 42.9
+
+1 
+
+ 1.58
+
+Ans.
+
+______________________________________________________________________________
+
+6-51 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-95, the critical stress element experiences  = 28.0 kpsi and  = 15.3 kpsi. Since the load is applied and released repeatedly, this gives max = 28.0 kpsi, min = 0
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 45/58
+
+kpsi, max = 15.3 kpsi, min = 0 kpsi. Consequently,m = a = 14.0 kpsi, m = a = 7.65 kpsi. From Table A-15-8 and A-15-9,
+D / d  1.5 /1  1.5, r / d  0.125 / 1  0.125 Kt,bend  1.60, Kt,tors  1.39
+
+Figs. 6-26 and 6-27: qbend = 0.78, qtors = 0.82 Eq. (6-32):
+    K f ,bend  1 qbend Kt,bend 1  1 0.78 1.60 1  1.47     K f ,tors  1 qtors Kt,tors 1  1 0.82 1.39 1  1.32
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (667).
+
+  a 
+
+1.4714.02  3 1.327.652
+
+1/ 2
+ 27.0 kpsi
+
+ m   a  27.0 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+54 27.0  27.0
+
+ 1.00
+
+Since stress concentrations are included in this quick yield check, the low factor of safety
+
+is acceptable.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81
+de  0.370d  0.3701  0.370 in
+kb  0.879de0.107  0.879(0.370)0.107  0.98
+Se  (0.81)(0.98)(0.5)(64)  25.4 kpsi
+
+For the Morrow criterion, estimate the fatigue strength coefficient for steel.
+
+Eq. (6-44):  f  Sut  50  64  50  114 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m  f
+
+1 
+
+
+
+
+
+27.0 25.4
+
+
+
+27.0 114
+
+1 
+
+n f  0.77 Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an equivalent completely reversed stress, again using Morrow.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 46/58
+
+Eq. (6-59): Fig. 6-23:
+
+ ar
+
+
+
+ a 1 ( m /  f
+
+)
+
+
+
+27.0 1 (27.0 / 114)
+
+
+
+35.4
+
+kpsi
+
+Off the chart, so use f = 0.9
+
+Eq. (6-13):
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.9(64)2
+25.4
+
+ 130.6
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(64) 25.4
+
+
+
+
+
+0.1185
+
+Eq. (6-15):
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+35.4 130.6
+
+1
+ 0.1185 
+
+
+
+60856
+
+cycles
+
+
+
+61
+
+000
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-52 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-96, the critical stress element experiences x,bend = 46.1 kpsi, x,axial = 0.382 kpsi and  = 15.3 kpsi. The axial load is practically negligible, but we'll include it to demonstrate the process. Since the load is applied and released repeatedly, this gives max,bend = 46.1 kpsi, min,bend = 0 kpsi, max,axial = 0.382 kpsi, min,axial = 0 kpsi, max = 15.3 kpsi, min = 0 kpsi. Consequently,m,bend = a,bend = 23.05 kpsi, m,axial = a,axial = 0.191 kpsi, m = a = 7.65 kpsi. From Table A-15-7, A-15-8 and A-15-9,
+
+D / d  1.5 /1  1.5, r / d  0.125 / 1  0.125
+
+Kt,bend  1.60,
+
+Kt,tors  1.39,
+
+Kt,axial  1.75
+
+Eqs. (6-33), (6-35), and (6-36), or Figs. 6-26 and 6-27: qbend = qaxial =0.78, qtors = 0.82 Eq. (6-32):
+    K f ,bend  1 qbend Kt,bend 1  1 0.78 1.60 1  1.47     K f ,axial  1 qaxial Kt,axial 1  1 0.78 1.75 1  1.59     K f ,tors  1 qtors Kt,tors 1  1 0.82 1.39 1  1.32
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (6-
+
+67).
+
+  a 
+
+1.4723.05  1.590.1912  3 1.327.652
+
+1/ 2
+ 38.4 kpsi
+
+  m 
+
+1.4723.05  1.590.1912  3 1.327.652
+
+1/ 2
+ 38.4 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+Sy  a   m
+
+
+
+54 38.4  38.4
+
+ 0.70
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 47/58
+
+Since the conservative yield check indicates yielding, we will check more carefully with  m ax obtained directly from the maximum stresses, using the distortion energy failure theory, without stress concentrations. Note that this is exactly the method used for static failure in Ch. 5.
+
+     m ax 
+
+     3  max,bend
+
+2 max,axial
+
+2 max
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 53.5
+
+ 1.01
+
+Ans.
+
+46.1 0.3822  315.32  53.5 kpsi
+
+This shows that yielding is imminent, and further analysis of fatigue life should not be interpreted as a guarantee of more than one cycle of life.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+
+Se  0.5(64)  32 kpsi ka  aSubt  2.00(64)0.217  0.81
+de  0.370d  0.3701  0.370 in
+kb  0.879de0.107  0.879(0.370)0.107  0.98
+Se  (0.81)(0.98)(0.5)(64)  25.4 kpsi
+
+For the Morrow criterion, estimate the fatigue strength coefficient for steel.
+
+Eq. (6-44):  f  Sut  50  64  50  114 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m  f
+
+1 
+
+
+
+
+
+38.4 25.4
+
+
+
+38.4 114
+
+1
+
+n f  0.54 Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an equivalent completely reversed stress, again using Morrow.
+
+Eq. (6-59): Fig. 6-23:
+
+ ar
+
+
+
+ a 1 ( m /  f
+
+)
+
+
+
+38.4 1 (38.4 / 114)
+
+
+
+57.9
+
+kpsi
+
+Off the chart, so use f = 0.9
+
+Eq. (6-13):
+
+a
+
+
+
+(f
+
+Sut )2 Se
+
+
+
+0.9(64)2
+25.4
+
+ 130.6
+
+Eq. (6-14):
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.9(64) 25.4
+
+
+
+
+
+0.1185
+
+Eq. (6-15):
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+1
+
+
+
+57.9 130.6
+
+
+
+0.1185
+
+
+
+960
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 48/58
+
+6-53 Table A-20: Sut  64 kpsi, Sy  54 kpsi From Prob. 3-97, the critical stress element experiences x,bend = 55.5 kpsi, x,axial = 0.382 kpsi and  = 15.3 kpsi. The axial load is practically negligible, but we'll include it to demonstrate the process. Since the load is applied and released repeatedly, this gives max,bend = 55.5 kpsi, min,bend = 0 kpsi, max,axial = 0.382 kpsi, min,axial = 0 kpsi, max = 15.3 kpsi, min = 0 kpsi. Consequently,m,bend = a,bend = 27.75 kpsi, m,axial = a,axial = 0.191 kpsi, m = a = 7.65 kpsi. From Table A-15-7, A-15-8 and A-15-9, D / d  1.5 /1  1.5, r / d  0.125 / 1  0.125
+
+Kt,bend  1.60,
+
+Kt,tors  1.39,
+
+Kt,axial  1.75
+
+Eqs. (6-33), (6-35), and (6-36), or Figs. 6-26 and 6-27: qbend = qaxial =0.78, qtors = 0.82 Eq. (6-32):
+    K f ,bend  1 qbend Kt,bend 1  1 0.78 1.60 1  1.47
+
+    K f ,axial  1 qaxial Kt,axial 1  1 0.78 1.75 1  1.59
+
+    K f ,tors  1 qtors Kt,tors 1  1 0.82 1.39 1  1.32
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (667).
+
+  a 
+
+1.4727.75  1.590.1912  3 1.327.652
+
+1/ 2
+ 44.66 kpsi
+
+  m 
+
+1.4727.75  1.590.1912  3 1.327.652
+
+1/ 2
+ 44.66 kpsi
+
+Since these stresses are relatively high compared to the yield strength, we will go ahead and check for yielding using the distortion energy failure theory.
+
+        m ax 
+
+     3  max,bend
+
+2 max,axial
+
+2 max
+
+55.5  0.382 2  3 15.3 2  61.8 kpsi
+
+ny
+
+
+
+Sy  m ax
+
+
+
+54 61.8
+
+ 0.87
+
+Ans.
+
+This shows that yielding is predicted. Further analysis of fatigue life is just to be able to report the fatigue factor of safety, though the life will be dictated by the static yielding failure, i.e. N = 1/2 cycle. Ans.
+
+Eq. (6-10): Eq. (6-18): Eq. (6-23): Eq. (6-19): Eq. (6-17):
+
+Se  0.564  32 kpsi
+ka  aSubt  2.00(64)0.217  0.81
+de  0.370d  0.3701  0.370 in
+kb  0.879de0.107  0.879(0.370)0.107  0.98
+Se  (0.81)(0.98)(0.5)(64)  25.4 kpsi
+
+For the Morrow criterion, estimate the fatigue strength coefficient for steel.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 49/58
+
+Eq. (6-44):  f  Sut  50  64  50  114 kpsi
+
+Eq. (6-46):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m  f
+
+1 
+
+
+
+
+
+44.66 25.4
+
+
+
+44.66 114
+
+1 
+
+n f  0.47 Ans.
+
+______________________________________________________________________________ 6-54 From Table A-20, for AISI 1040 CD, Sut = 85 kpsi and Sy = 71 kpsi. From the solution to
+Prob. 6-17 we find the completely reversed stress at the critical shoulder fillet to be ar = 35.0 kpsi, producing a = 35.0 kpsi and m = 0 kpsi. This problem adds a steady torque which creates torsional stresses of
+
+  m
+
+
+
+Tr J
+
+
+
+25001.625 / 2
+ 1.6254 / 32
+
+
+
+2967
+
+psi
+
+
+
+2.97
+
+kpsi,
+
+ a  0 kpsi
+
+From Table A-15-8 and A-15-9, r/d = 0.0625/1.625 = 0.04, D/d = 1.875/1.625 = 1.15, Kt,bend =1.95, Kt,tors =1.60 Eqs. (6-33), (6-35) and (6-36), or Figs. 6-26 and 6-27: qbend = 0.76, qtors = 0.81 Eq. (6-32):
+    K f ,bend  1 qbend Kt,bend 1  1 0.76 1.95 1  1.72     K f ,tors  1 qtors Kt,tors 1  1 0.81 1.60 1  1.49
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (667).
+   a  1.7235.02  3 1.4902 1/2  60.2 kpsi
+
+  m 
+
+1.7202  3 1.492.972
+
+1/ 2
+ 7.66 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+
+
+a
+
+Sy 
+
+m
+
+
+
+71 60.2  7.66
+
+ 1.05
+
+From the solution to Prob. 6-17, Se = 27.0 kpsi. Using Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+60.2 27.0
+
+
+
+7.66 85
+
+1 
+
+n f  0.43 Ans. Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an equivalent completely reversed stress. Choosing the Goodman criterion,
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 50/58
+
+Eq. (6-58): Fig. 6-23: Eq. (6-13): Eq. (6-14):
+Eq. (6-15):
+
+ ar
+
+
+
+ a 1 ( m /
+
+Sut )
+
+
+
+60.2 1 (7.66 / 85)
+
+
+
+66.2
+
+kpsi
+
+f = 0.867
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.867(85)2
+27.0
+
+
+
+201.1
+
+b
+
+
+
+
+
+1 3
+
+log
+
+  
+
+f Sut Se
+
+  
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.867(85) 27.0
+
+
+
+ 0.1454
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+1
+66.2 0.1454 201.1 
+
+
+
+2084
+
+cycles
+
+N = 2100 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-55 From the solution to Prob. 6-18 we find the completely reversed stress at the critical shoulder fillet to be rev = 32.8 kpsi, producing a = 32.8 kpsi and m = 0 kpsi. This problem adds a steady torque which creates torsional stresses of
+
+  m
+
+
+
+Tr J
+
+
+
+22001.625 / 2
+ 1.6254 / 32
+
+
+
+2611
+
+psi
+
+
+
+2.61
+
+kpsi,
+
+ a  0 kpsi
+
+From Table A-15-8 and A-15-9, r/d = 0.0625/1.625 = 0.04, D/d = 1.875/1.625 = 1.15, Kt,bend =1.95, Kt,tors =1.60
+Eqs. (6-33), (6-35) and (6-36), or Figs. 6-26 and 6-27: qbend = 0.76, qtors = 0.81 Eq. (6-32):
+    K f ,bend  1 qbend Kt,bend 1  1 0.76 1.95 1  1.72     K f ,tors  1 qtors Kt,tors 1  1 0.81 1.60 1  1.49
+
+Obtain von Mises stresses for the alternating and mean stresses from Eqs. (6-66) and (6-
+
+67).
+
+  a 
+
+1.72 32.82  3 1.4902
+
+1/ 2
+ 56.4 kpsi
+
+  m 
+
+1.7202  3 1.49 2.612
+
+1/ 2
+ 6.74 kpsi
+
+Check for yielding, using the conservative  m ax   a   m ,
+
+ny
+
+
+
+
+
+a
+
+Sy 
+
+m
+
+
+
+71 56.4  6.74
+
+ 1.12
+
+From the solution to Prob. 6-18, Se = 27.0 kpsi. Using Goodman,
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 51/58
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+56.4 27.0
+
+
+
+6.74 85
+
+1 
+
+n f  0.46 Ans.
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an
+
+equivalent completely reversed stress. Choosing the Goodman criterion,
+
+Eq. (6-58): Fig. 6-23: Eq. (6-13): Eq. (6-14):
+Eq. (6-15):
+
+ ar
+
+
+
+ a 1 ( m /
+
+Sut )
+
+
+
+56.4 1 (6.74 / 85)
+
+
+
+61.3
+
+kpsi
+
+f = 0.867
+
+a
+
+
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.867(85)2
+27.0
+
+
+
+201.1
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.867(85) 27.0
+
+
+
+ 0.1454
+
+N
+
+
+
+
+
+ ar a
+
+1/b 
+
+
+
+
+
+1
+61.3 0.1454 201.1 
+
+
+
+3536
+
+cycles
+
+N = 3500 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-56 Sut  55 kpsi, S y  30 kpsi, Kts  1.6, L  2 ft, Fmin  150 lbf , Fmax  500 lbf Eqs. (6-33) and (6-36), or Fig. 6-27: qs = 0.80
+Eq. (6-32): K fs  1 qs  Kts 1  1 0.801.6 1  1.48
+
+Tmax  500(2)  1000 lbf in, Tmin  150(2)  300 lbf in
+
+ max
+
+
+
+16K 
+
+Tfs max d3
+
+
+
+16(1.48)(1000)  (0.875)3
+
+ 11 251 psi
+
+ 11.25 kpsi
+
+ min
+
+
+
+16K 
+
+Tfs min d3
+
+
+
+16(1.48)(300)  (0.875)3
+
+ 3375
+
+psi  3.38 kpsi
+
+m
+
+  max
+
+  min 2
+
+
+
+11.25  2
+
+3.38
+
+ 7.32 kpsi
+
+a
+
+  max
+
+ min 2
+
+
+
+11.25  2
+
+3.38
+
+ 3.94
+
+kpsi
+
+Since the stress is entirely shear, it is convenient to check for yielding using the standard
+
+Maximum Shear Stress theory.
+
+ny
+
+
+
+Sy / 2  max
+
+
+
+30 / 2 11.25
+
+ 1.33
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 52/58
+
+Find the modifiers and endurance limit. Eq. (6-10): Se  0.5(55)  27.5 kpsi Eq. (6-18): ka  11.0(55)0.650  0.81 Eq. (6-23): de  0.370(0.875)  0.324 in Eq. (6-19): kb  0.879(0.324)0.107  0.99 Eq. (6-25): kc  0.59 Eq. (6-17): Sse  0.81(0.99)(0.59)(27.5)  13.0 kpsi
+
+Since the stress is entirely shear, we will use a load factor kc = 0.59, and convert the ultimate strength to a shear value rather than using the combination loading method of Sec. 6-16. From Eq. (6-58), Ssu = 0.67Su = 0.67 (55) = 36.9 kpsi.
+
+(a) Goodman,
+
+Eq. (6-41):
+
+nf
+
+
+
+ 
+
+a Sse
+
+
+
+m Ssu
+
+1  
+
+
+
+
+
+3.94 13.0
+
+
+
+7.32 36.9
+
+1 
+
+ 1.99
+
+Ans.
+
+(b) Gerber
+
+Eq. (6-48):
+
+nf
+
+
+
+1 2
+
+ 
+
+Ssu m
+
+2  
+
+a Sse
+
+  1 
+
+1
+
+ 
+
+2 mSse Ssu a
+
+2  
+
+  
+
+nf
+
+
+
+1 2
+
+
+
+36.9 7.32
+
+2
+
+
+
+3.94 13.0
+
+
+
+  
+
+1
+
+
+
+1
+
+
+
+ 
+
+2(7.32)(13.0) 36.9(3.94)
+
+2 
+
+  
+
+n f  2.49 Ans.
+
+______________________________________________________________________________
+
+6-57 Sut  145 kpsi, Sy  120 kpsi
+
+From Eqs. (6-33) and (6-35), or Fig. 6-26, with a notch radius of 0.1 in, q = 0.9. Thus, with Kt = 3 from the problem statement,
+
+K f  1 q(Kt 1)  1 0.9(3 1)  2.80
+
+ max
+
+ K f
+
+4P d2
+
+
+
+2.80(4)(P)  (1.2)2
+
+ 2.476P
+
+m
+
+
+
+ a
+
+
+
+1 2
+
+(2.476P)
+
+
+
+1.238P
+
+Tmax
+
+
+
+f
+
+P
+
+
+
+D 4
+
+
+
+d
+
+
+
+
+
+0.3P
+
+6
+4
+
+
+
+1.2
+
+
+
+0.54P
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 53/58
+
+From Eqs. (6-33) and (6-36), or Fig. 6-27, with a notch radius of 0.1 in, qs  0.92. Thus,
+
+with Kts = 1.8 from the problem statement,
+
+K fs  1 qs (Kts 1)  1 0.92(1.8 1)  1.74
+
+ max
+
+
+
+16K fsT d3
+
+
+
+16(1.74)(0.54P)  (1.2)3
+
+ 2.769P
+
+a
+
+m
+
+
+
+
+
+max
+2
+
+
+
+2.769P 2
+
+ 1.385P
+
+Eqs. (6-66) and (6-67):
+
+ a
+
+ [ a2
+
+
+
+3
+
+2 a
+
+]1/
+
+2
+
+ [(1.238P)2
+
+ 3(1.385P)2 ]1/2
+
+
+
+2.70P
+
+ m
+
+ [ m2
+
+
+
+3
+
+2 m
+
+]1/
+
+2
+
+ [(1.238P)2
+
+
+
+3(1.385P)2 ]1/2
+
+
+
+2.70P
+
+Eq. (6-10): Eq. (6-18): Eq. (6-19): Eq. (6-17):
+Eq. (6-41):
+
+Se  0.5(145)  72.5 kpsi
+
+ka  2.00(145)0.217  0.68
+
+kb  0.879(1.2)0.107  0.862
+
+Se  (0.68)(0.862)(72.5)  42.5 kpsi
+
+nf
+
+
+
+ 
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+2.70P 42.5
+
+
+
+2.70P 145
+
+1 
+
+
+
+3
+
+P  4.1 kips Ans.
+
+Yield (conservative):
+
+ny
+
+
+
+
+
+a
+
+Sy 
+
+m
+
+
+
+120 (2.70)(4.1)  (2.70)(4.1)
+
+ 5.4
+
+Yielding is not predicted. Ans.
+
+______________________________________________________________________________
+
+6-58 From Prob. 6-57, K f  2.80, K f s  1.74, Se  42.5 kpsi
+
+ max
+
+ K f
+
+4Pmax d2
+
+
+
+2.80
+
+4(18)  (1.22
+
+)
+
+ 44.56
+
+kpsi
+
+ min
+
+ K f
+
+4Pmin d2
+
+
+
+2.80
+
+4(4.5)  (1.2)2
+
+ 11.14 kpsi
+
+Tmax
+
+
+
+f
+
+Pmax 
+
+Dd 4
+
+
+
+
+
+0.3(18)
+
+
+
+6
+
+ 1.2 4
+
+
+
+
+
+9.72
+
+kip
+
+
+
+in
+
+Tmin
+
+
+
+f
+
+Pmin 
+
+Dd 4
+
+
+
+
+
+0.3(4.5)
+
+
+
+6
+
+ 1.2 4
+
+
+
+
+
+2.43
+
+kip
+
+
+
+in
+
+ max
+
+
+
+K
+
+f
+
+s
+
+16Tmax d3
+
+
+
+1.74
+
+16(9.72)  (1.2)3
+
+ 49.85 kpsi
+
+ min
+
+
+
+K
+
+f
+
+s
+
+16Tmin d3
+
+
+
+1.74
+
+16(2.43)  (1.2)3
+
+ 12.46
+
+kpsi
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 54/58
+
+a
+
+
+
+44.56  (11.14) 2
+
+ 16.71 kpsi
+
+m
+
+
+
+44.56  (11.14) 2
+
+
+
+27.85
+
+kpsi
+
+a
+
+
+
+49.85 12.46 2
+
+ 18.70
+
+kpsi
+
+m
+
+
+
+49.85 12.46 2
+
+
+
+31.16
+
+kpsi
+
+Eqs. (6-66) and (6-67):
+
+ a
+
+ [( a
+
+/
+
+0.85)2
+
+
+
+3
+
+2 a
+
+]1/
+
+2
+
+ [(16.71/
+
+0.85)2
+
+ 3(18.70)2 ]1/2
+
+
+
+37.89
+
+kpsi
+
+ m
+
+ [ m2
+
+
+
+3
+
+2 m
+
+]1/
+
+2
+
+ [(27.85)2
+
+ 3(31.16)2 ]1/2
+
+
+
+60.73
+
+kpsi
+
+Goodman: Eq. (6-41):
+
+nf
+
+
+
+  
+
+ a Se
+
+
+
+ m Sut
+
+1  
+
+
+
+
+
+37.89 42.5
+
+
+
+60.73 145
+
+1 
+
+nf = 0.76
+
+Since infinite life is not predicted, estimate a life from the S-N diagram. First, find an equivalent completely reversed stress (See Ex. 6-12). Choosing the Goodman criterion,
+
+Eq. (6-58): Fig. 6-23:
+
+ ar
+
+
+
+ a 1 ( m /
+
+Sut )
+
+
+
+37.89 1 (60.73 / 145)
+
+
+
+65.2
+
+kpsi
+
+f = 0.8
+
+Eq. (6-13): Eq. (6-14):
+Eq. (6-15):
+
+a
+
+
+
+f
+
+ Sut 2
+Se
+
+
+
+0.8(145)2
+42.5
+
+ 316.6
+
+b
+
+
+
+
+
+1 3
+
+log
+
+ 
+
+f Sut Se
+
+ 
+
+
+
+
+
+1 3
+
+log
+
+
+
+0.8(145) 42.5
+
+
+
+
+
+0.1454
+
+N
+
+
+
+ 
+
+ ar a
+
+1/b 
+
+
+
+
+
+65.2 316.6
+
+1
+ 0.1454 
+
+
+
+52
+
+460
+
+cycles
+
+N = 52 500 cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-59 For AISI 1020 CD, From Table A-20, Sy = 390 MPa, Sut = 470 MPa. Given: Se = 175 MPa.
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 55/58
+
+First Loading:
+
+ m
+
+1
+
+
+
+360
+
+160 2
+
+
+
+260
+
+MPa,
+
+ a
+
+1
+
+
+
+360
+
+160 2
+
+
+
+100
+
+MPa
+
+Goodman, Eq. (6-58):
+
+ a e1
+
+
+
+1
+
+
+
+ a 1  m 1 /
+
+Sut
+
+
+
+1
+
+
+
+100 260 /
+
+470
+
+ 223.8
+
+MPa
+
+
+
+Se
+
+ finite
+
+life
+
+Fig. 6-23: Off the graph, so let f = 0.9.
+
+a
+
+
+
+0.9  470 2
+175
+
+ 1022.5
+
+MPa
+
+b
+
+
+
+
+
+1 3
+
+log
+
+0.9  470
+175
+
+
+
+0.127
+
+767
+
+N
+
+
+
+
+
+223.8 1022.5
+
+1/ 0.127 767
+
+ 145
+
+920
+
+cycles
+
+Second
+
+loading:
+
+m 2
+
+
+
+320  200
+2
+
+
+
+60
+
+MPa,
+
+ a
+
+2
+
+
+
+320
+
+
+
+ 200 
+2
+
+
+
+260
+
+MPa
+
+ a
+
+e2
+
+
+
+260 1 60 / 470
+
+
+
+298.0
+
+MPa
+
+(a) Miner's method:
+
+N2
+
+
+
+
+
+298.0 1022.5
+
+1/0.127767 
+
+ 15
+
+520
+
+cycles
+
+n1 N1
+
+
+
+n2 N2
+
+1
+
+
+
+80 000 145 920
+
+
+
+n2 15 520
+
+1
+
+
+
+n2  7000 cycles Ans.
+
+(b) Manson's method: The number of cycles remaining after the first loading
+
+Nremaining =145 920  80 000 = 65 920 cycles Two data points: 0.9(470) MPa, 103 cycles
+223.8 MPa, 65 920 cycles
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 56/58
+
+  0.9470
+223.8
+
+
+
+a2 103 b2
+a2 65 920b2
+
+1.8901  0.015170b2
+
+b2
+
+
+
+log1.8901 log 0.015170
+
+
+
+0.151
+
+997
+
+a2
+
+
+
+65
+
+223.8
+ 920 0.151 997
+
+ 1208.7
+
+MPa
+
+n2
+
+
+
+
+
+298.0 1208.7
+
+1/0.151 997
+
+ 10
+
+000
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-60 Given: Se = 50 kpsi, Sut = 140 kpsi, f =0.8. Using Miner's method,
+
+a
+
+
+
+0.8 140   2
+50
+
+
+
+250.88
+
+kpsi
+
+b
+
+
+
+
+
+1 3
+
+log
+
+0.8 140 
+50
+
+
+
+0.116
+
+749
+
+1  95 kpsi,
+
+N1
+
+
+
+
+
+95 250.88
+
+1/0.116 749 
+
+
+
+4100
+
+cycles
+
+ 2  80 kpsi,
+
+N2
+
+
+
+
+
+80 250.88
+
+1/0.116 749 
+
+ 17
+
+850
+
+cycles
+
+ 3  65 kpsi,
+
+N3
+
+
+
+
+
+65 250.88
+
+1/0.116 749
+
+ 105
+
+700
+
+cycles
+
+0.2N 4100
+
+
+
+0.5N 17 850
+
+
+
+0.3N 105 700
+
+
+
+1
+
+ N  12 600 cycles Ans.
+
+______________________________________________________________________________
+
+6-61 Given: Sut = 530 MPa, Se = 210 MPa, and f = 0.9.
+
+(a) Miner's method
+
+a
+
+
+
+0.9  530  2
+210
+
+ 1083.47
+
+MPa
+
+b
+
+
+
+
+
+1 3
+
+log
+
+0.9  530 
+210
+
+
+
+0.118
+
+766
+
+1  350 MPa,
+
+N1
+
+
+
+
+
+350 1083.47
+
+1/0.118 766
+
+ 13
+
+550
+
+cycles
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 57/58
+
+ 2  260 MPa,
+
+N2
+
+
+
+
+
+260 1083.47
+
+1/0.118 766 
+
+
+
+165
+
+600
+
+cycles
+
+ 3  225 MPa,
+
+N3
+
+
+
+
+
+225 1083.47
+
+1/ 0.118 766 
+
+
+
+559
+
+400
+
+cycles
+
+n1 N1
+
+
+
+n2 N2
+
+
+
+n3 N3
+
+1
+
+5000 13 550
+
+
+
+50 000 165 600
+
+
+
+n3 559 400
+
+ 184
+
+100
+
+cycles
+
+Ans.
+
+(b) Manson's method:
+
+The life remaining after the first series of cycling is NR1 = 13 550  5000 = 8550 cycles. The two data points required to define Se,1 are [0.9(530), 103] and (350, 8550).
+
+  0.9530
+350
+
+
+
+a2 103 b2
+a2 8550b2
+
+ 1.3629  0.11696b2
+
+b2
+
+
+
+log 1.362 9 log 0.116 96
+
+
+
+0.144
+
+280
+
+a2
+
+
+
+350
+  8550 0.144 280
+
+ 1292.3
+
+MPa
+
+N2
+
+
+
+ 260 1/0.144 280  1292.3 
+
+
+
+67
+
+090
+
+cycles
+
+NR2  67 090  50 000  17 090 cycles
+
+  0.9530
+260
+
+
+
+a3 103 b3
+a3 17 090b3
+
+ 1.834 6  0.058 514b2
+
+b3
+
+
+
+log 1.834 6 log 0.058 514
+
+
+
+0.213
+
+785,
+
+a3
+
+
+
+17
+
+260
+ 090 0.213 785
+
+
+
+2088.7
+
+MPa
+
+N3
+
+
+
+
+
+225 2088.7
+
+1/0.213 785 
+
+
+
+33
+
+610
+
+cycles
+
+Ans.
+
+______________________________________________________________________________
+
+6-62 Given: Se = 45 kpsi, Sut = 85 kpsi, f = 0.86, and a = 35 kpsi and m = 30 kpsi for 12 (103) cycles. Goodman equivalent reversing stress, Eq. (6-58):
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 58/58
+
+Initial cycling
+
+ ar
+
+
+
+a
+1 m /
+
+Sut
+
+
+
+
+
+35
+1 30 / 85
+
+
+
+54.09
+
+kpsi
+
+a
+
+
+
+0.86 85 2
+45
+
+ 116.00
+
+kpsi
+
+b
+
+
+
+
+
+1 3
+
+log
+
+0.86 85
+45
+
+
+
+0.070
+
+235
+
+1  54.09 kpsi,
+
+N1
+
+
+
+
+
+54.09 116.00
+
+1/ 0.070
+
+235
+
+
+
+52
+
+190
+
+cycles
+
+(a) Miner's method: The number of remaining cycles at 54.09 kpsi is
+
+Nremaining = 52 190  12 000 = 40 190 cycles. The new coefficients are b = b, and a =Sf /Nb = 54.09/(40 190)  0.070 235 = 113.89 kpsi.
+
+The new endurance limit is
+
+  Se,1
+
+
+
+aN
+
+b e
+
+ 113.89
+
+106
+
+0.070 235  43.2 kpsi
+
+Ans.
+
+(b) Manson's method: The number of remaining cycles at 54.09 kpsi is
+
+Nremaining = 52 190  12 000 = 40 190 cycles. At 103 cycles,
+
+Sf = 0.86(85) = 73.1 kpsi. The new coefficients are
+b = [log(73.1/54.09)]/log(103/40 190) =  0.081 540 and a = 1/ (Nremaining) b = 54.09/(40 190)  0.081 540 = 128.39 kpsi. The new endurance limit is
+
+  Se,1
+
+
+
+aN
+
+b e
+
+ 128.39
+
+106
+
+0.081 540  41.6 kpsi
+
+Ans.
+
+______________________________________________________________________________
+
+Shigley's MED, 11th edition
+
+Chapter 6 Solutions, Page 59/58
+
+

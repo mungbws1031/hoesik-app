@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Task 0: 프로젝트 스캐폴드",
+  "description": "penta/ package.json + vite.config.js, 의존성 설치(vite/vitest/lunar-javascript/jsdom)",
+  "activeForm": "스캐폴드 구성 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "15",
+  "subject": "Task 8: IVDR 문서 템플릿 충실화 (2025 MDCG 반영)",
+  "description": "Enrich 6 IVDR templates in documents.ts with 2025 MDCG references (MDCG 2025-5 performance research, MDCG 2020-16 Rev.4 classification, SSCP requirement)",
+  "activeForm": "Enriching IVDR document templates",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

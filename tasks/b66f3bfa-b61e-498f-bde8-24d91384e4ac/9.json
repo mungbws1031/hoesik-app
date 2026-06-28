@@ -1,0 +1,9 @@
+{
+  "id": "9",
+  "subject": "Task 2: InlineEditor 컴포넌트 — 자동저장 textarea",
+  "description": "Create ivdr-wiki/src/components/InlineEditor.tsx with auto-save debounce, reset button, save status indicator",
+  "activeForm": "Creating InlineEditor component",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

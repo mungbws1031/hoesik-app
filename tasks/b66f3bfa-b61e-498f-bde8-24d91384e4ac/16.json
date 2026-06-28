@@ -1,0 +1,9 @@
+{
+  "id": "16",
+  "subject": "Task 9: ISO 13485 문서 템플릿 충실화 + 신규 문서 추가",
+  "description": "Add iso-internal-audit-report and iso-corrective-action templates, enrich iso-approved-supplier-list and iso-management-review in iso13485/documents.ts",
+  "activeForm": "Enriching ISO 13485 document templates",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

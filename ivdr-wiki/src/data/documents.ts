@@ -30,7 +30,7 @@ export interface DocSection {
   placeholder: string; // 채워넣기 예시/뼈대
 }
 
-export type CalcToolType = "sens-spec" | "sample-size" | "risk-matrix";
+export type CalcToolType = "sens-spec" | "sample-size" | "risk-matrix" | "lod-calc";
 
 export interface DocTemplate {
   id: string; // 고유 슬러그 (docTree 잎 id 와 일치)
@@ -38,6 +38,7 @@ export interface DocTemplate {
   docTitle: string;
   purpose: string; // 이 문서가 충족/증명하는 것 (무엇)
   rationale?: string; // 이 문서를 왜 쓰는가 (취지·근본 이유)
+  intent?: string;  // 기획 의도 (이 문서를 시스템에 추가한 배경·설계 의도)
   difficulty?: Level; // 작성 난이도
   importance?: Level; // 중요도
   effort?: DocEffort; // 예상 소요 기간(단계별)
@@ -61,6 +62,8 @@ export const documents: DocTemplate[] = [
     docTitle: "의도된 목적 정의서",
     purpose:
       "기기의 의도된 목적을 한 문단으로 확정해, 이후 분류·성능·라벨링의 기준을 고정한다.",
+    rationale: "IVDR Art.10(1) 및 Annex VIII에서 의도된 목적을 명확히 정의하도록 요구한다. 기기의 클래스 결정(Annex VIII), 성능 요건, 라벨·IFU 내용, 적합성 평가 경로 등 모든 후속 기술 결정의 기준이 된다.",
+    intent: "5요소(무엇·검체·사용자·환경·임상 결정)를 빠짐없이 기재하도록 구조화하여, NB가 가장 먼저 확인하는 문서의 품질을 높이기 위해 설계했다.",
     sections: [
       {
         heading: "1. 제품 식별",
@@ -106,6 +109,8 @@ export const documents: DocTemplate[] = [
     docTitle: "분류 근거서",
     purpose:
       "Annex VIII Rule 1~7을 적용해 클래스를 결정하고 그 근거를 1장으로 남긴다. NB가 가장 먼저 보는 문서.",
+    rationale: "IVDR Annex VIII에 따라 모든 IVD를 A~D 클래스로 분류해야 하며, 클래스에 따라 NB 개입 여부 및 적합성 평가 경로가 달라진다. 이 문서는 분류 결정의 추적 가능성을 보장한다.",
+    intent: "Rule 1~7을 순차적으로 검토하는 표 형식을 제공하여 분류 실수를 방지하고, NB 사전 검토 시 신뢰도를 높이도록 설계했다.",
     sections: [
       {
         heading: "1. 의도된 목적 요약",
@@ -158,6 +163,8 @@ export const documents: DocTemplate[] = [
     docTitle: "적합성 평가 경로 계획 + 산출물 체크리스트",
     purpose:
       "결정된 클래스에 맞는 Annex IX~XI 경로를 확정하고, 필요한 산출물을 미리 고정한다.",
+    rationale: "IVDR Annex IX(QMS 심사), Annex X(기술문서 심사), Annex XI(기술문서 심사)는 클래스별로 다른 경로를 규정한다. 경로 선택은 전체 일정과 비용에 직결된다.",
+    intent: "경로 선택이 일정·비용·NB 가용성에 미치는 영향을 팀 전체가 이해하고, 초기에 현실적인 일정을 수립할 수 있도록 설계했다.",
     sections: [
       {
         heading: "1. 클래스 및 경로 선택",
@@ -200,6 +207,8 @@ export const documents: DocTemplate[] = [
     docTitle: "QMS↔IVDR 연계 매트릭스",
     purpose:
       "ISO 13485 QMS에 IVDR 고유 프로세스를 연결해, 인증서만으로 부족한 부분을 메운다.",
+    rationale: "IVDR Art.10(8)은 ISO 13485 QMS를 기반으로 하되 성능평가·UDI·PMS 등 IVDR 특유 요건을 추가로 포함하도록 요구한다. NB는 QMS가 IVDR 요건과 어떻게 연계되는지 증거를 요청한다.",
+    intent: "ISO 13485 조항과 IVDR 요건을 한눈에 대조할 수 있는 매트릭스를 제공하여, QMS 갱신 범위를 최소화하고 감사 준비 시간을 단축하도록 설계했다.",
     sections: [
       {
         heading: "1. QMS 기준",
@@ -244,6 +253,8 @@ export const documents: DocTemplate[] = [
     docTitle: "기술문서 목차(Annex II/III) + GSPR 체크리스트",
     purpose:
       "Annex II/III 목차를 폴더 구조로 만들고, GSPR(Annex I) 충족을 항목별로 추적한다.",
+    rationale: "IVDR Annex II·III는 기술문서의 필수 구성을 규정하며, Annex I(GSPR) 14개 조항 각각에 대한 충족 증거를 요구한다. NB는 이 매트릭스를 통해 증거 공백을 식별한다.",
+    intent: "기술문서 작성 초기에 '어떤 증거가 어느 조항을 커버하는지' 전체 지도를 그려, 후반부 증거 누락을 사전에 방지하도록 설계했다.",
     sections: [
       {
         heading: "1. 기술문서 목차 (Annex II)",
@@ -289,6 +300,8 @@ export const documents: DocTemplate[] = [
     docTitle: "성능평가 계획 (PEP) 목차",
     purpose:
       "과학적·분석적·임상적 성능 3단 증거를 어떻게 확보할지 먼저 설계한다(PER 이전).",
+    rationale: "IVDR Annex XIII Part A는 모든 IVD에 대해 성능 평가를 요구한다. 계획 없는 성능 평가는 통계적 타당성과 참조 검사의 적합성을 증명하기 어려워 NB 승인이 지연된다.",
+    intent: "분석적·임상적 성능 연구를 착수 전에 설계하도록 유도하여, IRB 신청·검체 확보·통계 설계 등 장기 과제를 조기에 식별할 수 있도록 설계했다.",
     sections: [
       {
         heading: "1. 과학적 타당성 (Scientific Validity)",
@@ -350,6 +363,8 @@ export const documents: DocTemplate[] = [
     docTitle: "위험관리 계획 (ISO 14971) + GSPR↔위험 추적표",
     purpose:
       "ISO 14971 프로세스를 수립하고, 위험-요구(GSPR)-성능을 양방향 추적한다.",
+    rationale: "IVDR Annex I §8은 ISO 14971 기반 위험관리 시스템을 요구한다. 계획 없이 작성한 위험관리 파일은 위험 수용 기준·통제 조치 검증이 일관성 없어 NB 지적을 받는다.",
+    intent: "위험 식별 → 평가 → 통제 → 잔여위험 수용의 전체 흐름을 착수 전에 기획하도록 안내하여, 성능·사용적합성 팀과 위험관리 팀이 데이터를 공유할 수 있도록 설계했다.",
     sections: [
       {
         heading: "1. 위험관리 계획 (ISO 14971 Clause 4.4)",
@@ -406,6 +421,8 @@ export const documents: DocTemplate[] = [
     docTitle: "NB 선정·접촉·신청 준비 체크리스트",
     purpose:
       "scope에 맞는 NB를 조기에 확보하고 신청 패키지를 준비한다. 슬롯 지연이 시장 접근을 막는다.",
+    rationale: "IVDR은 Class B(일부)·C·D 기기에 NB 심사를 의무화한다(Annex IX~XI). NB 슬롯 부족 문제로 신청이 늦어지면 전환 기한을 넘길 수 있다.",
+    intent: "NB 선정 기준(scope·경험·슬롯 가용성)을 명시하고 신청 패키지 체크리스트를 제공하여, 첫 신청에서 반려를 최소화하도록 설계했다.",
     sections: [
       {
         heading: "1. NB 후보 선정",
@@ -449,6 +466,8 @@ export const documents: DocTemplate[] = [
     docTitle: "적합성 선언서 (DoC, Annex IV) 템플릿",
     purpose:
       "IVDR 충족을 공식 선언하고 CE 부착의 법적 근거를 만든다.",
+    rationale: "IVDR Art.17 및 Annex IV는 제조자가 CE 마킹 전 DoC를 발행하고 최소 10년간 보관하도록 의무화한다. DoC는 CE 마킹의 법적 근거 문서다.",
+    intent: "Annex IV의 필수 기재 항목을 모두 포함하는 양식을 제공하여, CE 마킹 직전 서류 누락으로 인한 지연을 방지하도록 설계했다.",
     sections: [
       {
         heading: "1. 제조자·대리인",
@@ -502,6 +521,8 @@ export const documents: DocTemplate[] = [
     docTitle: "EUDAMED/UDI 등록 데이터 준비표",
     purpose:
       "행위자 등록(SRN)→기기 등록→UDI 체계를 정리해 합법 출시 요건을 채운다.",
+    rationale: "IVDR Art.24~28, Annex VI는 기기·행위자·UDI를 EUDAMED에 등록하도록 의무화한다. 등록 없이 EU 시장에 기기를 출시하면 Art.89~92의 제재를 받는다.",
+    intent: "SRN 취득·UDI 발급·EUDAMED 모듈별 등록 절차를 단계별로 안내하여, 처음 등록하는 담당자도 누락 없이 완료할 수 있도록 설계했다.",
     sections: [
       {
         heading: "1. 행위자 등록 (SRN)",
@@ -554,6 +575,8 @@ export const documents: DocTemplate[] = [
     docTitle: "시판 후 감시 계획 (PMS Plan) + PMPF/PSUR 일정",
     purpose:
       "PMS를 QMS에 통합하고 PMS→성능→위험 환류 경로를 명문화한다. 인증은 끝이 아니다.",
+    rationale: "IVDR Art.78~80은 제조자에게 체계적인 시판 후 감시 시스템을 요구한다. 계획 없는 PMS는 PSUR·PMPF 시 데이터를 소급 수집해야 하는 비효율이 생긴다.",
+    intent: "출시 전에 고객 불만·문헌 감시·PMPF 프로토콜·PSUR 일정을 설계하도록 안내하여, PMS 운영 부담을 최소화하고 데이터 연속성을 보장하도록 설계했다.",
     sections: [
       {
         heading: "1. PMS 계획",
@@ -605,6 +628,8 @@ export const documents: DocTemplate[] = [
     stationId: 5,
     docTitle: "기기 설명서·사양 (Annex II 1.1)",
     purpose: "기기의 물리적 특성·구성·작동 원리를 문서화해 기술문서의 출발 항목을 완성한다.",
+    rationale: "IVDR Annex II §1은 기기의 설명, 기능 원리, BOM, 제조 방법을 기술문서에 포함하도록 요구한다. NB는 이를 통해 기기 설계의 전체 그림을 파악한다.",
+    intent: "R&D 팀이 보유한 기술 정보를 규제 문서 형식으로 전환하도록 안내하여, 기술문서 작성 초기의 진입 장벽을 낮추도록 설계했다.",
     sections: [
       {
         heading: "1. 제품 식별",
@@ -657,6 +682,8 @@ export const documents: DocTemplate[] = [
     stationId: 9,
     docTitle: "라벨 사양서 (Annex I + Art.18)",
     purpose: "IVDR Annex I 정보 요건을 충족하는 라벨·포장 사양을 확정한다. UDI·CE·NB 번호 포함.",
+    rationale: "IVDR Annex I §20은 제조자명·UDI·CE 마킹·언어 요건 등 라벨 기재 사항을 세부 규정한다. 라벨 오류는 출시 후 수정 시 비용이 크다.",
+    intent: "출시 전 라벨 검토 체크리스트를 제공하여, UDI 누락·심볼 오류·언어 미달 등 흔한 문제를 최종 생산 전에 발견하도록 설계했다.",
     sections: [
       {
         heading: "1. 제조자·연락처",
@@ -713,6 +740,8 @@ export const documents: DocTemplate[] = [
     stationId: 9,
     docTitle: "사용설명서 (IFU, Annex I)",
     purpose: "사용자가 기기를 올바르고 안전하게 사용할 수 있도록 모든 필수 정보를 제공한다.",
+    rationale: "IVDR Annex I §20은 IFU 기재 사항을, Art.7은 허위·오해성 정보 금지를 규정한다. 자가검사·근접검사 기기는 IEC 62366-1 사용적합성 평가를 IFU와 연계해야 한다.",
+    intent: "비전문가 사용자도 이해할 수 있는 IFU 구조를 안내하고, 사용적합성 시험에서 발견된 사용 오류가 IFU에 반영되도록 워크플로를 설계했다.",
     sections: [
       {
         heading: "1. 기기 식별 및 제조자",
@@ -781,6 +810,8 @@ export const documents: DocTemplate[] = [
     stationId: 7,
     docTitle: "위험관리 파일·보고서 (ISO 14971)",
     purpose: "위험 분석→평가→통제→잔여위험 평가의 전 이력을 파일로 유지하고, 결론을 보고서로 닫는다.",
+    rationale: "IVDR Annex I §8 및 ISO 14971:2019는 전체 제품 수명주기에 걸친 위험관리 활동 결과물을 파일로 유지하도록 요구한다. NB는 이 파일로 잔여위험이 수용 기준 이내임을 검증한다.",
+    intent: "위험 식별부터 잔여위험 수용까지의 추적 가능성을 한 파일에서 확인할 수 있도록 구조화하여, NB 심사 시 증거 제시를 신속하게 할 수 있도록 설계했다.",
     sections: [
       {
         heading: "1. 파일 구조 및 색인",
@@ -827,12 +858,15 @@ export const documents: DocTemplate[] = [
     ],
     relatedConceptSlugs: ["iso-14971", "gspr", "pms"],
     refs: ["ISO 14971:2019", "IVDR Annex I"],
+    calcTools: ["risk-matrix"],
   },
   {
     id: "performance-eval-report",
     stationId: 6,
     docTitle: "성능평가 보고서 (PER, Annex XIII)",
     purpose: "PEP에서 설계한 3단 증거(과학·분석·임상)를 종합해 성능 결론을 확정하고 평가를 닫는다.",
+    rationale: "IVDR Annex XIII Part B는 성능 평가의 모든 결과(분석적·임상적 성능, 과학적 타당성)를 보고서로 작성하도록 요구한다. Class C·D는 NB가 PER을 심사한다.",
+    intent: "LoD·정밀도·정확도·임상 Se/Sp 등 필수 분석 항목과 통계 방법을 미리 정의하여, 데이터 수집 후 보고서 작성이 신속히 이루어지도록 설계했다.",
     sections: [
       {
         heading: "1. 과학적 타당성 결론",
@@ -888,12 +922,15 @@ export const documents: DocTemplate[] = [
     ],
     relatedConceptSlugs: ["pep-per", "annex-xiii", "gspr"],
     refs: ["IVDR Art.56", "Annex XIII"],
+    calcTools: ["sens-spec", "sample-size", "lod-calc"],
   },
   {
     id: "quality-manual",
     stationId: 4,
     docTitle: "품질매뉴얼 (ISO 13485 4.2.2)",
     purpose: "QMS 범위·적용 제외·프로세스 상호작용을 선언해 인증기관과 고객에게 QMS 체계를 한 권으로 보인다.",
+    rationale: "ISO 13485:2016 Clause 4.2.2 및 IVDR Art.10(8)은 QMS 범위와 상호작용을 기술한 품질매뉴얼을 요구한다. ISO 13485 인증 심사의 핵심 검토 문서다.",
+    intent: "IVDR 고유 프로세스(성능평가·UDI·PMS)가 기존 ISO 13485 품질매뉴얼에 통합되도록 안내하여, 별도 문서 없이 단일 QMS 체계를 유지하도록 설계했다.",
     sections: [
       {
         heading: "1. 회사 및 QMS 범위",
@@ -942,6 +979,8 @@ export const documents: DocTemplate[] = [
     stationId: 7,
     docTitle: "이익-위험 분석서 (Annex I 1)",
     purpose: "기기가 제공하는 임상적 이익이 잔여위험을 상회함을 증명해 GSPR 1조를 충족한다.",
+    rationale: "IVDR Annex I §1은 기기의 임상적 이익이 잔여 위험보다 커야 CE 마킹이 가능하다고 규정한다. NB는 DoC 발행 전 이 분석의 타당성을 검토한다.",
+    intent: "임상 이익의 정량적 근거(Se/Sp 데이터)와 잔여위험 목록을 연계하여, 이익 > 위험임을 논리적으로 증명하는 구조를 제공하도록 설계했다.",
     sections: [
       {
         heading: "1. 이익 요약",
@@ -982,12 +1021,15 @@ export const documents: DocTemplate[] = [
     ],
     relatedConceptSlugs: ["iso-14971", "gspr", "pep-per"],
     refs: ["IVDR Annex I 1", "Annex II", "ISO 14971:2019"],
+    calcTools: ["sens-spec"],
   },
   {
     id: "usability-file",
     stationId: 7,
     docTitle: "사용적합성 파일·보고서 (IEC 62366-1)",
     purpose: "비전문가(자가검사·근접검사) 사용 오류를 체계적으로 줄여 GSPR 요건을 충족한다.",
+    rationale: "IVDR GSPR §13 및 IEC 62366-1은 자가검사·근접검사 기기에 대해 사용 오류로 인한 위험을 최소화하는 설계와 그 검증 과정을 기록하도록 요구한다.",
+    intent: "사용 오류 관련 위험을 IFU·라벨 개선으로 통제하는 사이클을 문서화하여, 형성 평가 → 설계 개선 → 총괄 평가의 추적 가능성을 확보하도록 설계했다.",
     sections: [
       {
         heading: "1. 사용 명세 (Use Specification)",

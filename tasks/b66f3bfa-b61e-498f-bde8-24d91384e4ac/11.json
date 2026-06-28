@@ -1,0 +1,9 @@
+{
+  "id": "11",
+  "subject": "Task 4: SensSpecCalc — 민감도/특이도/PPV/NPV 계산기",
+  "description": "Create ivdr-wiki/src/components/calcs/SensSpecCalc.tsx with 2x2 confusion matrix input and metric output",
+  "activeForm": "Building SensSpecCalc widget",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

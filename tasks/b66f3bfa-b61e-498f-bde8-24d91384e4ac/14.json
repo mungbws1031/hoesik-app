@@ -1,0 +1,9 @@
+{
+  "id": "14",
+  "subject": "Task 7: CalcTools 통합 — DocumentWorkspace에 계산기 렌더링",
+  "description": "Add CalcToolType to DocTemplate interface, add calcTools field to relevant docs, render calc widgets in DocumentWorkspace",
+  "activeForm": "Integrating calc tools into DocumentWorkspace",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

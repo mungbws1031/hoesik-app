@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Task 4: ISO 13485 docTree.ts + documents.ts",
+  "description": "src/data/iso13485/docTree.ts (20개 전용 문서 트리) + documents.ts (6개 상세 템플릿). resolveDoc에 ISO 13485 폴백 추가.",
+  "activeForm": "ISO 13485 문서 트리·템플릿 작성 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

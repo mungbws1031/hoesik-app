@@ -1,0 +1,9 @@
+{
+  "id": "10",
+  "subject": "Task 3: DocumentWorkspace — pre → InlineEditor 교체",
+  "description": "Modify DocumentWorkspace.tsx to swap <pre> blocks with <InlineEditor> component",
+  "activeForm": "Wiring InlineEditor into DocumentWorkspace",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

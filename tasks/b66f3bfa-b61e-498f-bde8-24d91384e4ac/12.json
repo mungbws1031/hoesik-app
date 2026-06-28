@@ -1,0 +1,9 @@
+{
+  "id": "12",
+  "subject": "Task 5: SampleSizeCalc — 임상 최소 검체수 계산기",
+  "description": "Create ivdr-wiki/src/components/calcs/SampleSizeCalc.tsx with Wilson approximation for minimum sample size",
+  "activeForm": "Building SampleSizeCalc widget",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Task 3: MBTI 매핑",
+  "description": "src/mbti.js: mbtiSignals 글자→5축, A5 기권, weak 옵션",
+  "activeForm": "MBTI 매핑 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "단일 HTML에 4탭 UI 통합 (계산/보정/탐색/저장 + 하단 네비)",
+  "description": "기존 탐색 시뮬레이터 유지하고 계산/보정/저장 뷰 추가. 하단 네비, 칩/세그먼트/숫자입력/결과카드/맛바차트, localStorage 저장. 모바일 우선·다크골드 테마+코랄 강조.",
+  "activeForm": "4탭 UI 통합 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

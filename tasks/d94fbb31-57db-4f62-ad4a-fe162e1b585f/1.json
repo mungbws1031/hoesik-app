@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "PRD 데이터/엔진 구현 (조미료·카테고리·프리셋·템플릿·환산·보정규칙)",
+  "description": "PRD 7~11장의 CONDIMENTS, DISH_CATEGORY_PROFILES, TASTE_STYLE_PRESETS, RECIPE_TEMPLATES, 단위환산(밀도), 강도배수, 안전보정, ADJUSTMENT_RULES를 JS로 구현. scaleTemplate/calculateTargets/allocate/unitConversion/fixTaste.",
+  "activeForm": "PRD 데이터·계산엔진 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

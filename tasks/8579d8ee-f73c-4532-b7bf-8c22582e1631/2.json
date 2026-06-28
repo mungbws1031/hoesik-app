@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Task 1: 축 메타 + vote()",
+  "description": "src/axes.js: AXES 5축, EPSILON, CONFLICT_RATIO, vote(). consensus.test.js 일부",
+  "activeForm": "축 메타 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -34,6 +34,8 @@ export const iso13485Documents: DocTemplate[] = [
       "ISO 13485:2016 Clause 4.1 원문",
       "고객·규제 요건 목록 (QMS 범위에 영향하는 요건)",
     ],
+    rationale: "ISO 13485:2016 Clause 4.1은 QMS 범위를 문서화하도록 요구한다. 범위에서 제외되는 조항(예: 7.3 설계·개발)은 근거를 명시해야 한다. 인증 범위가 곧 감사 범위를 결정한다.",
+    intent: "제품 목록·사업장·규제 요건을 한 문서에 정의하여, 신규 제품 추가 또는 사이트 확장 시 QMS 범위 검토를 체계적으로 수행하도록 설계했다.",
     checklist: [
       "제품·서비스·사이트가 명확히 기술되어 있다",
       "7.3 제외 여부와 근거가 명시되어 있다",
@@ -66,6 +68,8 @@ export const iso13485Documents: DocTemplate[] = [
       "ISO 13485:2016 Clause 5.3 원문",
       "이해관계자 요구사항 분석 결과 (고객·규제·직원)",
     ],
+    rationale: "ISO 13485:2016 Clause 5.3은 경영진이 품질방침을 수립·문서화·의사소통하도록 요구한다. 감사자는 방침이 측정 가능한 품질목표와 연계되는지 확인한다.",
+    intent: "경영진의 품질 의지가 실무 품질목표와 연결되도록 방침 작성 지침을 제공하여, '형식적 방침'이 아닌 실질적 경영 도구가 되도록 설계했다.",
     checklist: [
       "최고경영진 서명이 있다",
       "QMS 목적·지속 개선·요구사항 충족 의지가 포함되어 있다",
@@ -80,7 +84,8 @@ export const iso13485Documents: DocTemplate[] = [
     stationId: 2,
     docTitle: "경영 검토 기록",
     purpose: "최고경영진이 QMS의 적절성·효과성을 정기적으로 평가한 결과를 문서화한다.",
-    rationale: "ISO 13485:2016 §5.6은 최소 연 1회 QMS 전체 성과를 경영진이 검토해야 한다고 규정한다. NB는 경영 검토 회의록을 첫 인증 심사 필수 서류로 요구한다.",
+    rationale: "ISO 13485:2016 Clause 5.6은 경영진이 정기적으로 QMS를 검토하고 기록을 유지하도록 요구한다. 기록이 없으면 Clause 5.6.2 입력사항 누락으로 부적합이 된다.",
+    intent: "경영 검토 입력 항목(심사 결과·고객 불만·CAPA 현황 등)을 미리 정의하여, 회의 전 데이터 수집부터 회의 후 개선 조치까지의 흐름을 표준화하도록 설계했다.",
     sections: [
       {
         heading: "1. 검토 개요",
@@ -121,7 +126,8 @@ export const iso13485Documents: DocTemplate[] = [
     stationId: 6,
     docTitle: "승인공급자목록(ASL)",
     purpose: "품질에 영향을 주는 외부 공급자를 평가·선정·관리하는 승인 목록을 유지한다.",
-    rationale: "ISO 13485 §7.4.1은 공급업체 평가·선정·재평가를 의무화한다. 공급업체 실패는 제품 결함의 주요 원인이다.",
+    rationale: "ISO 13485:2016 Clause 7.4.1은 제품 품질에 영향을 미치는 공급자를 평가·선정·모니터링하도록 요구한다. ASL은 구매·공급망 관리의 추적 가능성 근거다.",
+    intent: "공급자 영향 등급(Low/Medium/High) 분류 기준을 포함하여, 중요 공급자의 정기 재평가 누락을 방지하고 감사 시 공급망 관리 현황을 빠르게 제시하도록 설계했다.",
     sections: [
       {
         heading: "1. 목록 개요",
@@ -164,7 +170,8 @@ export const iso13485Documents: DocTemplate[] = [
     stationId: 9,
     docTitle: "내부 심사 보고서 (ISO 13485 §8.2.4)",
     purpose: "QMS 내부 심사 계획·실시·결과·시정 조치 요청을 기록하는 문서",
-    rationale: "ISO 13485:2016 §8.2.4는 QMS가 계획된 대로 실행·유지되는지 연 1회 이상 내부 심사를 요구한다. NB는 첫 인증 심사 시 내부 심사 이력과 CAR 처리 현황을 반드시 확인한다.",
+    rationale: "ISO 13485:2016 Clause 8.2.4는 계획된 내부 심사를 수행하고 결과를 기록하도록 요구한다. 내부 심사는 외부 인증 심사 전 부적합을 자체 발견하는 핵심 메커니즘이다.",
+    intent: "ISO 13485 조항별 체크리스트를 제공하여 심사원이 놓치기 쉬운 조항을 빠짐없이 확인하고, 발견된 부적합이 CAPA로 연결되도록 설계했다.",
     difficulty: "med",
     importance: "high",
     knowledge: [
@@ -230,7 +237,8 @@ export const iso13485Documents: DocTemplate[] = [
     stationId: 10,
     docTitle: "시정 조치 보고서 (CAPA)",
     purpose: "부적합 원인 제거 및 재발 방지를 위한 CAPA(Corrective and Preventive Action) 문서",
-    rationale: "ISO 13485:2016 §8.5.2/8.5.3는 부적합 원인 분석 및 재발 방지 조치를 의무화한다. FDA 21 CFR 820.100과도 연계되며, NB 심사에서 CAPA 실효성은 핵심 평가 항목이다.",
+    rationale: "ISO 13485:2016 Clause 8.5.2/8.5.3은 부적합의 근본원인을 분석하고 재발 방지 조치를 수립·검증하도록 요구한다. CAPA는 QMS 개선의 핵심 엔진이다.",
+    intent: "5Why·피쉬본 분석 등 근본원인 분석 도구를 사용하도록 안내하고, 시정 조치 효과 검증 절차를 포함하여 동일 문제 반복을 방지하도록 설계했다.",
     difficulty: "med",
     importance: "high",
     knowledge: [

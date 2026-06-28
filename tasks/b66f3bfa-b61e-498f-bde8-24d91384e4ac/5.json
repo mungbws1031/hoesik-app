@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Task 5: ISO13485Map 컴포넌트",
+  "description": "ISO13485Map.tsx 완성 — 기존 PhaseBand/StationDetail 재사용, PhaseNav overridePhases prop 추가.",
+  "activeForm": "ISO13485Map 컴포넌트 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

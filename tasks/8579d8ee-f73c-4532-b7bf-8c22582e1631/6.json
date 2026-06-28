@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Task 5: 혈액형 매핑",
+  "description": "src/bloodtype.js: bloodSignals 통념 ±0.5",
+  "activeForm": "혈액형 매핑 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,9 @@
+{
+  "id": "15",
+  "subject": "타로 3장 스프레드",
+  "description": "tarot.js 메이저22 덱+셔플/드로우 + 타로 화면(셔플·탭·정역방향·과거현재미래 해석)",
+  "activeForm": "타로 구현 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}
