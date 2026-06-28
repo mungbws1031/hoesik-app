@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "region": "세종특별자치시",
+    "generatedAt": "2026-06-24",
+    "note": "회식 큐레이션. 평점/영업시간은 2026.6 기준이며 변동 가능 → v2에서 지도 API 갱신 권장.",
+    "avgDrivingSpeedKmh": 25,
+    "defaultDriveLimitMin": 20,
+    "defaultVisitExcludeDays": 14
+  },
+  "anchors": [
+    { "id": "sejong_cityhall", "name": "세종시청", "lat": 36.4800, "lng": 127.2890 },
+    { "id": "gov_complex", "name": "정부세종청사", "lat": 36.5040, "lng": 127.2590 },
+    { "id": "naseong_brt", "name": "나성동 중심상가(BRT)", "lat": 36.4912, "lng": 127.2586 }
+  ],
+  "clusters": [
+    { "id": "naseong", "name": "나성동·어진동(중심상가)" },
+    { "id": "boram", "name": "보람동(시청권)" },
+    { "id": "dodam", "name": "도담동" }
+  ],
+  "restaurants": [
+    {
+      "id": "r_cheongmigwan", "name": "청미관", "type": "restaurant",
+      "category": ["한식", "족발보쌈"], "cluster": "naseong",
+      "lat": 36.491554, "lng": 127.258640, "rating": 4.9, "ratingCount": 184,
+      "tags": ["단체석", "주차", "고급분위기"],
+      "phone": "+82-50-71346-9234", "address": "세종시 나성동 나성북1로 23",
+      "placeId": "ChIJ18jxLQDLejURzqrpigJ65Fw", "naverPlaceId": null
+    },
+    {
+      "id": "r_jinwonsou", "name": "진원소우 세종나성점", "type": "restaurant",
+      "category": ["고기", "소고기"], "cluster": "naseong",
+      "lat": 36.491101, "lng": 127.258027, "rating": 4.5, "ratingCount": 2,
+      "tags": ["테이블오더", "단체석", "셀프바"],
+      "phone": "+82-44-863-7772", "address": "세종시 나성북1로 18",
+      "placeId": "ChIJXZvWBADLejURT0uU2AgjA8c", "naverPlaceId": null
+    },
+    {
+      "id": "r_goraebudae", "name": "수제햄 고래부대찌개 세종나성점", "type": "restaurant",
+      "category": ["찌개", "부대찌개"], "cluster": "naseong",
+      "lat": 36.482636, "lng": 127.261198, "rating": 5.0, "ratingCount": 21,
+      "tags": ["라면사리무한", "메가박스옆", "점심회식"],
+      "phone": "+82-44-864-3366", "address": "세종시 나성동 한누리대로 194 세종의아침",
+      "placeId": "ChIJtUcrrx3LejURhr73pA2xuD0", "naverPlaceId": null
+    },
+    {
+      "id": "r_olivus_eojin", "name": "올리부스(어진동 본점)", "type": "restaurant",
+      "category": ["양식", "이탈리안"], "cluster": "naseong",
+      "lat": 36.495626, "lng": 127.264908, "rating": 5.0, "ratingCount": 188,
+      "tags": ["블루리본", "호수공원근처", "모임"],
+      "phone": "+82-50-71411-1928", "address": "세종시 가름로 232 SBC센터 B동 113호",
+      "placeId": "ChIJ-Z_rBADLejURcrq7wOW9fMY", "naverPlaceId": null
+    },
+    {
+      "id": "r_bapsang", "name": "밥상차려주는집 세종비지니스센터", "type": "restaurant",
+      "category": ["한식", "한정식"], "cluster": "naseong",
+      "lat": 36.495573, "lng": 127.264747, "rating": 4.0, "ratingCount": 257,
+      "tags": ["대형테이블", "단체10인이상", "주차"],
+      "phone": "+82-44-866-5133", "address": "세종시 가름로 232 세종비지니스센터 A320",
+      "placeId": "ChIJp4eu-WjLejUR28HIxLmkfCM", "naverPlaceId": null
+    },
+    {
+      "id": "r_songtan", "name": "송탄식당 세종시청점", "type": "restaurant",
+      "category": ["찌개", "부대찌개"], "cluster": "boram",
+      "lat": 36.477358, "lng": 127.290104, "rating": 5.0, "ratingCount": 30,
+      "tags": ["시청앞", "회식많음", "TV출연"],
+      "phone": "+82-44-866-6120", "address": "세종시 보람동 760 보람빌딩 208호",
+      "placeId": "ChIJvzmtOp_LejUR3dTaRRx6I3Y", "naverPlaceId": null
+    },
+    {
+      "id": "r_olivus_boram", "name": "올리부스 꼼파뇨 세종보람점", "type": "restaurant",
+      "category": ["양식", "이탈리안"], "cluster": "boram",
+      "lat": 36.479576, "lng": 127.285974, "rating": 4.9, "ratingCount": 53,
+      "tags": ["세트메뉴", "세련된분위기", "공원옆"],
+      "phone": "+82-10-2665-6405", "address": "세종시 보람동 시청대로 127",
+      "placeId": "ChIJuZ-OVCrLejURX8ye27NkrDQ", "naverPlaceId": null
+    },
+    {
+      "id": "r_bogangjib", "name": "보강집", "type": "restaurant",
+      "category": ["한식", "육회"], "cluster": "boram",
+      "lat": 36.477582, "lng": 127.290506, "rating": 4.5, "ratingCount": 27,
+      "tags": ["곱창전골", "지하주차", "가족모임"],
+      "phone": null, "address": "세종시 남세종로 446 1층 103,104호",
+      "placeId": "ChIJpSzdGWPLejUR6YzDV7dcMks", "naverPlaceId": null
+    },
+    {
+      "id": "r_heosatto", "name": "허사또쭈꾸미 세종보람점", "type": "restaurant",
+      "category": ["한식", "쭈꾸미"], "cluster": "boram",
+      "lat": 36.483936, "lng": 127.293796, "rating": 4.8, "ratingCount": 8,
+      "tags": ["매운맛", "가성비", "2인세트"],
+      "phone": "+82-44-864-4545", "address": "세종시 보람동 시청대로 219 4층",
+      "placeId": "ChIJ1zXzclLLejURQjpPrg4kwis", "naverPlaceId": null
+    },
+    {
+      "id": "r_megumi", "name": "메구미(Megumi)", "type": "restaurant",
+      "category": ["일식", "회"], "cluster": "dodam",
+      "lat": 36.504121, "lng": 127.271617, "rating": 4.3, "ratingCount": 34,
+      "tags": ["룸", "예약", "접대", "호수뷰"],
+      "phone": "+82-44-417-6170", "address": "세종시 도움8로 91",
+      "placeId": "ChIJ0fg87pXLejURNJ_87YJVObE", "naverPlaceId": null
+    },
+    {
+      "id": "r_eumoa", "name": "음오아 고기집", "type": "restaurant",
+      "category": ["고기", "삼겹살"], "cluster": "dodam",
+      "lat": 36.513804, "lng": 127.259628, "rating": 5.0, "ratingCount": 29,
+      "tags": ["구워주는집", "감성인테리어", "회식"],
+      "phone": "+82-10-4914-5711", "address": "세종시 도담동 다움프라자 107호",
+      "placeId": "ChIJy-iWmPDLejURs7peeijIIvA", "naverPlaceId": null
+    },
+    {
+      "id": "r_italyshabu", "name": "이태리샤브칼국수 세종청사점", "type": "restaurant",
+      "category": ["한식", "샤브칼국수"], "cluster": "dodam",
+      "lat": 36.508207, "lng": 127.260220, "rating": 5.0, "ratingCount": 25,
+      "tags": ["공원뷰", "단체", "점심회식"],
+      "phone": "+82-50-71483-4225", "address": "세종시 도담동 절재로 172 302호",
+      "placeId": "ChIJ1XiX4FjLejURetUDxB_HsY0", "naverPlaceId": null
+    }
+  ],
+  "cafes": [
+    {
+      "id": "cf_pleasure", "name": "Pleasure(49층 뷰카페)", "type": "cafe",
+      "category": ["카페", "뷰카페"], "cluster": "naseong",
+      "lat": 36.488780, "lng": 127.267014, "rating": 4.5, "ratingCount": 146,
+      "tags": ["뷰맛집", "49층", "베이커리"],
+      "phone": "+82-50-71382-9488", "address": "세종시 중앙공원서로 10",
+      "placeId": "ChIJRXTttXbLejURxsLv4jeJu-s", "naverPlaceId": null
+    },
+    {
+      "id": "cf_cafe45", "name": "카페45(45층 뷰카페)", "type": "cafe",
+      "category": ["카페", "뷰카페"], "cluster": "naseong",
+      "lat": 36.492130, "lng": 127.262191, "rating": 4.3, "ratingCount": 379,
+      "tags": ["뷰맛집", "45층", "야경"],
+      "phone": "+82-50-71473-0961", "address": "세종시 나성북1로 51 나릿재마을6단지 601동 45층",
+      "placeId": "ChIJAe2X9unLejURgay4Y9MW3hI", "naverPlaceId": null
+    },
+    {
+      "id": "cf_stayinterview", "name": "Cafe Stay Interview", "type": "cafe",
+      "category": ["카페", "브런치"], "cluster": "naseong",
+      "lat": 36.490216, "lng": 127.260884, "rating": 4.2, "ratingCount": 55,
+      "tags": ["감성인테리어", "사진맛집"],
+      "phone": null, "address": "세종시 나성북로 47 132~134호",
+      "placeId": "ChIJLef7GlbLejURuNLbkl9twmE", "naverPlaceId": null
+    },
+    {
+      "id": "cf_frank", "name": "프랭크커피바 세종점", "type": "cafe",
+      "category": ["카페", "디저트"], "cluster": "naseong",
+      "lat": 36.491837, "lng": 127.258731, "rating": 4.6, "ratingCount": 14,
+      "tags": ["크로플", "야간바", "분위기"],
+      "phone": "+82-50-71429-2059", "address": "세종시 나성동 나성북1로 23 1층",
+      "placeId": "ChIJo1TgKRDLejUR82Pposiqe5c", "naverPlaceId": null
+    },
+    {
+      "id": "cf_stellar", "name": "Stellar On Coffee", "type": "cafe",
+      "category": ["카페", "스페셜티"], "cluster": "boram",
+      "lat": 36.483616, "lng": 127.293507, "rating": 4.8, "ratingCount": 13,
+      "tags": ["로스터리", "핸드드립", "조용함"],
+      "phone": "+82-70-7788-8122", "address": "세종시 시청대로 213 103-105호",
+      "placeId": "ChIJZ4GBBIzLejUR4fEUUG8FBxs", "naverPlaceId": null
+    },
+    {
+      "id": "cf_florence", "name": "Cafe Florence", "type": "cafe",
+      "category": ["카페", "브런치"], "cluster": "boram",
+      "lat": 36.484168, "lng": 127.293953, "rating": 4.2, "ratingCount": 119,
+      "tags": ["감성", "디저트", "지하주차"],
+      "phone": "+82-44-867-0713", "address": "세종시 시청대로 219 121호",
+      "placeId": "ChIJxYqSj3XLejURU6JvBoJnLoI", "naverPlaceId": null
+    },
+    {
+      "id": "cf_goodmorning", "name": "좋은아침페스츄리 세종보람점", "type": "cafe",
+      "category": ["카페", "베이커리"], "cluster": "boram",
+      "lat": 36.482945, "lng": 127.292885, "rating": 4.4, "ratingCount": 34,
+      "tags": ["3시간무료주차", "넓은홀", "빵"],
+      "phone": "+82-44-862-4091", "address": "세종시 보람동 709",
+      "placeId": "ChIJCy8E5d3LejURj1wbzAb5ZGY", "naverPlaceId": null
+    },
+    {
+      "id": "cf_nolsup", "name": "놀숲 세종시청점(만화카페)", "type": "cafe",
+      "category": ["카페", "만화카페"], "cluster": "boram",
+      "lat": 36.478260, "lng": 127.290155, "rating": 4.4, "ratingCount": 22,
+      "tags": ["보드게임", "이색", "프라이빗룸"],
+      "phone": null, "address": "세종시 호려울로 45",
+      "placeId": "ChIJiafAgybLejURprsQCOk-9UI", "naverPlaceId": null
+    }
+  ]
+}
